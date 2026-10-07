@@ -1,4 +1,4 @@
-import { Address, Keypair, StrKey, hash, nativeToScVal, xdr } from "@stellar/stellar-sdk";
+import { Address, Keypair, StrKey, hash, nativeToScVal, xdr } from "@stellar/stellar-sdk/base";
 import { toBase64 } from "./bytes.ts";
 import { findMapping } from "./tokens.ts";
 import type { Authorization, Invocation, MutationField } from "./vector.ts";

@@ -17,7 +17,7 @@ import {
   hash,
   inspectAuthEntry,
   xdr,
-} from "@stellar/stellar-sdk";
+} from "@stellar/stellar-sdk/base";
 import { fromBase64, fromHex, toBase64, toHex } from "./bytes.ts";
 import type { Authorization, Canonical, DecodedEntry, DecodedInvocation, Invocation, VerifyResult } from "./vector.ts";
 

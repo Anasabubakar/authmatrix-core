@@ -1,4 +1,4 @@
-import { Address, scValToBigInt, xdr } from "@stellar/stellar-sdk";
+import { Address, scValToBigInt, xdr } from "@stellar/stellar-sdk/base";
 import { toBase64, toHex } from "./bytes.ts";
 
 /**

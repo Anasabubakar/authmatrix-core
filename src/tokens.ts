@@ -13,7 +13,7 @@
  * known to be a token; the label says "token-shaped call", never "token transfer".
  */
 import { typedFromScVal, type TypedVal } from "./scval.ts";
-import { xdr } from "@stellar/stellar-sdk";
+import { xdr } from "@stellar/stellar-sdk/base";
 
 export type ArgKind = "address" | "i128" | "u32" | "bool";
 export type Role = "sender" | "spender" | "recipient" | "holder" | "amount" | "expiryLedger" | "admin" | "target";
