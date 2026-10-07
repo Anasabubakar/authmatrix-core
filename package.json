@@ -20,12 +20,14 @@
     "./evidence/native-host/results.json": "./evidence/native-host/results.json",
     "./evidence/testnet/summary.json": "./evidence/testnet/summary.json"
   },
-  "files": ["dist", "schema", "vectors", "evidence", "README.md", "LICENSE"],
+  "files": ["dist", "schema", "vectors", "evidence/native-host/results.json", "evidence/testnet/summary.json", "evidence/testnet/deployment.json", "evidence/conformance-report.json", "README.md", "LICENSE"],
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "schema": "node --experimental-strip-types scripts/gen-schema.ts",
     "check:schema": "node --experimental-strip-types scripts/gen-schema.ts --check",
     "typecheck": "tsc -p tsconfig.json --noEmit",
+    "evidence:native": "bash scripts/record-native.sh",
+    "evidence:testnet": "node --experimental-strip-types --no-warnings scripts/testnet-evidence.ts",
     "conformance": "node --experimental-strip-types scripts/conformance.ts",
     "vectors": "node --experimental-strip-types scripts/gen-vectors.ts",
     "check:vectors": "node --experimental-strip-types scripts/gen-vectors.ts --check",
