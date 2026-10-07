@@ -11,6 +11,7 @@ export {
   decodedToAuthorization,
   deriveKeypair,
   ed25519Sign,
+  networkIdHex,
   entryFromXdr,
   verifyEntry,
 } from "./entry.ts";

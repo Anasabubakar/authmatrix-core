@@ -21,6 +21,11 @@ import {
 import { fromBase64, fromHex, toBase64, toHex } from "./bytes.ts";
 import type { Authorization, Canonical, DecodedEntry, DecodedInvocation, Invocation, VerifyResult } from "./vector.ts";
 
+/** SHA-256 of the network passphrase, lowercase hex (the "network id" bound into every payload). */
+export function networkIdHex(networkPassphrase: string): string {
+  return toHex(hash(networkPassphrase));
+}
+
 export function deriveKeypair(phrase: string): Keypair {
   return Keypair.fromRawEd25519Seed(hash(phrase));
 }
