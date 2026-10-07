@@ -1,0 +1,413 @@
+{
+  "adapters": [
+    {
+      "adapter": "authmatrix-adapter-typescript",
+      "language": "TypeScript (Node)",
+      "xdrImplementation": "@stellar/stellar-sdk 17.2.1 generated xdr classes (@stellar/js-xdr)",
+      "signingImplementation": "@stellar/stellar-sdk 17.2.1 Keypair / authorizeEntry (ed25519 via @noble/ed25519, sha512 via @noble/hashes)",
+      "hashImplementation": "@stellar/stellar-sdk 17.2.1 hash() (sha256 via @noble/hashes)",
+      "ops": [
+        "describe",
+        "derive_key",
+        "build",
+        "decode",
+        "verify",
+        "ed25519_sign"
+      ]
+    },
+    {
+      "adapter": "authmatrix-adapter-rust",
+      "language": "Rust",
+      "xdrImplementation": "stellar-xdr =28.0.1 (rs-stellar-xdr)",
+      "signingImplementation": "ed25519-dalek =2.2.0",
+      "hashImplementation": "sha2 =0.10.9",
+      "ops": [
+        "describe",
+        "derive_key",
+        "build",
+        "decode",
+        "verify",
+        "ed25519_sign"
+      ]
+    }
+  ],
+  "agreements": [
+    {
+      "vectorId": "v2-nested-relay-testnet",
+      "op": "derive_key",
+      "ok": true
+    },
+    {
+      "vectorId": "v2-nested-relay-testnet",
+      "op": "build",
+      "ok": true
+    },
+    {
+      "vectorId": "v2-nested-relay-testnet",
+      "op": "decode",
+      "ok": true
+    },
+    {
+      "vectorId": "v2-nested-relay-testnet",
+      "op": "verify",
+      "ok": true
+    },
+    {
+      "vectorId": "v2-nested-relay-testnet--recipient",
+      "op": "verify",
+      "ok": true
+    },
+    {
+      "vectorId": "v2-nested-relay-testnet--recipient",
+      "op": "build",
+      "ok": true
+    },
+    {
+      "vectorId": "v2-nested-relay-testnet--amount",
+      "op": "verify",
+      "ok": true
+    },
+    {
+      "vectorId": "v2-nested-relay-testnet--amount",
+      "op": "build",
+      "ok": true
+    },
+    {
+      "vectorId": "v2-nested-relay-testnet--network",
+      "op": "verify",
+      "ok": true
+    },
+    {
+      "vectorId": "v2-nested-relay-testnet--network",
+      "op": "build",
+      "ok": true
+    },
+    {
+      "vectorId": "v2-nested-relay-testnet--nonce",
+      "op": "verify",
+      "ok": true
+    },
+    {
+      "vectorId": "v2-nested-relay-testnet--nonce",
+      "op": "build",
+      "ok": true
+    },
+    {
+      "vectorId": "v2-nested-relay-testnet--expiry",
+      "op": "verify",
+      "ok": true
+    },
+    {
+      "vectorId": "v2-nested-relay-testnet--expiry",
+      "op": "build",
+      "ok": true
+    },
+    {
+      "vectorId": "v2-nested-relay-testnet--function",
+      "op": "verify",
+      "ok": true
+    },
+    {
+      "vectorId": "v2-nested-relay-testnet--function",
+      "op": "build",
+      "ok": true
+    },
+    {
+      "vectorId": "v2-nested-relay-testnet--contractId",
+      "op": "verify",
+      "ok": true
+    },
+    {
+      "vectorId": "v2-nested-relay-testnet--contractId",
+      "op": "build",
+      "ok": true
+    },
+    {
+      "vectorId": "legacy-nested-relay-testnet",
+      "op": "derive_key",
+      "ok": true
+    },
+    {
+      "vectorId": "legacy-nested-relay-testnet",
+      "op": "build",
+      "ok": true
+    },
+    {
+      "vectorId": "legacy-nested-relay-testnet",
+      "op": "decode",
+      "ok": true
+    },
+    {
+      "vectorId": "legacy-nested-relay-testnet",
+      "op": "verify",
+      "ok": true
+    },
+    {
+      "vectorId": "legacy-nested-relay-testnet--recipient",
+      "op": "verify",
+      "ok": true
+    },
+    {
+      "vectorId": "legacy-nested-relay-testnet--recipient",
+      "op": "build",
+      "ok": true
+    },
+    {
+      "vectorId": "legacy-nested-relay-testnet--amount",
+      "op": "verify",
+      "ok": true
+    },
+    {
+      "vectorId": "legacy-nested-relay-testnet--amount",
+      "op": "build",
+      "ok": true
+    },
+    {
+      "vectorId": "legacy-nested-relay-testnet--network",
+      "op": "verify",
+      "ok": true
+    },
+    {
+      "vectorId": "legacy-nested-relay-testnet--network",
+      "op": "build",
+      "ok": true
+    },
+    {
+      "vectorId": "legacy-nested-relay-testnet--nonce",
+      "op": "verify",
+      "ok": true
+    },
+    {
+      "vectorId": "legacy-nested-relay-testnet--nonce",
+      "op": "build",
+      "ok": true
+    },
+    {
+      "vectorId": "legacy-nested-relay-testnet--expiry",
+      "op": "verify",
+      "ok": true
+    },
+    {
+      "vectorId": "legacy-nested-relay-testnet--expiry",
+      "op": "build",
+      "ok": true
+    },
+    {
+      "vectorId": "legacy-nested-relay-testnet--function",
+      "op": "verify",
+      "ok": true
+    },
+    {
+      "vectorId": "legacy-nested-relay-testnet--function",
+      "op": "build",
+      "ok": true
+    },
+    {
+      "vectorId": "legacy-nested-relay-testnet--contractId",
+      "op": "verify",
+      "ok": true
+    },
+    {
+      "vectorId": "legacy-nested-relay-testnet--contractId",
+      "op": "build",
+      "ok": true
+    },
+    {
+      "vectorId": "v2-token-ops-synthetic",
+      "op": "derive_key",
+      "ok": true
+    },
+    {
+      "vectorId": "v2-token-ops-synthetic",
+      "op": "build",
+      "ok": true
+    },
+    {
+      "vectorId": "v2-token-ops-synthetic",
+      "op": "decode",
+      "ok": true
+    },
+    {
+      "vectorId": "v2-token-ops-synthetic",
+      "op": "verify",
+      "ok": true
+    },
+    {
+      "vectorId": "v2-token-ops-synthetic--recipient",
+      "op": "verify",
+      "ok": true
+    },
+    {
+      "vectorId": "v2-token-ops-synthetic--recipient",
+      "op": "build",
+      "ok": true
+    },
+    {
+      "vectorId": "v2-token-ops-synthetic--amount",
+      "op": "verify",
+      "ok": true
+    },
+    {
+      "vectorId": "v2-token-ops-synthetic--amount",
+      "op": "build",
+      "ok": true
+    },
+    {
+      "vectorId": "v2-token-ops-synthetic--network",
+      "op": "verify",
+      "ok": true
+    },
+    {
+      "vectorId": "v2-token-ops-synthetic--network",
+      "op": "build",
+      "ok": true
+    },
+    {
+      "vectorId": "v2-token-ops-synthetic--nonce",
+      "op": "verify",
+      "ok": true
+    },
+    {
+      "vectorId": "v2-token-ops-synthetic--nonce",
+      "op": "build",
+      "ok": true
+    },
+    {
+      "vectorId": "v2-token-ops-synthetic--expiry",
+      "op": "verify",
+      "ok": true
+    },
+    {
+      "vectorId": "v2-token-ops-synthetic--expiry",
+      "op": "build",
+      "ok": true
+    },
+    {
+      "vectorId": "v2-token-ops-synthetic--function",
+      "op": "verify",
+      "ok": true
+    },
+    {
+      "vectorId": "v2-token-ops-synthetic--function",
+      "op": "build",
+      "ok": true
+    },
+    {
+      "vectorId": "v2-token-ops-synthetic--contractId",
+      "op": "verify",
+      "ok": true
+    },
+    {
+      "vectorId": "v2-token-ops-synthetic--contractId",
+      "op": "build",
+      "ok": true
+    },
+    {
+      "vectorId": "legacy-pubnet-historical-transfer",
+      "op": "derive_key",
+      "ok": true
+    },
+    {
+      "vectorId": "legacy-pubnet-historical-transfer",
+      "op": "build",
+      "ok": true
+    },
+    {
+      "vectorId": "legacy-pubnet-historical-transfer",
+      "op": "decode",
+      "ok": true
+    },
+    {
+      "vectorId": "legacy-pubnet-historical-transfer",
+      "op": "verify",
+      "ok": true
+    },
+    {
+      "vectorId": "legacy-pubnet-historical-transfer--recipient",
+      "op": "verify",
+      "ok": true
+    },
+    {
+      "vectorId": "legacy-pubnet-historical-transfer--recipient",
+      "op": "build",
+      "ok": true
+    },
+    {
+      "vectorId": "legacy-pubnet-historical-transfer--amount",
+      "op": "verify",
+      "ok": true
+    },
+    {
+      "vectorId": "legacy-pubnet-historical-transfer--amount",
+      "op": "build",
+      "ok": true
+    },
+    {
+      "vectorId": "legacy-pubnet-historical-transfer--network",
+      "op": "verify",
+      "ok": true
+    },
+    {
+      "vectorId": "legacy-pubnet-historical-transfer--network",
+      "op": "build",
+      "ok": true
+    },
+    {
+      "vectorId": "legacy-pubnet-historical-transfer--nonce",
+      "op": "verify",
+      "ok": true
+    },
+    {
+      "vectorId": "legacy-pubnet-historical-transfer--nonce",
+      "op": "build",
+      "ok": true
+    },
+    {
+      "vectorId": "legacy-pubnet-historical-transfer--expiry",
+      "op": "verify",
+      "ok": true
+    },
+    {
+      "vectorId": "legacy-pubnet-historical-transfer--expiry",
+      "op": "build",
+      "ok": true
+    },
+    {
+      "vectorId": "legacy-pubnet-historical-transfer--contractId",
+      "op": "verify",
+      "ok": true
+    },
+    {
+      "vectorId": "legacy-pubnet-historical-transfer--contractId",
+      "op": "build",
+      "ok": true
+    },
+    {
+      "vectorId": "rfc8032:RFC 8032 section 7.1 TEST 1",
+      "op": "ed25519_sign",
+      "ok": true
+    },
+    {
+      "vectorId": "rfc8032:RFC 8032 section 7.1 TEST 2",
+      "op": "ed25519_sign",
+      "ok": true
+    },
+    {
+      "vectorId": "rfc8032:RFC 8032 section 7.1 TEST 3",
+      "op": "ed25519_sign",
+      "ok": true
+    },
+    {
+      "vectorId": "rfc8032:RFC 8032 section 7.1 TEST SHA(abc)",
+      "op": "ed25519_sign",
+      "ok": true
+    }
+  ],
+  "passed": 446,
+  "failed": 0,
+  "summary": {
+    "checks": 372,
+    "agreements": 74,
+    "failed": 0
+  }
+}
