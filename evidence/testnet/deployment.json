@@ -1,0 +1,22 @@
+{
+  "network": "testnet",
+  "networkPassphrase": "Test SDF Network ; September 2015",
+  "rpc": "https://soroban-testnet.stellar.org",
+  "deployedAt": "2026-10-07",
+  "deployerAlias": "authmatrix-source (stellar CLI key, stored only in ~/.config/stellar/identity, funded by friendbot)",
+  "deployerAddress": "GADNINT62WXXJEIEKUKZNTHYNQPOFMRRTXPZ7VPJ7IK33JAF7K4GX556",
+  "artifacts": {
+    "inner": { "file": "fixtures/nested-auth/artifacts/authmatrix_inner.wasm", "sha256": "451d7553508ed2ee105c438dfade29844cc14c0190fd8b6f47887dcccbab30a8" },
+    "outer": { "file": "fixtures/nested-auth/artifacts/authmatrix_outer.wasm", "sha256": "0e4815a9d8244092d84de6e162c4a117cd683262c69c2cb5e401b071d6246745" }
+  },
+  "contracts": {
+    "inner": "CCYEZ3EXL7OZAPMN2ARFZT23ODFOOT6QCPHWY3WBM7GGBFCDVYQ2SOHF",
+    "outer": "CBHPE4LNYOWPO3G6WAP64MDKENGX7LUR34KQUTWGAZED5MXTA7CAMFQK",
+    "outerSecondInstance": "CASRT7GY4N7FXHVW2FHUSPHJ3BO6WAYFVTA2BUMFOKTGE3XJKJMGS3MR"
+  },
+  "deployTransactions": {
+    "inner": "488663df535b674c937bb5e1a1c0fe8d32743f58ea5b6a3b83c32fc2f21a7cc7",
+    "outer": "ea5fbf97861b6c354f6d5d488a4fb505201a667d5e7123e0931737e68a53e8c2"
+  },
+  "note": "Throwaway testnet deployment of the AuthMatrix fixture contracts. Built with `stellar contract build` (stellar CLI 28.1.0, soroban-sdk =28.0.0)."
+}
