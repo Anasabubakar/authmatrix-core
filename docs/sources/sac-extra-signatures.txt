@@ -1,0 +1,9 @@
+# Function signatures copied verbatim from soroban-sdk 28.0.0 src/token.rs, trait StellarAssetInterface (Stellar Asset Contract).
+# Only the lines that are NOT in SEP-41 are kept. test/tokens.test.ts checks src/tokens.ts against them.
+    fn admin(env: Env) -> Address;
+    fn authorized(env: Env, id: Address) -> bool;
+    fn clawback(env: Env, from: Address, amount: i128);
+    fn mint(env: Env, to: Address, amount: i128);
+    fn set_admin(env: Env, new_admin: Address);
+    fn set_authorized(env: Env, id: Address, authorize: bool);
+    fn trust(env: Env, addr: Address);
