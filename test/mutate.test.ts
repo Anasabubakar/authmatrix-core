@@ -46,3 +46,10 @@ describe("mutateAuthorization", () => {
     expect(verifyEntry(assembleEntry(v.authorization, sigRaw).toXdr("base64"), v.authorization.networkPassphrase).signatureValid).toBe(true);
   });
 });
+
+describe("networkIdHex", () => {
+  it("is SHA-256 of the passphrase (known testnet network id)", async () => {
+    const { networkIdHex } = await import("../src/entry.ts");
+    expect(networkIdHex("Test SDF Network ; September 2015")).toBe("cee0302d59844d32bdca915c8203dd44b33fbb7edc19051ea37abedf28ecd472");
+  });
+});
