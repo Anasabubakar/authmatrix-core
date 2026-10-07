@@ -1,0 +1,94 @@
+{
+  "title": "AuthMatrix host-verification evidence v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "format": {
+      "type": "string",
+      "const": "authmatrix-evidence"
+    },
+    "formatVersion": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "native-testutils",
+        "testnet-simulate-enforce"
+      ]
+    },
+    "recordedAt": {
+      "type": "string"
+    },
+    "environment": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string"
+      },
+      "additionalProperties": {}
+    },
+    "limits": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "what this evidence does NOT establish"
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "vectorId": {
+            "type": "string"
+          },
+          "case": {
+            "type": "string",
+            "description": "original | <mutation field> | <mutation field>-resigned | control-no-auth | control-unsigned"
+          },
+          "expectation": {
+            "type": "string",
+            "enum": [
+              "accept",
+              "reject"
+            ]
+          },
+          "outcome": {
+            "type": "string",
+            "enum": [
+              "accepted",
+              "rejected"
+            ]
+          },
+          "detail": {
+            "type": "string",
+            "description": "host return value or verbatim host error text"
+          },
+          "note": {
+            "type": "string"
+          },
+          "raw": {
+            "description": "recorded raw RPC response (testnet evidence only)"
+          }
+        },
+        "required": [
+          "vectorId",
+          "case",
+          "expectation",
+          "outcome",
+          "detail"
+        ]
+      }
+    }
+  },
+  "required": [
+    "format",
+    "formatVersion",
+    "kind",
+    "recordedAt",
+    "environment",
+    "limits",
+    "results"
+  ]
+}

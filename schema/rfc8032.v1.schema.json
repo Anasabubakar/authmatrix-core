@@ -1,0 +1,53 @@
+{
+  "title": "AuthMatrix RFC 8032 vectors v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "format": {
+      "type": "string",
+      "const": "authmatrix-rfc8032"
+    },
+    "source": {
+      "type": "string"
+    },
+    "vectors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "secretKeyHex": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "publicKeyHex": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "messageHex": {
+            "type": "string",
+            "pattern": "^([0-9a-f]{2})*$"
+          },
+          "signatureHex": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{128}$"
+          }
+        },
+        "required": [
+          "name",
+          "secretKeyHex",
+          "publicKeyHex",
+          "messageHex",
+          "signatureHex"
+        ]
+      }
+    }
+  },
+  "required": [
+    "format",
+    "source",
+    "vectors"
+  ]
+}

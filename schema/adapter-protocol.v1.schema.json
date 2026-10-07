@@ -1,0 +1,666 @@
+{
+  "title": "AuthMatrix adapter protocol v1 (newline-delimited JSON over stdio)",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "request": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "protocol": {
+              "type": "string",
+              "const": "authmatrix-adapter/1"
+            },
+            "id": {
+              "type": "integer",
+              "minimum": -9007199254740991,
+              "maximum": 9007199254740991
+            },
+            "op": {
+              "type": "string",
+              "const": "describe"
+            }
+          },
+          "required": [
+            "protocol",
+            "id",
+            "op"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "protocol": {
+              "type": "string",
+              "const": "authmatrix-adapter/1"
+            },
+            "id": {
+              "type": "integer",
+              "minimum": -9007199254740991,
+              "maximum": 9007199254740991
+            },
+            "op": {
+              "type": "string",
+              "const": "derive_key"
+            },
+            "params": {
+              "type": "object",
+              "properties": {
+                "phrase": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "phrase"
+              ]
+            }
+          },
+          "required": [
+            "protocol",
+            "id",
+            "op",
+            "params"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "protocol": {
+              "type": "string",
+              "const": "authmatrix-adapter/1"
+            },
+            "id": {
+              "type": "integer",
+              "minimum": -9007199254740991,
+              "maximum": 9007199254740991
+            },
+            "op": {
+              "type": "string",
+              "const": "build"
+            },
+            "params": {
+              "type": "object",
+              "properties": {
+                "authorization": {
+                  "type": "object",
+                  "properties": {
+                    "networkPassphrase": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "credentialType": {
+                      "type": "string",
+                      "enum": [
+                        "address",
+                        "addressV2"
+                      ],
+                      "description": "address = SOROBAN_CREDENTIALS_ADDRESS (legacy payload, not address-bound); addressV2 = SOROBAN_CREDENTIALS_ADDRESS_V2 (CAP-71, address-bound payload)"
+                    },
+                    "address": {
+                      "type": "string",
+                      "pattern": "^G[A-Z2-7]{55}$",
+                      "description": "the authorizing address; must equal the signer public key"
+                    },
+                    "nonce": {
+                      "type": "string",
+                      "pattern": "^-?\\d{1,19}$"
+                    },
+                    "signatureExpirationLedger": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 4294967295
+                    },
+                    "rootInvocation": {
+                      "$ref": "#/$defs/__schema0"
+                    }
+                  },
+                  "required": [
+                    "networkPassphrase",
+                    "credentialType",
+                    "address",
+                    "nonce",
+                    "signatureExpirationLedger",
+                    "rootInvocation"
+                  ]
+                },
+                "phrase": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "authorization",
+                "phrase"
+              ]
+            }
+          },
+          "required": [
+            "protocol",
+            "id",
+            "op",
+            "params"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "protocol": {
+              "type": "string",
+              "const": "authmatrix-adapter/1"
+            },
+            "id": {
+              "type": "integer",
+              "minimum": -9007199254740991,
+              "maximum": 9007199254740991
+            },
+            "op": {
+              "type": "string",
+              "const": "decode"
+            },
+            "params": {
+              "type": "object",
+              "properties": {
+                "entryXdr": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9+/]*={0,2}$"
+                }
+              },
+              "required": [
+                "entryXdr"
+              ]
+            }
+          },
+          "required": [
+            "protocol",
+            "id",
+            "op",
+            "params"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "protocol": {
+              "type": "string",
+              "const": "authmatrix-adapter/1"
+            },
+            "id": {
+              "type": "integer",
+              "minimum": -9007199254740991,
+              "maximum": 9007199254740991
+            },
+            "op": {
+              "type": "string",
+              "const": "verify"
+            },
+            "params": {
+              "type": "object",
+              "properties": {
+                "entryXdr": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9+/]*={0,2}$"
+                },
+                "networkPassphrase": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "entryXdr",
+                "networkPassphrase"
+              ]
+            }
+          },
+          "required": [
+            "protocol",
+            "id",
+            "op",
+            "params"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "protocol": {
+              "type": "string",
+              "const": "authmatrix-adapter/1"
+            },
+            "id": {
+              "type": "integer",
+              "minimum": -9007199254740991,
+              "maximum": 9007199254740991
+            },
+            "op": {
+              "type": "string",
+              "const": "ed25519_sign"
+            },
+            "params": {
+              "type": "object",
+              "properties": {
+                "secretKeyHex": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                },
+                "messageHex": {
+                  "type": "string",
+                  "pattern": "^([0-9a-f]{2})*$"
+                }
+              },
+              "required": [
+                "secretKeyHex",
+                "messageHex"
+              ]
+            }
+          },
+          "required": [
+            "protocol",
+            "id",
+            "op",
+            "params"
+          ]
+        }
+      ]
+    },
+    "response": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "protocol": {
+              "type": "string",
+              "const": "authmatrix-adapter/1"
+            },
+            "id": {
+              "type": "integer",
+              "minimum": -9007199254740991,
+              "maximum": 9007199254740991
+            },
+            "ok": {
+              "type": "boolean",
+              "const": true
+            },
+            "result": {}
+          },
+          "required": [
+            "protocol",
+            "id",
+            "ok",
+            "result"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "protocol": {
+              "type": "string",
+              "const": "authmatrix-adapter/1"
+            },
+            "id": {
+              "type": "integer",
+              "minimum": -9007199254740991,
+              "maximum": 9007199254740991
+            },
+            "ok": {
+              "type": "boolean",
+              "const": false
+            },
+            "error": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "protocol",
+            "id",
+            "ok",
+            "error"
+          ]
+        }
+      ]
+    },
+    "results": {
+      "type": "object",
+      "properties": {
+        "describe": {
+          "type": "object",
+          "properties": {
+            "adapter": {
+              "type": "string"
+            },
+            "language": {
+              "type": "string"
+            },
+            "xdrImplementation": {
+              "type": "string"
+            },
+            "signingImplementation": {
+              "type": "string"
+            },
+            "hashImplementation": {
+              "type": "string"
+            },
+            "ops": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "adapter",
+            "language",
+            "xdrImplementation",
+            "signingImplementation",
+            "hashImplementation",
+            "ops"
+          ]
+        },
+        "derive_key": {
+          "type": "object",
+          "properties": {
+            "publicKey": {
+              "type": "string"
+            },
+            "publicKeyHex": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "publicKey",
+            "publicKeyHex"
+          ]
+        },
+        "build": {
+          "type": "object",
+          "properties": {
+            "preimageType": {
+              "type": "string",
+              "enum": [
+                "envelopeTypeSorobanAuthorization",
+                "envelopeTypeSorobanAuthorizationWithAddress"
+              ]
+            },
+            "preimageXdr": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9+/]*={0,2}$"
+            },
+            "payloadHashHex": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$",
+              "description": "sha256 over the preimage XDR bytes"
+            },
+            "signatureHex": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{128}$"
+            },
+            "unsignedEntryXdr": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9+/]*={0,2}$"
+            },
+            "signedEntryXdr": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9+/]*={0,2}$"
+            }
+          },
+          "required": [
+            "preimageType",
+            "preimageXdr",
+            "payloadHashHex",
+            "signatureHex",
+            "unsignedEntryXdr",
+            "signedEntryXdr"
+          ]
+        },
+        "decode": {
+          "type": "object",
+          "properties": {
+            "credentialType": {
+              "type": "string",
+              "enum": [
+                "sourceAccount",
+                "address",
+                "addressV2",
+                "addressWithDelegates"
+              ]
+            },
+            "address": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "nonce": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^-?\\d{1,19}$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "signatureExpirationLedger": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "signature": {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "type": "string",
+                  "enum": [
+                    "none",
+                    "ed25519",
+                    "raw"
+                  ]
+                },
+                "publicKeyHex": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                },
+                "signatureHex": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{128}$"
+                },
+                "rawXdr": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9+/]*={0,2}$",
+                  "description": "the signature ScVal as XDR base64"
+                }
+              },
+              "required": [
+                "kind",
+                "rawXdr"
+              ]
+            },
+            "delegateCount": {
+              "type": "integer",
+              "minimum": -9007199254740991,
+              "maximum": 9007199254740991
+            },
+            "rootInvocation": {
+              "$ref": "#/$defs/__schema1"
+            }
+          },
+          "required": [
+            "credentialType",
+            "address",
+            "nonce",
+            "signatureExpirationLedger",
+            "signature",
+            "delegateCount",
+            "rootInvocation"
+          ]
+        },
+        "verify": {
+          "type": "object",
+          "properties": {
+            "preimageType": {
+              "type": "string",
+              "enum": [
+                "envelopeTypeSorobanAuthorization",
+                "envelopeTypeSorobanAuthorizationWithAddress"
+              ]
+            },
+            "preimageXdr": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9+/]*={0,2}$"
+            },
+            "payloadHashHex": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "signatureValid": {
+              "type": "boolean"
+            },
+            "reason": {
+              "type": "string",
+              "description": "why signatureValid is false, or 'ok'"
+            }
+          },
+          "required": [
+            "preimageType",
+            "preimageXdr",
+            "payloadHashHex",
+            "signatureValid",
+            "reason"
+          ]
+        },
+        "ed25519_sign": {
+          "type": "object",
+          "properties": {
+            "publicKeyHex": {
+              "type": "string"
+            },
+            "signatureHex": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "publicKeyHex",
+            "signatureHex"
+          ]
+        }
+      },
+      "required": [
+        "describe",
+        "derive_key",
+        "build",
+        "decode",
+        "verify",
+        "ed25519_sign"
+      ]
+    }
+  },
+  "required": [
+    "request",
+    "response",
+    "results"
+  ],
+  "$defs": {
+    "__schema0": {
+      "type": "object",
+      "properties": {
+        "contractId": {
+          "type": "string",
+          "pattern": "^C[A-Z2-7]{55}$"
+        },
+        "functionName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 32
+        },
+        "args": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9+/]*={0,2}$"
+          },
+          "description": "each element is one ScVal serialized as XDR then base64"
+        },
+        "subInvocations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/__schema0"
+          }
+        }
+      },
+      "required": [
+        "contractId",
+        "functionName",
+        "args",
+        "subInvocations"
+      ]
+    },
+    "__schema1": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "type": "string",
+              "const": "contractFn"
+            },
+            "contractId": {
+              "type": "string"
+            },
+            "functionName": {
+              "type": "string"
+            },
+            "args": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9+/]*={0,2}$"
+              }
+            },
+            "subInvocations": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/__schema1"
+              }
+            }
+          },
+          "required": [
+            "kind",
+            "contractId",
+            "functionName",
+            "args",
+            "subInvocations"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "type": "string",
+              "const": "createContract"
+            },
+            "functionXdr": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9+/]*={0,2}$"
+            },
+            "subInvocations": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/__schema1"
+              }
+            }
+          },
+          "required": [
+            "kind",
+            "functionXdr",
+            "subInvocations"
+          ]
+        }
+      ]
+    }
+  }
+}
