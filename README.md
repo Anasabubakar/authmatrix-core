@@ -26,7 +26,7 @@ git clone <this repo> && cd authmatrix-core
 pnpm install --frozen-lockfile
 export CARGO_TARGET_DIR=$HOME/.cache/stellar-cargo-target
 (cd adapters/rust && cargo build --release -j2 && cargo test -j2)   # Rust adapter + its own tests
-pnpm test                                                           # 112 tests; fails if the Rust adapter is missing
+pnpm test                                                           # 113 tests; fails if the Rust adapter is missing
 pnpm run conformance                                                # both adapters, byte-for-byte
 (cd fixtures/nested-auth && cargo test -j2)                         # real-host tests over the committed vectors
 ```
