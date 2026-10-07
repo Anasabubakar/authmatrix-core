@@ -1,0 +1,1750 @@
+{
+  "format": "authmatrix-vectors",
+  "formatVersion": "1.0.0",
+  "generator": {
+    "tool": "authmatrix-core scripts/gen-vectors.ts",
+    "version": "0.1.0",
+    "sdk": "@stellar/stellar-sdk@17.2.1",
+    "note": "Canonical values come from the SDK's official helpers; the Rust adapter and the Soroban host independently confirm them (see README)."
+  },
+  "vectors": [
+    {
+      "id": "v2-nested-relay-testnet",
+      "title": "ADDRESS_V2: outer.relay requires auth, nested inner.transfer requires auth (testnet passphrase)",
+      "labels": [
+        "fixture-contracts",
+        "host-verifiable"
+      ],
+      "signer": {
+        "publicKey": "GAGCWJVDANC44KKHZQ2AHLZELZOCINJME2BB4WI257P4LM7WC6OOGQ4N",
+        "derivation": {
+          "scheme": "sha256-of-utf8-phrase",
+          "phrase": "authmatrix test vector signer 1: public test phrase, key has no value",
+          "note": "Seed = SHA-256(UTF-8 phrase). Public, test-only key; it protects nothing and must never hold value on any network."
+        }
+      },
+      "authorization": {
+        "address": "GAGCWJVDANC44KKHZQ2AHLZELZOCINJME2BB4WI257P4LM7WC6OOGQ4N",
+        "credentialType": "addressV2",
+        "networkPassphrase": "Test SDF Network ; September 2015",
+        "nonce": "7316487300985",
+        "signatureExpirationLedger": 1000,
+        "rootInvocation": {
+          "contractId": "CBB6ZGAOBKSY4X5DCPJTFARFMUKGBLQQWWRF3Q3PXJUBSNEYLHMY2DFR",
+          "functionName": "relay",
+          "args": [
+            "AAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepyw==",
+            "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+            "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+            "AAAACgAAAAAAAAAAAAAAAukO3QA="
+          ],
+          "subInvocations": [
+            {
+              "contractId": "CBTPMPP6ULPTEOJCBPET2WV2YSRJAD7PSUCQ3FPOTLBTKC7CK6U4XS7R",
+              "functionName": "transfer",
+              "args": [
+                "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                "AAAACgAAAAAAAAAAAAAAAukO3QA="
+              ],
+              "subInvocations": []
+            }
+          ]
+        }
+      },
+      "expected": {
+        "preimageType": "envelopeTypeSorobanAuthorizationWithAddress",
+        "preimageXdr": "AAAACs7gMC1ZhE0yvcqRXIID3USzP7t+3BkFHqN6vt8o7NRyAAAGp4CgZ3kAAAPoAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAAAAAAAABQ+yYDgqljl+jE9MygiVlFGCuELWiXcNvumgZNJhZ2Y0AAAAFcmVsYXkAAAAAAAAEAAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepywAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAEAAAAAAAAAAWb2Pf6i3zI5IgvJPVq6xKKQD++VBQ2V7prDNQviV6nLAAAACHRyYW5zZmVyAAAAAwAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAA=",
+        "payloadHashHex": "f524a7f5665853146bb4c36185c09dc16565f8b46af2aea1087b42c10d5ff5e8",
+        "signatureHex": "0d75480be22ea16704c9e06584ca5cc47dec58725b61b98443a42bf7095bd5923bb491b8fb04b6510468bea0d795a4109553ded4fbece809ae51a05827d3ff0f",
+        "unsignedEntryXdr": "AAAAAgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAangKBneQAAAAAAAAAQAAAAAQAAAAAAAAAAAAAAAUPsmA4KpY5foxPTMoIlZRRgrhC1ol3Db7poGTSYWdmNAAAABXJlbGF5AAAAAAAABAAAABIAAAABZvY9/qLfMjkiC8k9WrrEopAP75UFDZXumsM1C+JXqcsAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAukO3QAAAAABAAAAAAAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepywAAAAh0cmFuc2ZlcgAAAAMAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAukO3QAAAAAA",
+        "signedEntryXdr": "AAAAAgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAangKBneQAAA+gAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABADXVIC+IuoWcEyeBlhMpcxH3sWHJbYbmEQ6Qr9wlb1ZI7tJG4+wS2UQRovqDXlaQQlVPe1Pvs6AmuUaBYJ9P/DwAAAAAAAAABQ+yYDgqljl+jE9MygiVlFGCuELWiXcNvumgZNJhZ2Y0AAAAFcmVsYXkAAAAAAAAEAAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepywAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAEAAAAAAAAAAWb2Pf6i3zI5IgvJPVq6xKKQD++VBQ2V7prDNQviV6nLAAAACHRyYW5zZmVyAAAAAwAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAA="
+      },
+      "compatibility": {
+        "protocol": {
+          "min": 27,
+          "max": null
+        },
+        "status": "current",
+        "note": "CAP-71 credential type, introduced in Protocol 27; testnet reports Protocol 29 at recording time (see hostVerified).",
+        "hostVerified": [
+          {
+            "environment": "native-testutils",
+            "protocolVersion": 28,
+            "evidence": "evidence/native-host/results.json",
+            "original": "accepted",
+            "mutationsRejected": [
+              "recipient",
+              "amount",
+              "network",
+              "nonce",
+              "expiry",
+              "function",
+              "contractId"
+            ]
+          },
+          {
+            "environment": "testnet-simulate-enforce",
+            "protocolVersion": 29,
+            "evidence": "evidence/testnet/summary.json",
+            "original": "accepted",
+            "mutationsRejected": [
+              "recipient",
+              "amount",
+              "network",
+              "nonce",
+              "expiry",
+              "function",
+              "contractId"
+            ]
+          }
+        ]
+      },
+      "mutations": [
+        {
+          "id": "v2-nested-relay-testnet--recipient",
+          "field": "recipient",
+          "description": "recipient address replaced everywhere it appears in the invocation tree",
+          "changedPaths": [
+            "rootInvocation.args[2]",
+            "rootInvocation.subInvocations[0].args[1]"
+          ],
+          "mutatedAuthorization": {
+            "address": "GAGCWJVDANC44KKHZQ2AHLZELZOCINJME2BB4WI257P4LM7WC6OOGQ4N",
+            "credentialType": "addressV2",
+            "networkPassphrase": "Test SDF Network ; September 2015",
+            "nonce": "7316487300985",
+            "signatureExpirationLedger": 1000,
+            "rootInvocation": {
+              "contractId": "CBB6ZGAOBKSY4X5DCPJTFARFMUKGBLQQWWRF3Q3PXJUBSNEYLHMY2DFR",
+              "functionName": "relay",
+              "args": [
+                "AAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepyw==",
+                "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                "AAAAEgAAAAAAAAAAq43XkLwOrbmsnuF0yyyzSqvAy5lioFDVZ9oCCLGc2Cw=",
+                "AAAACgAAAAAAAAAAAAAAAukO3QA="
+              ],
+              "subInvocations": [
+                {
+                  "contractId": "CBTPMPP6ULPTEOJCBPET2WV2YSRJAD7PSUCQ3FPOTLBTKC7CK6U4XS7R",
+                  "functionName": "transfer",
+                  "args": [
+                    "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                    "AAAAEgAAAAAAAAAAq43XkLwOrbmsnuF0yyyzSqvAy5lioFDVZ9oCCLGc2Cw=",
+                    "AAAACgAAAAAAAAAAAAAAAukO3QA="
+                  ],
+                  "subInvocations": []
+                }
+              ]
+            }
+          },
+          "expected": {
+            "payloadHashChanged": true,
+            "mutatedPreimageXdr": "AAAACs7gMC1ZhE0yvcqRXIID3USzP7t+3BkFHqN6vt8o7NRyAAAGp4CgZ3kAAAPoAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAAAAAAAABQ+yYDgqljl+jE9MygiVlFGCuELWiXcNvumgZNJhZ2Y0AAAAFcmVsYXkAAAAAAAAEAAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepywAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAq43XkLwOrbmsnuF0yyyzSqvAy5lioFDVZ9oCCLGc2CwAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAEAAAAAAAAAAWb2Pf6i3zI5IgvJPVq6xKKQD++VBQ2V7prDNQviV6nLAAAACHRyYW5zZmVyAAAAAwAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAq43XkLwOrbmsnuF0yyyzSqvAy5lioFDVZ9oCCLGc2CwAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAA=",
+            "mutatedPayloadHashHex": "9effc8239cc77510572f014b81731ddf95da0f1452527a06e220dddfeb5c8cf4",
+            "originalSignatureVerifies": false,
+            "entryXdrWithOriginalSignature": "AAAAAgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAangKBneQAAA+gAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABADXVIC+IuoWcEyeBlhMpcxH3sWHJbYbmEQ6Qr9wlb1ZI7tJG4+wS2UQRovqDXlaQQlVPe1Pvs6AmuUaBYJ9P/DwAAAAAAAAABQ+yYDgqljl+jE9MygiVlFGCuELWiXcNvumgZNJhZ2Y0AAAAFcmVsYXkAAAAAAAAEAAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepywAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAq43XkLwOrbmsnuF0yyyzSqvAy5lioFDVZ9oCCLGc2CwAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAEAAAAAAAAAAWb2Pf6i3zI5IgvJPVq6xKKQD++VBQ2V7prDNQviV6nLAAAACHRyYW5zZmVyAAAAAwAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAq43XkLwOrbmsnuF0yyyzSqvAy5lioFDVZ9oCCLGc2CwAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAA=",
+            "hostExpectation": "reject",
+            "resignedEntryXdr": "AAAAAgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAangKBneQAAA+gAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABARObMYCfnxg7Um4C/rDEGnhhnDx6TtwjrhLzzs7UqOSBNrRgzm9bIEXE+E9Tr0v332Pr9gUCsQ0ILIgDr76VbAAAAAAAAAAABQ+yYDgqljl+jE9MygiVlFGCuELWiXcNvumgZNJhZ2Y0AAAAFcmVsYXkAAAAAAAAEAAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepywAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAq43XkLwOrbmsnuF0yyyzSqvAy5lioFDVZ9oCCLGc2CwAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAEAAAAAAAAAAWb2Pf6i3zI5IgvJPVq6xKKQD++VBQ2V7prDNQviV6nLAAAACHRyYW5zZmVyAAAAAwAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAq43XkLwOrbmsnuF0yyyzSqvAy5lioFDVZ9oCCLGc2CwAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAA=",
+            "resignedSignatureHex": "44e6cc6027e7c60ed49b80bfac31069e18670f1e93b708eb84bcf3b3b52a39204dad18339bd6c811713e13d4ebd2fdf7d8fafd8140ac43420b2200ebefa55b00"
+          }
+        },
+        {
+          "id": "v2-nested-relay-testnet--amount",
+          "field": "amount",
+          "description": "amount multiplied by ten everywhere it appears in the invocation tree",
+          "changedPaths": [
+            "rootInvocation.args[3]",
+            "rootInvocation.subInvocations[0].args[2]"
+          ],
+          "mutatedAuthorization": {
+            "address": "GAGCWJVDANC44KKHZQ2AHLZELZOCINJME2BB4WI257P4LM7WC6OOGQ4N",
+            "credentialType": "addressV2",
+            "networkPassphrase": "Test SDF Network ; September 2015",
+            "nonce": "7316487300985",
+            "signatureExpirationLedger": 1000,
+            "rootInvocation": {
+              "contractId": "CBB6ZGAOBKSY4X5DCPJTFARFMUKGBLQQWWRF3Q3PXJUBSNEYLHMY2DFR",
+              "functionName": "relay",
+              "args": [
+                "AAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepyw==",
+                "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                "AAAACgAAAAAAAAAAAAAAHRqUogA="
+              ],
+              "subInvocations": [
+                {
+                  "contractId": "CBTPMPP6ULPTEOJCBPET2WV2YSRJAD7PSUCQ3FPOTLBTKC7CK6U4XS7R",
+                  "functionName": "transfer",
+                  "args": [
+                    "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                    "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                    "AAAACgAAAAAAAAAAAAAAHRqUogA="
+                  ],
+                  "subInvocations": []
+                }
+              ]
+            }
+          },
+          "expected": {
+            "payloadHashChanged": true,
+            "mutatedPreimageXdr": "AAAACs7gMC1ZhE0yvcqRXIID3USzP7t+3BkFHqN6vt8o7NRyAAAGp4CgZ3kAAAPoAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAAAAAAAABQ+yYDgqljl+jE9MygiVlFGCuELWiXcNvumgZNJhZ2Y0AAAAFcmVsYXkAAAAAAAAEAAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepywAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAdGpSiAAAAAAEAAAAAAAAAAWb2Pf6i3zI5IgvJPVq6xKKQD++VBQ2V7prDNQviV6nLAAAACHRyYW5zZmVyAAAAAwAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAdGpSiAAAAAAA=",
+            "mutatedPayloadHashHex": "dd8eb5009024298c11e3842279736d0d420e5ea9cceef7928cd07e6ab9fceee6",
+            "originalSignatureVerifies": false,
+            "entryXdrWithOriginalSignature": "AAAAAgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAangKBneQAAA+gAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABADXVIC+IuoWcEyeBlhMpcxH3sWHJbYbmEQ6Qr9wlb1ZI7tJG4+wS2UQRovqDXlaQQlVPe1Pvs6AmuUaBYJ9P/DwAAAAAAAAABQ+yYDgqljl+jE9MygiVlFGCuELWiXcNvumgZNJhZ2Y0AAAAFcmVsYXkAAAAAAAAEAAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepywAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAdGpSiAAAAAAEAAAAAAAAAAWb2Pf6i3zI5IgvJPVq6xKKQD++VBQ2V7prDNQviV6nLAAAACHRyYW5zZmVyAAAAAwAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAdGpSiAAAAAAA=",
+            "hostExpectation": "reject",
+            "resignedEntryXdr": "AAAAAgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAangKBneQAAA+gAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABAoYxcbTxbxUPC/fUXnLjWSzBI5A29G683ajbQOZWezYxdKGaN4pqgVKpws1/N8q7Sw/drmauLxFxVrU2+wGu1CQAAAAAAAAABQ+yYDgqljl+jE9MygiVlFGCuELWiXcNvumgZNJhZ2Y0AAAAFcmVsYXkAAAAAAAAEAAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepywAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAdGpSiAAAAAAEAAAAAAAAAAWb2Pf6i3zI5IgvJPVq6xKKQD++VBQ2V7prDNQviV6nLAAAACHRyYW5zZmVyAAAAAwAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAdGpSiAAAAAAA=",
+            "resignedSignatureHex": "a18c5c6d3c5bc543c2fdf5179cb8d64b3048e40dbd1baf376a36d039959ecd8c5d28668de29aa054aa70b35fcdf2aed2c3f76b99ab8bc45c55ad4dbec06bb509"
+          }
+        },
+        {
+          "id": "v2-nested-relay-testnet--network",
+          "field": "network",
+          "description": "network passphrase replaced (entry signed for a different network)",
+          "changedPaths": [
+            "networkPassphrase"
+          ],
+          "mutatedAuthorization": {
+            "address": "GAGCWJVDANC44KKHZQ2AHLZELZOCINJME2BB4WI257P4LM7WC6OOGQ4N",
+            "credentialType": "addressV2",
+            "networkPassphrase": "Test SDF Future Network ; October 2022",
+            "nonce": "7316487300985",
+            "signatureExpirationLedger": 1000,
+            "rootInvocation": {
+              "contractId": "CBB6ZGAOBKSY4X5DCPJTFARFMUKGBLQQWWRF3Q3PXJUBSNEYLHMY2DFR",
+              "functionName": "relay",
+              "args": [
+                "AAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepyw==",
+                "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                "AAAACgAAAAAAAAAAAAAAAukO3QA="
+              ],
+              "subInvocations": [
+                {
+                  "contractId": "CBTPMPP6ULPTEOJCBPET2WV2YSRJAD7PSUCQ3FPOTLBTKC7CK6U4XS7R",
+                  "functionName": "transfer",
+                  "args": [
+                    "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                    "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                    "AAAACgAAAAAAAAAAAAAAAukO3QA="
+                  ],
+                  "subInvocations": []
+                }
+              ]
+            }
+          },
+          "expected": {
+            "payloadHashChanged": true,
+            "mutatedPreimageXdr": "AAAACqOhxqeChnE+Kb4Ol4VnD6g40TkXzY6utKNXn/HevH/VAAAGp4CgZ3kAAAPoAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAAAAAAAABQ+yYDgqljl+jE9MygiVlFGCuELWiXcNvumgZNJhZ2Y0AAAAFcmVsYXkAAAAAAAAEAAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepywAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAEAAAAAAAAAAWb2Pf6i3zI5IgvJPVq6xKKQD++VBQ2V7prDNQviV6nLAAAACHRyYW5zZmVyAAAAAwAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAA=",
+            "mutatedPayloadHashHex": "77f7d643785ff7615a0cccbba3916689fa5b63b948ded024ecfd1d6c099ec096",
+            "originalSignatureVerifies": false,
+            "entryXdrWithOriginalSignature": "AAAAAgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAangKBneQAAA+gAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABADXVIC+IuoWcEyeBlhMpcxH3sWHJbYbmEQ6Qr9wlb1ZI7tJG4+wS2UQRovqDXlaQQlVPe1Pvs6AmuUaBYJ9P/DwAAAAAAAAABQ+yYDgqljl+jE9MygiVlFGCuELWiXcNvumgZNJhZ2Y0AAAAFcmVsYXkAAAAAAAAEAAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepywAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAEAAAAAAAAAAWb2Pf6i3zI5IgvJPVq6xKKQD++VBQ2V7prDNQviV6nLAAAACHRyYW5zZmVyAAAAAwAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAA=",
+            "hostExpectation": "reject",
+            "resignedEntryXdr": "AAAAAgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAangKBneQAAA+gAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABAR3Fh6qtLHqErvBaehoCszRXe6e96KlisrzjDYi5G8ckUtlS+kakUI8Hkw5krKl3xO4lzGWnI0h+xYLN1RoxxAwAAAAAAAAABQ+yYDgqljl+jE9MygiVlFGCuELWiXcNvumgZNJhZ2Y0AAAAFcmVsYXkAAAAAAAAEAAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepywAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAEAAAAAAAAAAWb2Pf6i3zI5IgvJPVq6xKKQD++VBQ2V7prDNQviV6nLAAAACHRyYW5zZmVyAAAAAwAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAA=",
+            "resignedSignatureHex": "477161eaab4b1ea12bbc169e8680accd15dee9ef7a2a58acaf38c3622e46f1c914b654be91a91423c1e4c3992b2a5df13b89731969c8d21fb160b375468c7103"
+          }
+        },
+        {
+          "id": "v2-nested-relay-testnet--nonce",
+          "field": "nonce",
+          "description": "nonce incremented by one",
+          "changedPaths": [
+            "nonce"
+          ],
+          "mutatedAuthorization": {
+            "address": "GAGCWJVDANC44KKHZQ2AHLZELZOCINJME2BB4WI257P4LM7WC6OOGQ4N",
+            "credentialType": "addressV2",
+            "networkPassphrase": "Test SDF Network ; September 2015",
+            "nonce": "7316487300986",
+            "signatureExpirationLedger": 1000,
+            "rootInvocation": {
+              "contractId": "CBB6ZGAOBKSY4X5DCPJTFARFMUKGBLQQWWRF3Q3PXJUBSNEYLHMY2DFR",
+              "functionName": "relay",
+              "args": [
+                "AAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepyw==",
+                "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                "AAAACgAAAAAAAAAAAAAAAukO3QA="
+              ],
+              "subInvocations": [
+                {
+                  "contractId": "CBTPMPP6ULPTEOJCBPET2WV2YSRJAD7PSUCQ3FPOTLBTKC7CK6U4XS7R",
+                  "functionName": "transfer",
+                  "args": [
+                    "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                    "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                    "AAAACgAAAAAAAAAAAAAAAukO3QA="
+                  ],
+                  "subInvocations": []
+                }
+              ]
+            }
+          },
+          "expected": {
+            "payloadHashChanged": true,
+            "mutatedPreimageXdr": "AAAACs7gMC1ZhE0yvcqRXIID3USzP7t+3BkFHqN6vt8o7NRyAAAGp4CgZ3oAAAPoAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAAAAAAAABQ+yYDgqljl+jE9MygiVlFGCuELWiXcNvumgZNJhZ2Y0AAAAFcmVsYXkAAAAAAAAEAAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepywAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAEAAAAAAAAAAWb2Pf6i3zI5IgvJPVq6xKKQD++VBQ2V7prDNQviV6nLAAAACHRyYW5zZmVyAAAAAwAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAA=",
+            "mutatedPayloadHashHex": "e775871ff32221def3437bc77f8c05739c8387d71a922933d65fcd78bc7e9b9d",
+            "originalSignatureVerifies": false,
+            "entryXdrWithOriginalSignature": "AAAAAgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAangKBnegAAA+gAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABADXVIC+IuoWcEyeBlhMpcxH3sWHJbYbmEQ6Qr9wlb1ZI7tJG4+wS2UQRovqDXlaQQlVPe1Pvs6AmuUaBYJ9P/DwAAAAAAAAABQ+yYDgqljl+jE9MygiVlFGCuELWiXcNvumgZNJhZ2Y0AAAAFcmVsYXkAAAAAAAAEAAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepywAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAEAAAAAAAAAAWb2Pf6i3zI5IgvJPVq6xKKQD++VBQ2V7prDNQviV6nLAAAACHRyYW5zZmVyAAAAAwAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAA=",
+            "hostExpectation": "reject",
+            "resignedEntryXdr": "AAAAAgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAangKBnegAAA+gAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABAwBbVUXvU+VE7GKySzAFyM49NTcUNta+QjzhCZ7izSYaemPLrfYdrZTLNBT8P2ll3MGhJjyWtsK67qr/vgavNBAAAAAAAAAABQ+yYDgqljl+jE9MygiVlFGCuELWiXcNvumgZNJhZ2Y0AAAAFcmVsYXkAAAAAAAAEAAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepywAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAEAAAAAAAAAAWb2Pf6i3zI5IgvJPVq6xKKQD++VBQ2V7prDNQviV6nLAAAACHRyYW5zZmVyAAAAAwAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAA=",
+            "resignedSignatureHex": "c016d5517bd4f9513b18ac92cc0172338f4d4dc50db5af908f384267b8b349869e98f2eb7d876b6532cd053f0fda59773068498f25adb0aebbaabfef81abcd04"
+          }
+        },
+        {
+          "id": "v2-nested-relay-testnet--expiry",
+          "field": "expiry",
+          "description": "signature expiration ledger incremented by one",
+          "changedPaths": [
+            "signatureExpirationLedger"
+          ],
+          "mutatedAuthorization": {
+            "address": "GAGCWJVDANC44KKHZQ2AHLZELZOCINJME2BB4WI257P4LM7WC6OOGQ4N",
+            "credentialType": "addressV2",
+            "networkPassphrase": "Test SDF Network ; September 2015",
+            "nonce": "7316487300985",
+            "signatureExpirationLedger": 1001,
+            "rootInvocation": {
+              "contractId": "CBB6ZGAOBKSY4X5DCPJTFARFMUKGBLQQWWRF3Q3PXJUBSNEYLHMY2DFR",
+              "functionName": "relay",
+              "args": [
+                "AAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepyw==",
+                "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                "AAAACgAAAAAAAAAAAAAAAukO3QA="
+              ],
+              "subInvocations": [
+                {
+                  "contractId": "CBTPMPP6ULPTEOJCBPET2WV2YSRJAD7PSUCQ3FPOTLBTKC7CK6U4XS7R",
+                  "functionName": "transfer",
+                  "args": [
+                    "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                    "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                    "AAAACgAAAAAAAAAAAAAAAukO3QA="
+                  ],
+                  "subInvocations": []
+                }
+              ]
+            }
+          },
+          "expected": {
+            "payloadHashChanged": true,
+            "mutatedPreimageXdr": "AAAACs7gMC1ZhE0yvcqRXIID3USzP7t+3BkFHqN6vt8o7NRyAAAGp4CgZ3kAAAPpAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAAAAAAAABQ+yYDgqljl+jE9MygiVlFGCuELWiXcNvumgZNJhZ2Y0AAAAFcmVsYXkAAAAAAAAEAAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepywAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAEAAAAAAAAAAWb2Pf6i3zI5IgvJPVq6xKKQD++VBQ2V7prDNQviV6nLAAAACHRyYW5zZmVyAAAAAwAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAA=",
+            "mutatedPayloadHashHex": "7880713d2dff7df265afe856912e101378f04e44837d32db281efe04b56ea033",
+            "originalSignatureVerifies": false,
+            "entryXdrWithOriginalSignature": "AAAAAgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAangKBneQAAA+kAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABADXVIC+IuoWcEyeBlhMpcxH3sWHJbYbmEQ6Qr9wlb1ZI7tJG4+wS2UQRovqDXlaQQlVPe1Pvs6AmuUaBYJ9P/DwAAAAAAAAABQ+yYDgqljl+jE9MygiVlFGCuELWiXcNvumgZNJhZ2Y0AAAAFcmVsYXkAAAAAAAAEAAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepywAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAEAAAAAAAAAAWb2Pf6i3zI5IgvJPVq6xKKQD++VBQ2V7prDNQviV6nLAAAACHRyYW5zZmVyAAAAAwAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAA=",
+            "hostExpectation": "reject",
+            "resignedEntryXdr": "AAAAAgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAangKBneQAAA+kAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABABHzl5F0uItsPOsJ24RonsSb9yK6OHTg1x9/R5FLr9UFP3WF6jYJmh1LIBjINIRveGVFXAE3u+sfGqp1r6UC9BgAAAAAAAAABQ+yYDgqljl+jE9MygiVlFGCuELWiXcNvumgZNJhZ2Y0AAAAFcmVsYXkAAAAAAAAEAAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepywAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAEAAAAAAAAAAWb2Pf6i3zI5IgvJPVq6xKKQD++VBQ2V7prDNQviV6nLAAAACHRyYW5zZmVyAAAAAwAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAA=",
+            "resignedSignatureHex": "047ce5e45d2e22db0f3ac276e11a27b126fdc8ae8e1d3835c7dfd1e452ebf5414fdd617a8d82668752c806320d211bde195157004deefac7c6aa9d6be940bd06"
+          }
+        },
+        {
+          "id": "v2-nested-relay-testnet--function",
+          "field": "function",
+          "description": "root function name replaced by a sibling function name",
+          "changedPaths": [
+            "rootInvocation.functionName"
+          ],
+          "mutatedAuthorization": {
+            "address": "GAGCWJVDANC44KKHZQ2AHLZELZOCINJME2BB4WI257P4LM7WC6OOGQ4N",
+            "credentialType": "addressV2",
+            "networkPassphrase": "Test SDF Network ; September 2015",
+            "nonce": "7316487300985",
+            "signatureExpirationLedger": 1000,
+            "rootInvocation": {
+              "contractId": "CBB6ZGAOBKSY4X5DCPJTFARFMUKGBLQQWWRF3Q3PXJUBSNEYLHMY2DFR",
+              "functionName": "relay_alt",
+              "args": [
+                "AAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepyw==",
+                "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                "AAAACgAAAAAAAAAAAAAAAukO3QA="
+              ],
+              "subInvocations": [
+                {
+                  "contractId": "CBTPMPP6ULPTEOJCBPET2WV2YSRJAD7PSUCQ3FPOTLBTKC7CK6U4XS7R",
+                  "functionName": "transfer",
+                  "args": [
+                    "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                    "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                    "AAAACgAAAAAAAAAAAAAAAukO3QA="
+                  ],
+                  "subInvocations": []
+                }
+              ]
+            }
+          },
+          "expected": {
+            "payloadHashChanged": true,
+            "mutatedPreimageXdr": "AAAACs7gMC1ZhE0yvcqRXIID3USzP7t+3BkFHqN6vt8o7NRyAAAGp4CgZ3kAAAPoAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAAAAAAAABQ+yYDgqljl+jE9MygiVlFGCuELWiXcNvumgZNJhZ2Y0AAAAJcmVsYXlfYWx0AAAAAAAABAAAABIAAAABZvY9/qLfMjkiC8k9WrrEopAP75UFDZXumsM1C+JXqcsAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAukO3QAAAAABAAAAAAAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepywAAAAh0cmFuc2ZlcgAAAAMAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAukO3QAAAAAA",
+            "mutatedPayloadHashHex": "3210aac27570d5cd4a550038d21440ab2cea26770135bc00912d2ddf95635278",
+            "originalSignatureVerifies": false,
+            "entryXdrWithOriginalSignature": "AAAAAgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAangKBneQAAA+gAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABADXVIC+IuoWcEyeBlhMpcxH3sWHJbYbmEQ6Qr9wlb1ZI7tJG4+wS2UQRovqDXlaQQlVPe1Pvs6AmuUaBYJ9P/DwAAAAAAAAABQ+yYDgqljl+jE9MygiVlFGCuELWiXcNvumgZNJhZ2Y0AAAAJcmVsYXlfYWx0AAAAAAAABAAAABIAAAABZvY9/qLfMjkiC8k9WrrEopAP75UFDZXumsM1C+JXqcsAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAukO3QAAAAABAAAAAAAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepywAAAAh0cmFuc2ZlcgAAAAMAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAukO3QAAAAAA",
+            "hostExpectation": "reject",
+            "resignedEntryXdr": "AAAAAgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAangKBneQAAA+gAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABAhthCkZMKRVF1AVoF1V/6j+o4VNzgeDs8YkMJnd91NoHfq+Imd4T3JyspSbcdzLp7lvQ9r0poanSe+mswnDAyDAAAAAAAAAABQ+yYDgqljl+jE9MygiVlFGCuELWiXcNvumgZNJhZ2Y0AAAAJcmVsYXlfYWx0AAAAAAAABAAAABIAAAABZvY9/qLfMjkiC8k9WrrEopAP75UFDZXumsM1C+JXqcsAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAukO3QAAAAABAAAAAAAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepywAAAAh0cmFuc2ZlcgAAAAMAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAukO3QAAAAAA",
+            "resignedSignatureHex": "86d84291930a455175015a05d55ffa8fea3854dce0783b3c6243099ddf753681dfabe2267784f7272b2949b71dccba7b96f43daf4a686a749efa6b309c30320c"
+          }
+        },
+        {
+          "id": "v2-nested-relay-testnet--contractId",
+          "field": "contractId",
+          "description": "root contract id replaced by another contract id",
+          "changedPaths": [
+            "rootInvocation.contractId"
+          ],
+          "mutatedAuthorization": {
+            "address": "GAGCWJVDANC44KKHZQ2AHLZELZOCINJME2BB4WI257P4LM7WC6OOGQ4N",
+            "credentialType": "addressV2",
+            "networkPassphrase": "Test SDF Network ; September 2015",
+            "nonce": "7316487300985",
+            "signatureExpirationLedger": 1000,
+            "rootInvocation": {
+              "contractId": "CCMTLZDZ43XM6W2L5R3B3OGQTEJFI23A5WZWBOMEC2WWHPZD7FEDO4SH",
+              "functionName": "relay",
+              "args": [
+                "AAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepyw==",
+                "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                "AAAACgAAAAAAAAAAAAAAAukO3QA="
+              ],
+              "subInvocations": [
+                {
+                  "contractId": "CBTPMPP6ULPTEOJCBPET2WV2YSRJAD7PSUCQ3FPOTLBTKC7CK6U4XS7R",
+                  "functionName": "transfer",
+                  "args": [
+                    "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                    "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                    "AAAACgAAAAAAAAAAAAAAAukO3QA="
+                  ],
+                  "subInvocations": []
+                }
+              ]
+            }
+          },
+          "expected": {
+            "payloadHashChanged": true,
+            "mutatedPreimageXdr": "AAAACs7gMC1ZhE0yvcqRXIID3USzP7t+3BkFHqN6vt8o7NRyAAAGp4CgZ3kAAAPoAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAAAAAAAABmTXkeebuz1tL7HYduNCZElRrYO2zYLmEFq1jvyP5SDcAAAAFcmVsYXkAAAAAAAAEAAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepywAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAEAAAAAAAAAAWb2Pf6i3zI5IgvJPVq6xKKQD++VBQ2V7prDNQviV6nLAAAACHRyYW5zZmVyAAAAAwAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAA=",
+            "mutatedPayloadHashHex": "5216abc449939d246ec41caf7eef3134ec3d8375d19ecc2246fd51a2a04ea4d9",
+            "originalSignatureVerifies": false,
+            "entryXdrWithOriginalSignature": "AAAAAgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAangKBneQAAA+gAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABADXVIC+IuoWcEyeBlhMpcxH3sWHJbYbmEQ6Qr9wlb1ZI7tJG4+wS2UQRovqDXlaQQlVPe1Pvs6AmuUaBYJ9P/DwAAAAAAAAABmTXkeebuz1tL7HYduNCZElRrYO2zYLmEFq1jvyP5SDcAAAAFcmVsYXkAAAAAAAAEAAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepywAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAEAAAAAAAAAAWb2Pf6i3zI5IgvJPVq6xKKQD++VBQ2V7prDNQviV6nLAAAACHRyYW5zZmVyAAAAAwAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAA=",
+            "hostExpectation": "reject",
+            "resignedEntryXdr": "AAAAAgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAangKBneQAAA+gAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABAfBL7Zbg0jebebRAVYGH5leIvGR3j/cP3DLlR8JxIfRcnvd4HX3JykKOj0rHMDQK6RM73eTWi2BOMSv2rRzl8DAAAAAAAAAABmTXkeebuz1tL7HYduNCZElRrYO2zYLmEFq1jvyP5SDcAAAAFcmVsYXkAAAAAAAAEAAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepywAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAEAAAAAAAAAAWb2Pf6i3zI5IgvJPVq6xKKQD++VBQ2V7prDNQviV6nLAAAACHRyYW5zZmVyAAAAAwAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAA=",
+            "resignedSignatureHex": "7c12fb65b8348de6de6d10156061f995e22f191de3fdc3f70cb951f09c487d1727bdde075f727290a3a3d2b1cc0d02ba44cef77935a2d8138c4afdab47397c0c"
+          }
+        }
+      ]
+    },
+    {
+      "id": "legacy-nested-relay-testnet",
+      "title": "Legacy ADDRESS: same nested invocation, non-address-bound payload (testnet passphrase)",
+      "labels": [
+        "fixture-contracts",
+        "host-verifiable",
+        "legacy"
+      ],
+      "signer": {
+        "publicKey": "GAGCWJVDANC44KKHZQ2AHLZELZOCINJME2BB4WI257P4LM7WC6OOGQ4N",
+        "derivation": {
+          "scheme": "sha256-of-utf8-phrase",
+          "phrase": "authmatrix test vector signer 1: public test phrase, key has no value",
+          "note": "Seed = SHA-256(UTF-8 phrase). Public, test-only key; it protects nothing and must never hold value on any network."
+        }
+      },
+      "authorization": {
+        "address": "GAGCWJVDANC44KKHZQ2AHLZELZOCINJME2BB4WI257P4LM7WC6OOGQ4N",
+        "credentialType": "address",
+        "networkPassphrase": "Test SDF Network ; September 2015",
+        "nonce": "5110024781663",
+        "signatureExpirationLedger": 1000,
+        "rootInvocation": {
+          "contractId": "CBB6ZGAOBKSY4X5DCPJTFARFMUKGBLQQWWRF3Q3PXJUBSNEYLHMY2DFR",
+          "functionName": "relay",
+          "args": [
+            "AAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepyw==",
+            "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+            "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+            "AAAACgAAAAAAAAAAAAAAAukO3QA="
+          ],
+          "subInvocations": [
+            {
+              "contractId": "CBTPMPP6ULPTEOJCBPET2WV2YSRJAD7PSUCQ3FPOTLBTKC7CK6U4XS7R",
+              "functionName": "transfer",
+              "args": [
+                "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                "AAAACgAAAAAAAAAAAAAAAukO3QA="
+              ],
+              "subInvocations": []
+            }
+          ]
+        }
+      },
+      "expected": {
+        "preimageType": "envelopeTypeSorobanAuthorization",
+        "preimageXdr": "AAAACc7gMC1ZhE0yvcqRXIID3USzP7t+3BkFHqN6vt8o7NRyAAAEpcU2P18AAAPoAAAAAAAAAAFD7JgOCqWOX6MT0zKCJWUUYK4QtaJdw2+6aBk0mFnZjQAAAAVyZWxheQAAAAAAAAQAAAASAAAAAWb2Pf6i3zI5IgvJPVq6xKKQD++VBQ2V7prDNQviV6nLAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAAAKU+fZpzT8HBNGlwfd+rXQyrImSeMRNBy7c/mFSQ0NxgAAAAoAAAAAAAAAAAAAAALpDt0AAAAAAQAAAAAAAAABZvY9/qLfMjkiC8k9WrrEopAP75UFDZXumsM1C+JXqcsAAAAIdHJhbnNmZXIAAAADAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAAAKU+fZpzT8HBNGlwfd+rXQyrImSeMRNBy7c/mFSQ0NxgAAAAoAAAAAAAAAAAAAAALpDt0AAAAAAA==",
+        "payloadHashHex": "4257d6f9395fd108bec08f778e60807be621a611abecea11b23d86e0afed5aec",
+        "signatureHex": "b833e1d44aca67d1bfb63c1f715c33a9dfc933ffc5957e8473c6518d534495cf1956452109deb30deffc82c2ce233a3d3ca8c1b0c595906b164980218e94c10c",
+        "unsignedEntryXdr": "AAAAAQAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAASlxTY/XwAAAAAAAAAQAAAAAQAAAAAAAAAAAAAAAUPsmA4KpY5foxPTMoIlZRRgrhC1ol3Db7poGTSYWdmNAAAABXJlbGF5AAAAAAAABAAAABIAAAABZvY9/qLfMjkiC8k9WrrEopAP75UFDZXumsM1C+JXqcsAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAukO3QAAAAABAAAAAAAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepywAAAAh0cmFuc2ZlcgAAAAMAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAukO3QAAAAAA",
+        "signedEntryXdr": "AAAAAQAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAASlxTY/XwAAA+gAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABAuDPh1ErKZ9G/tjwfcVwzqd/JM//FlX6Ec8ZRjVNElc8ZVkUhCd6zDe/8gsLOIzo9PKjBsMWVkGsWSYAhjpTBDAAAAAAAAAABQ+yYDgqljl+jE9MygiVlFGCuELWiXcNvumgZNJhZ2Y0AAAAFcmVsYXkAAAAAAAAEAAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepywAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAEAAAAAAAAAAWb2Pf6i3zI5IgvJPVq6xKKQD++VBQ2V7prDNQviV6nLAAAACHRyYW5zZmVyAAAAAwAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAA="
+      },
+      "compatibility": {
+        "protocol": {
+          "min": 20,
+          "max": null
+        },
+        "status": "legacy-still-valid",
+        "note": "Pre-Protocol-27 payload. The SDK migration guide says the legacy ADDRESS type is still valid; this is only claimed for protocols listed under hostVerified.",
+        "hostVerified": [
+          {
+            "environment": "native-testutils",
+            "protocolVersion": 28,
+            "evidence": "evidence/native-host/results.json",
+            "original": "accepted",
+            "mutationsRejected": [
+              "recipient",
+              "amount",
+              "network",
+              "nonce",
+              "expiry",
+              "function",
+              "contractId"
+            ]
+          },
+          {
+            "environment": "testnet-simulate-enforce",
+            "protocolVersion": 29,
+            "evidence": "evidence/testnet/summary.json",
+            "original": "accepted",
+            "mutationsRejected": [
+              "recipient",
+              "amount",
+              "network",
+              "nonce",
+              "expiry",
+              "function",
+              "contractId"
+            ]
+          }
+        ]
+      },
+      "mutations": [
+        {
+          "id": "legacy-nested-relay-testnet--recipient",
+          "field": "recipient",
+          "description": "recipient address replaced everywhere it appears in the invocation tree",
+          "changedPaths": [
+            "rootInvocation.args[2]",
+            "rootInvocation.subInvocations[0].args[1]"
+          ],
+          "mutatedAuthorization": {
+            "address": "GAGCWJVDANC44KKHZQ2AHLZELZOCINJME2BB4WI257P4LM7WC6OOGQ4N",
+            "credentialType": "address",
+            "networkPassphrase": "Test SDF Network ; September 2015",
+            "nonce": "5110024781663",
+            "signatureExpirationLedger": 1000,
+            "rootInvocation": {
+              "contractId": "CBB6ZGAOBKSY4X5DCPJTFARFMUKGBLQQWWRF3Q3PXJUBSNEYLHMY2DFR",
+              "functionName": "relay",
+              "args": [
+                "AAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepyw==",
+                "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                "AAAAEgAAAAAAAAAAq43XkLwOrbmsnuF0yyyzSqvAy5lioFDVZ9oCCLGc2Cw=",
+                "AAAACgAAAAAAAAAAAAAAAukO3QA="
+              ],
+              "subInvocations": [
+                {
+                  "contractId": "CBTPMPP6ULPTEOJCBPET2WV2YSRJAD7PSUCQ3FPOTLBTKC7CK6U4XS7R",
+                  "functionName": "transfer",
+                  "args": [
+                    "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                    "AAAAEgAAAAAAAAAAq43XkLwOrbmsnuF0yyyzSqvAy5lioFDVZ9oCCLGc2Cw=",
+                    "AAAACgAAAAAAAAAAAAAAAukO3QA="
+                  ],
+                  "subInvocations": []
+                }
+              ]
+            }
+          },
+          "expected": {
+            "payloadHashChanged": true,
+            "mutatedPreimageXdr": "AAAACc7gMC1ZhE0yvcqRXIID3USzP7t+3BkFHqN6vt8o7NRyAAAEpcU2P18AAAPoAAAAAAAAAAFD7JgOCqWOX6MT0zKCJWUUYK4QtaJdw2+6aBk0mFnZjQAAAAVyZWxheQAAAAAAAAQAAAASAAAAAWb2Pf6i3zI5IgvJPVq6xKKQD++VBQ2V7prDNQviV6nLAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAACrjdeQvA6tuaye4XTLLLNKq8DLmWKgUNVn2gIIsZzYLAAAAAoAAAAAAAAAAAAAAALpDt0AAAAAAQAAAAAAAAABZvY9/qLfMjkiC8k9WrrEopAP75UFDZXumsM1C+JXqcsAAAAIdHJhbnNmZXIAAAADAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAACrjdeQvA6tuaye4XTLLLNKq8DLmWKgUNVn2gIIsZzYLAAAAAoAAAAAAAAAAAAAAALpDt0AAAAAAA==",
+            "mutatedPayloadHashHex": "be084c39461789b1350e1aec93115b3619c9ab06d23d7c126985385d8adc973f",
+            "originalSignatureVerifies": false,
+            "entryXdrWithOriginalSignature": "AAAAAQAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAASlxTY/XwAAA+gAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABAuDPh1ErKZ9G/tjwfcVwzqd/JM//FlX6Ec8ZRjVNElc8ZVkUhCd6zDe/8gsLOIzo9PKjBsMWVkGsWSYAhjpTBDAAAAAAAAAABQ+yYDgqljl+jE9MygiVlFGCuELWiXcNvumgZNJhZ2Y0AAAAFcmVsYXkAAAAAAAAEAAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepywAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAq43XkLwOrbmsnuF0yyyzSqvAy5lioFDVZ9oCCLGc2CwAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAEAAAAAAAAAAWb2Pf6i3zI5IgvJPVq6xKKQD++VBQ2V7prDNQviV6nLAAAACHRyYW5zZmVyAAAAAwAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAq43XkLwOrbmsnuF0yyyzSqvAy5lioFDVZ9oCCLGc2CwAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAA=",
+            "hostExpectation": "reject",
+            "resignedEntryXdr": "AAAAAQAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAASlxTY/XwAAA+gAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABA+ss4gL8B1bjRDpMOD4UDuAdRGJUUyFXO8M60ZrgDLf2ej4kXVkA8b6cevCQURUgZJfId9LwWAhP5DNO34M8WCgAAAAAAAAABQ+yYDgqljl+jE9MygiVlFGCuELWiXcNvumgZNJhZ2Y0AAAAFcmVsYXkAAAAAAAAEAAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepywAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAq43XkLwOrbmsnuF0yyyzSqvAy5lioFDVZ9oCCLGc2CwAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAEAAAAAAAAAAWb2Pf6i3zI5IgvJPVq6xKKQD++VBQ2V7prDNQviV6nLAAAACHRyYW5zZmVyAAAAAwAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAq43XkLwOrbmsnuF0yyyzSqvAy5lioFDVZ9oCCLGc2CwAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAA=",
+            "resignedSignatureHex": "facb3880bf01d5b8d10e930e0f8503b80751189514c855cef0ceb466b8032dfd9e8f891756403c6fa71ebc241445481925f21df4bc160213f90cd3b7e0cf160a"
+          }
+        },
+        {
+          "id": "legacy-nested-relay-testnet--amount",
+          "field": "amount",
+          "description": "amount multiplied by ten everywhere it appears in the invocation tree",
+          "changedPaths": [
+            "rootInvocation.args[3]",
+            "rootInvocation.subInvocations[0].args[2]"
+          ],
+          "mutatedAuthorization": {
+            "address": "GAGCWJVDANC44KKHZQ2AHLZELZOCINJME2BB4WI257P4LM7WC6OOGQ4N",
+            "credentialType": "address",
+            "networkPassphrase": "Test SDF Network ; September 2015",
+            "nonce": "5110024781663",
+            "signatureExpirationLedger": 1000,
+            "rootInvocation": {
+              "contractId": "CBB6ZGAOBKSY4X5DCPJTFARFMUKGBLQQWWRF3Q3PXJUBSNEYLHMY2DFR",
+              "functionName": "relay",
+              "args": [
+                "AAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepyw==",
+                "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                "AAAACgAAAAAAAAAAAAAAHRqUogA="
+              ],
+              "subInvocations": [
+                {
+                  "contractId": "CBTPMPP6ULPTEOJCBPET2WV2YSRJAD7PSUCQ3FPOTLBTKC7CK6U4XS7R",
+                  "functionName": "transfer",
+                  "args": [
+                    "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                    "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                    "AAAACgAAAAAAAAAAAAAAHRqUogA="
+                  ],
+                  "subInvocations": []
+                }
+              ]
+            }
+          },
+          "expected": {
+            "payloadHashChanged": true,
+            "mutatedPreimageXdr": "AAAACc7gMC1ZhE0yvcqRXIID3USzP7t+3BkFHqN6vt8o7NRyAAAEpcU2P18AAAPoAAAAAAAAAAFD7JgOCqWOX6MT0zKCJWUUYK4QtaJdw2+6aBk0mFnZjQAAAAVyZWxheQAAAAAAAAQAAAASAAAAAWb2Pf6i3zI5IgvJPVq6xKKQD++VBQ2V7prDNQviV6nLAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAAAKU+fZpzT8HBNGlwfd+rXQyrImSeMRNBy7c/mFSQ0NxgAAAAoAAAAAAAAAAAAAAB0alKIAAAAAAQAAAAAAAAABZvY9/qLfMjkiC8k9WrrEopAP75UFDZXumsM1C+JXqcsAAAAIdHJhbnNmZXIAAAADAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAAAKU+fZpzT8HBNGlwfd+rXQyrImSeMRNBy7c/mFSQ0NxgAAAAoAAAAAAAAAAAAAAB0alKIAAAAAAA==",
+            "mutatedPayloadHashHex": "6ae3c1d290b50f9c5e710d7cc8ddbd9a2e2633dcbb1e0c1d6c195c5e0e312381",
+            "originalSignatureVerifies": false,
+            "entryXdrWithOriginalSignature": "AAAAAQAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAASlxTY/XwAAA+gAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABAuDPh1ErKZ9G/tjwfcVwzqd/JM//FlX6Ec8ZRjVNElc8ZVkUhCd6zDe/8gsLOIzo9PKjBsMWVkGsWSYAhjpTBDAAAAAAAAAABQ+yYDgqljl+jE9MygiVlFGCuELWiXcNvumgZNJhZ2Y0AAAAFcmVsYXkAAAAAAAAEAAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepywAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAdGpSiAAAAAAEAAAAAAAAAAWb2Pf6i3zI5IgvJPVq6xKKQD++VBQ2V7prDNQviV6nLAAAACHRyYW5zZmVyAAAAAwAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAdGpSiAAAAAAA=",
+            "hostExpectation": "reject",
+            "resignedEntryXdr": "AAAAAQAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAASlxTY/XwAAA+gAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABAE5hdSYp+SQD3pVZQScw2gAts1eBSX072rWsHlj5F1fpyOMdcuy6ANDoIMlicdH/4QJnU8y3qKcatpZVdxPUxAgAAAAAAAAABQ+yYDgqljl+jE9MygiVlFGCuELWiXcNvumgZNJhZ2Y0AAAAFcmVsYXkAAAAAAAAEAAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepywAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAdGpSiAAAAAAEAAAAAAAAAAWb2Pf6i3zI5IgvJPVq6xKKQD++VBQ2V7prDNQviV6nLAAAACHRyYW5zZmVyAAAAAwAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAdGpSiAAAAAAA=",
+            "resignedSignatureHex": "13985d498a7e4900f7a5565049cc36800b6cd5e0525f4ef6ad6b07963e45d5fa7238c75cbb2e80343a0832589c747ff84099d4f32dea29c6ada5955dc4f53102"
+          }
+        },
+        {
+          "id": "legacy-nested-relay-testnet--network",
+          "field": "network",
+          "description": "network passphrase replaced (entry signed for a different network)",
+          "changedPaths": [
+            "networkPassphrase"
+          ],
+          "mutatedAuthorization": {
+            "address": "GAGCWJVDANC44KKHZQ2AHLZELZOCINJME2BB4WI257P4LM7WC6OOGQ4N",
+            "credentialType": "address",
+            "networkPassphrase": "Test SDF Future Network ; October 2022",
+            "nonce": "5110024781663",
+            "signatureExpirationLedger": 1000,
+            "rootInvocation": {
+              "contractId": "CBB6ZGAOBKSY4X5DCPJTFARFMUKGBLQQWWRF3Q3PXJUBSNEYLHMY2DFR",
+              "functionName": "relay",
+              "args": [
+                "AAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepyw==",
+                "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                "AAAACgAAAAAAAAAAAAAAAukO3QA="
+              ],
+              "subInvocations": [
+                {
+                  "contractId": "CBTPMPP6ULPTEOJCBPET2WV2YSRJAD7PSUCQ3FPOTLBTKC7CK6U4XS7R",
+                  "functionName": "transfer",
+                  "args": [
+                    "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                    "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                    "AAAACgAAAAAAAAAAAAAAAukO3QA="
+                  ],
+                  "subInvocations": []
+                }
+              ]
+            }
+          },
+          "expected": {
+            "payloadHashChanged": true,
+            "mutatedPreimageXdr": "AAAACaOhxqeChnE+Kb4Ol4VnD6g40TkXzY6utKNXn/HevH/VAAAEpcU2P18AAAPoAAAAAAAAAAFD7JgOCqWOX6MT0zKCJWUUYK4QtaJdw2+6aBk0mFnZjQAAAAVyZWxheQAAAAAAAAQAAAASAAAAAWb2Pf6i3zI5IgvJPVq6xKKQD++VBQ2V7prDNQviV6nLAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAAAKU+fZpzT8HBNGlwfd+rXQyrImSeMRNBy7c/mFSQ0NxgAAAAoAAAAAAAAAAAAAAALpDt0AAAAAAQAAAAAAAAABZvY9/qLfMjkiC8k9WrrEopAP75UFDZXumsM1C+JXqcsAAAAIdHJhbnNmZXIAAAADAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAAAKU+fZpzT8HBNGlwfd+rXQyrImSeMRNBy7c/mFSQ0NxgAAAAoAAAAAAAAAAAAAAALpDt0AAAAAAA==",
+            "mutatedPayloadHashHex": "d138ca7f9c323de9b655b2afcab899712ede8942d8629b6382d9ddd84d39baad",
+            "originalSignatureVerifies": false,
+            "entryXdrWithOriginalSignature": "AAAAAQAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAASlxTY/XwAAA+gAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABAuDPh1ErKZ9G/tjwfcVwzqd/JM//FlX6Ec8ZRjVNElc8ZVkUhCd6zDe/8gsLOIzo9PKjBsMWVkGsWSYAhjpTBDAAAAAAAAAABQ+yYDgqljl+jE9MygiVlFGCuELWiXcNvumgZNJhZ2Y0AAAAFcmVsYXkAAAAAAAAEAAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepywAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAEAAAAAAAAAAWb2Pf6i3zI5IgvJPVq6xKKQD++VBQ2V7prDNQviV6nLAAAACHRyYW5zZmVyAAAAAwAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAA=",
+            "hostExpectation": "reject",
+            "resignedEntryXdr": "AAAAAQAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAASlxTY/XwAAA+gAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABACQ5NNLI2UnHGDSD70zWMV8OHm98JIgDOwUbq44/vq1DOUazUpy6gvsjHEwCPBifjADNcJer8+5kdSk+kAiLPCgAAAAAAAAABQ+yYDgqljl+jE9MygiVlFGCuELWiXcNvumgZNJhZ2Y0AAAAFcmVsYXkAAAAAAAAEAAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepywAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAEAAAAAAAAAAWb2Pf6i3zI5IgvJPVq6xKKQD++VBQ2V7prDNQviV6nLAAAACHRyYW5zZmVyAAAAAwAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAA=",
+            "resignedSignatureHex": "090e4d34b2365271c60d20fbd3358c57c3879bdf092200cec146eae38fefab50ce51acd4a72ea0bec8c713008f0627e300335c25eafcfb991d4a4fa40222cf0a"
+          }
+        },
+        {
+          "id": "legacy-nested-relay-testnet--nonce",
+          "field": "nonce",
+          "description": "nonce incremented by one",
+          "changedPaths": [
+            "nonce"
+          ],
+          "mutatedAuthorization": {
+            "address": "GAGCWJVDANC44KKHZQ2AHLZELZOCINJME2BB4WI257P4LM7WC6OOGQ4N",
+            "credentialType": "address",
+            "networkPassphrase": "Test SDF Network ; September 2015",
+            "nonce": "5110024781664",
+            "signatureExpirationLedger": 1000,
+            "rootInvocation": {
+              "contractId": "CBB6ZGAOBKSY4X5DCPJTFARFMUKGBLQQWWRF3Q3PXJUBSNEYLHMY2DFR",
+              "functionName": "relay",
+              "args": [
+                "AAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepyw==",
+                "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                "AAAACgAAAAAAAAAAAAAAAukO3QA="
+              ],
+              "subInvocations": [
+                {
+                  "contractId": "CBTPMPP6ULPTEOJCBPET2WV2YSRJAD7PSUCQ3FPOTLBTKC7CK6U4XS7R",
+                  "functionName": "transfer",
+                  "args": [
+                    "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                    "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                    "AAAACgAAAAAAAAAAAAAAAukO3QA="
+                  ],
+                  "subInvocations": []
+                }
+              ]
+            }
+          },
+          "expected": {
+            "payloadHashChanged": true,
+            "mutatedPreimageXdr": "AAAACc7gMC1ZhE0yvcqRXIID3USzP7t+3BkFHqN6vt8o7NRyAAAEpcU2P2AAAAPoAAAAAAAAAAFD7JgOCqWOX6MT0zKCJWUUYK4QtaJdw2+6aBk0mFnZjQAAAAVyZWxheQAAAAAAAAQAAAASAAAAAWb2Pf6i3zI5IgvJPVq6xKKQD++VBQ2V7prDNQviV6nLAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAAAKU+fZpzT8HBNGlwfd+rXQyrImSeMRNBy7c/mFSQ0NxgAAAAoAAAAAAAAAAAAAAALpDt0AAAAAAQAAAAAAAAABZvY9/qLfMjkiC8k9WrrEopAP75UFDZXumsM1C+JXqcsAAAAIdHJhbnNmZXIAAAADAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAAAKU+fZpzT8HBNGlwfd+rXQyrImSeMRNBy7c/mFSQ0NxgAAAAoAAAAAAAAAAAAAAALpDt0AAAAAAA==",
+            "mutatedPayloadHashHex": "34c322d91d56a30c8a7cd0c5a4a2d2514d565c8e11ffbfaf08d828628fbce545",
+            "originalSignatureVerifies": false,
+            "entryXdrWithOriginalSignature": "AAAAAQAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAASlxTY/YAAAA+gAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABAuDPh1ErKZ9G/tjwfcVwzqd/JM//FlX6Ec8ZRjVNElc8ZVkUhCd6zDe/8gsLOIzo9PKjBsMWVkGsWSYAhjpTBDAAAAAAAAAABQ+yYDgqljl+jE9MygiVlFGCuELWiXcNvumgZNJhZ2Y0AAAAFcmVsYXkAAAAAAAAEAAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepywAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAEAAAAAAAAAAWb2Pf6i3zI5IgvJPVq6xKKQD++VBQ2V7prDNQviV6nLAAAACHRyYW5zZmVyAAAAAwAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAA=",
+            "hostExpectation": "reject",
+            "resignedEntryXdr": "AAAAAQAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAASlxTY/YAAAA+gAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABAtLcnh911154EL1HjEnjZOPy+PxAucuTgAMHFZzyUpGKUAA32+tu/mT4gh99Q1iqbKyBB5iX+FJ5J+Dl4J3jvAwAAAAAAAAABQ+yYDgqljl+jE9MygiVlFGCuELWiXcNvumgZNJhZ2Y0AAAAFcmVsYXkAAAAAAAAEAAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepywAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAEAAAAAAAAAAWb2Pf6i3zI5IgvJPVq6xKKQD++VBQ2V7prDNQviV6nLAAAACHRyYW5zZmVyAAAAAwAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAA=",
+            "resignedSignatureHex": "b4b72787dd75d79e042f51e31278d938fcbe3f102e72e4e000c1c5673c94a46294000df6fadbbf993e2087df50d62a9b2b2041e625fe149e49f839782778ef03"
+          }
+        },
+        {
+          "id": "legacy-nested-relay-testnet--expiry",
+          "field": "expiry",
+          "description": "signature expiration ledger incremented by one",
+          "changedPaths": [
+            "signatureExpirationLedger"
+          ],
+          "mutatedAuthorization": {
+            "address": "GAGCWJVDANC44KKHZQ2AHLZELZOCINJME2BB4WI257P4LM7WC6OOGQ4N",
+            "credentialType": "address",
+            "networkPassphrase": "Test SDF Network ; September 2015",
+            "nonce": "5110024781663",
+            "signatureExpirationLedger": 1001,
+            "rootInvocation": {
+              "contractId": "CBB6ZGAOBKSY4X5DCPJTFARFMUKGBLQQWWRF3Q3PXJUBSNEYLHMY2DFR",
+              "functionName": "relay",
+              "args": [
+                "AAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepyw==",
+                "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                "AAAACgAAAAAAAAAAAAAAAukO3QA="
+              ],
+              "subInvocations": [
+                {
+                  "contractId": "CBTPMPP6ULPTEOJCBPET2WV2YSRJAD7PSUCQ3FPOTLBTKC7CK6U4XS7R",
+                  "functionName": "transfer",
+                  "args": [
+                    "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                    "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                    "AAAACgAAAAAAAAAAAAAAAukO3QA="
+                  ],
+                  "subInvocations": []
+                }
+              ]
+            }
+          },
+          "expected": {
+            "payloadHashChanged": true,
+            "mutatedPreimageXdr": "AAAACc7gMC1ZhE0yvcqRXIID3USzP7t+3BkFHqN6vt8o7NRyAAAEpcU2P18AAAPpAAAAAAAAAAFD7JgOCqWOX6MT0zKCJWUUYK4QtaJdw2+6aBk0mFnZjQAAAAVyZWxheQAAAAAAAAQAAAASAAAAAWb2Pf6i3zI5IgvJPVq6xKKQD++VBQ2V7prDNQviV6nLAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAAAKU+fZpzT8HBNGlwfd+rXQyrImSeMRNBy7c/mFSQ0NxgAAAAoAAAAAAAAAAAAAAALpDt0AAAAAAQAAAAAAAAABZvY9/qLfMjkiC8k9WrrEopAP75UFDZXumsM1C+JXqcsAAAAIdHJhbnNmZXIAAAADAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAAAKU+fZpzT8HBNGlwfd+rXQyrImSeMRNBy7c/mFSQ0NxgAAAAoAAAAAAAAAAAAAAALpDt0AAAAAAA==",
+            "mutatedPayloadHashHex": "487bbfaa7933278a63622495eea80f74450285275df3ee7d6c0018540a4fc38e",
+            "originalSignatureVerifies": false,
+            "entryXdrWithOriginalSignature": "AAAAAQAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAASlxTY/XwAAA+kAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABAuDPh1ErKZ9G/tjwfcVwzqd/JM//FlX6Ec8ZRjVNElc8ZVkUhCd6zDe/8gsLOIzo9PKjBsMWVkGsWSYAhjpTBDAAAAAAAAAABQ+yYDgqljl+jE9MygiVlFGCuELWiXcNvumgZNJhZ2Y0AAAAFcmVsYXkAAAAAAAAEAAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepywAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAEAAAAAAAAAAWb2Pf6i3zI5IgvJPVq6xKKQD++VBQ2V7prDNQviV6nLAAAACHRyYW5zZmVyAAAAAwAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAA=",
+            "hostExpectation": "reject",
+            "resignedEntryXdr": "AAAAAQAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAASlxTY/XwAAA+kAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABApH37ZCfLCDca1r3TACAc3hCWdVHpt8yTshkq4iMUF4WBbW213g2QHEBE7aiEFCDgnCxdqQFDwLomSPN8NLWlBQAAAAAAAAABQ+yYDgqljl+jE9MygiVlFGCuELWiXcNvumgZNJhZ2Y0AAAAFcmVsYXkAAAAAAAAEAAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepywAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAEAAAAAAAAAAWb2Pf6i3zI5IgvJPVq6xKKQD++VBQ2V7prDNQviV6nLAAAACHRyYW5zZmVyAAAAAwAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAA=",
+            "resignedSignatureHex": "a47dfb6427cb08371ad6bdd300201cde10967551e9b7cc93b2192ae223141785816d6db5de0d901c4044eda8841420e09c2c5da90143c0ba2648f37c34b5a505"
+          }
+        },
+        {
+          "id": "legacy-nested-relay-testnet--function",
+          "field": "function",
+          "description": "root function name replaced by a sibling function name",
+          "changedPaths": [
+            "rootInvocation.functionName"
+          ],
+          "mutatedAuthorization": {
+            "address": "GAGCWJVDANC44KKHZQ2AHLZELZOCINJME2BB4WI257P4LM7WC6OOGQ4N",
+            "credentialType": "address",
+            "networkPassphrase": "Test SDF Network ; September 2015",
+            "nonce": "5110024781663",
+            "signatureExpirationLedger": 1000,
+            "rootInvocation": {
+              "contractId": "CBB6ZGAOBKSY4X5DCPJTFARFMUKGBLQQWWRF3Q3PXJUBSNEYLHMY2DFR",
+              "functionName": "relay_alt",
+              "args": [
+                "AAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepyw==",
+                "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                "AAAACgAAAAAAAAAAAAAAAukO3QA="
+              ],
+              "subInvocations": [
+                {
+                  "contractId": "CBTPMPP6ULPTEOJCBPET2WV2YSRJAD7PSUCQ3FPOTLBTKC7CK6U4XS7R",
+                  "functionName": "transfer",
+                  "args": [
+                    "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                    "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                    "AAAACgAAAAAAAAAAAAAAAukO3QA="
+                  ],
+                  "subInvocations": []
+                }
+              ]
+            }
+          },
+          "expected": {
+            "payloadHashChanged": true,
+            "mutatedPreimageXdr": "AAAACc7gMC1ZhE0yvcqRXIID3USzP7t+3BkFHqN6vt8o7NRyAAAEpcU2P18AAAPoAAAAAAAAAAFD7JgOCqWOX6MT0zKCJWUUYK4QtaJdw2+6aBk0mFnZjQAAAAlyZWxheV9hbHQAAAAAAAAEAAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepywAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAEAAAAAAAAAAWb2Pf6i3zI5IgvJPVq6xKKQD++VBQ2V7prDNQviV6nLAAAACHRyYW5zZmVyAAAAAwAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAA=",
+            "mutatedPayloadHashHex": "726dc621b6887c9560ee91c8e4d232bad362246ef1e4191259a7d572ca4b6277",
+            "originalSignatureVerifies": false,
+            "entryXdrWithOriginalSignature": "AAAAAQAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAASlxTY/XwAAA+gAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABAuDPh1ErKZ9G/tjwfcVwzqd/JM//FlX6Ec8ZRjVNElc8ZVkUhCd6zDe/8gsLOIzo9PKjBsMWVkGsWSYAhjpTBDAAAAAAAAAABQ+yYDgqljl+jE9MygiVlFGCuELWiXcNvumgZNJhZ2Y0AAAAJcmVsYXlfYWx0AAAAAAAABAAAABIAAAABZvY9/qLfMjkiC8k9WrrEopAP75UFDZXumsM1C+JXqcsAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAukO3QAAAAABAAAAAAAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepywAAAAh0cmFuc2ZlcgAAAAMAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAukO3QAAAAAA",
+            "hostExpectation": "reject",
+            "resignedEntryXdr": "AAAAAQAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAASlxTY/XwAAA+gAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABAcvmenZYi174kFYIvojRDmWpd4j7NFl6aFNF1cH6LmarNCvvfvEqjl5zRFg8cUc9pjSXcGiFzzrSAVyBlLW/IBAAAAAAAAAABQ+yYDgqljl+jE9MygiVlFGCuELWiXcNvumgZNJhZ2Y0AAAAJcmVsYXlfYWx0AAAAAAAABAAAABIAAAABZvY9/qLfMjkiC8k9WrrEopAP75UFDZXumsM1C+JXqcsAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAukO3QAAAAABAAAAAAAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepywAAAAh0cmFuc2ZlcgAAAAMAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAukO3QAAAAAA",
+            "resignedSignatureHex": "72f99e9d9622d7be2415822fa23443996a5de23ecd165e9a14d175707e8b99aacd0afbdfbc4aa3979cd1160f1c51cf698d25dc1a2173ceb4805720652d6fc804"
+          }
+        },
+        {
+          "id": "legacy-nested-relay-testnet--contractId",
+          "field": "contractId",
+          "description": "root contract id replaced by another contract id",
+          "changedPaths": [
+            "rootInvocation.contractId"
+          ],
+          "mutatedAuthorization": {
+            "address": "GAGCWJVDANC44KKHZQ2AHLZELZOCINJME2BB4WI257P4LM7WC6OOGQ4N",
+            "credentialType": "address",
+            "networkPassphrase": "Test SDF Network ; September 2015",
+            "nonce": "5110024781663",
+            "signatureExpirationLedger": 1000,
+            "rootInvocation": {
+              "contractId": "CCMTLZDZ43XM6W2L5R3B3OGQTEJFI23A5WZWBOMEC2WWHPZD7FEDO4SH",
+              "functionName": "relay",
+              "args": [
+                "AAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepyw==",
+                "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                "AAAACgAAAAAAAAAAAAAAAukO3QA="
+              ],
+              "subInvocations": [
+                {
+                  "contractId": "CBTPMPP6ULPTEOJCBPET2WV2YSRJAD7PSUCQ3FPOTLBTKC7CK6U4XS7R",
+                  "functionName": "transfer",
+                  "args": [
+                    "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                    "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                    "AAAACgAAAAAAAAAAAAAAAukO3QA="
+                  ],
+                  "subInvocations": []
+                }
+              ]
+            }
+          },
+          "expected": {
+            "payloadHashChanged": true,
+            "mutatedPreimageXdr": "AAAACc7gMC1ZhE0yvcqRXIID3USzP7t+3BkFHqN6vt8o7NRyAAAEpcU2P18AAAPoAAAAAAAAAAGZNeR55u7PW0vsdh240JkSVGtg7bNguYQWrWO/I/lINwAAAAVyZWxheQAAAAAAAAQAAAASAAAAAWb2Pf6i3zI5IgvJPVq6xKKQD++VBQ2V7prDNQviV6nLAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAAAKU+fZpzT8HBNGlwfd+rXQyrImSeMRNBy7c/mFSQ0NxgAAAAoAAAAAAAAAAAAAAALpDt0AAAAAAQAAAAAAAAABZvY9/qLfMjkiC8k9WrrEopAP75UFDZXumsM1C+JXqcsAAAAIdHJhbnNmZXIAAAADAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAAAKU+fZpzT8HBNGlwfd+rXQyrImSeMRNBy7c/mFSQ0NxgAAAAoAAAAAAAAAAAAAAALpDt0AAAAAAA==",
+            "mutatedPayloadHashHex": "9ddad9320dea65d034288755c7048b3bb4dd39f90fd219154a3e029e6643efd9",
+            "originalSignatureVerifies": false,
+            "entryXdrWithOriginalSignature": "AAAAAQAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAASlxTY/XwAAA+gAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABAuDPh1ErKZ9G/tjwfcVwzqd/JM//FlX6Ec8ZRjVNElc8ZVkUhCd6zDe/8gsLOIzo9PKjBsMWVkGsWSYAhjpTBDAAAAAAAAAABmTXkeebuz1tL7HYduNCZElRrYO2zYLmEFq1jvyP5SDcAAAAFcmVsYXkAAAAAAAAEAAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepywAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAEAAAAAAAAAAWb2Pf6i3zI5IgvJPVq6xKKQD++VBQ2V7prDNQviV6nLAAAACHRyYW5zZmVyAAAAAwAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAA=",
+            "hostExpectation": "reject",
+            "resignedEntryXdr": "AAAAAQAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAASlxTY/XwAAA+gAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABAEgyOtE/WRYneap1aIndlFuaB57hsgLyQG9BaptmM3RvEppmz7sKN/h0A18Sm9dvKuKCrbnvhsFxCBaH2U+7kDQAAAAAAAAABmTXkeebuz1tL7HYduNCZElRrYO2zYLmEFq1jvyP5SDcAAAAFcmVsYXkAAAAAAAAEAAAAEgAAAAFm9j3+ot8yOSILyT1ausSikA/vlQUNle6awzUL4lepywAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAEAAAAAAAAAAWb2Pf6i3zI5IgvJPVq6xKKQD++VBQ2V7prDNQviV6nLAAAACHRyYW5zZmVyAAAAAwAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAC6Q7dAAAAAAA=",
+            "resignedSignatureHex": "120c8eb44fd64589de6a9d5a22776516e681e7b86c80bc901bd05aa6d98cdd1bc4a699b3eec28dfe1d00d7c4a6f5dbcab8a0ab6e7be1b05c4205a1f653eee40d"
+          }
+        }
+      ]
+    },
+    {
+      "id": "v2-token-ops-synthetic",
+      "title": "ADDRESS_V2: synthetic tree of SEP-41 and SAC calls plus an unknown contract with unknown ScVals",
+      "labels": [
+        "synthetic",
+        "decode-coverage",
+        "not-host-verified"
+      ],
+      "signer": {
+        "publicKey": "GAGCWJVDANC44KKHZQ2AHLZELZOCINJME2BB4WI257P4LM7WC6OOGQ4N",
+        "derivation": {
+          "scheme": "sha256-of-utf8-phrase",
+          "phrase": "authmatrix test vector signer 1: public test phrase, key has no value",
+          "note": "Seed = SHA-256(UTF-8 phrase). Public, test-only key; it protects nothing and must never hold value on any network."
+        }
+      },
+      "authorization": {
+        "address": "GAGCWJVDANC44KKHZQ2AHLZELZOCINJME2BB4WI257P4LM7WC6OOGQ4N",
+        "credentialType": "addressV2",
+        "networkPassphrase": "Test SDF Network ; September 2015",
+        "nonce": "9001",
+        "signatureExpirationLedger": 2000000,
+        "rootInvocation": {
+          "contractId": "CB6OEQFHGIZJU64ZE3VIPRONTVMEQDOKXTUIK4PJN7FISHUB6BVB4ZB6",
+          "functionName": "approve",
+          "args": [
+            "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+            "AAAAEgAAAAAAAAAAyk6QH/IvQAb4HUDmRXJBuBAIf2TqpG6iLo5T+Xxva7Q=",
+            "AAAACgAAAAAAAAAAAAAAC6Q7dAA=",
+            "AAAAAwAehIA="
+          ],
+          "subInvocations": [
+            {
+              "contractId": "CB6OEQFHGIZJU64ZE3VIPRONTVMEQDOKXTUIK4PJN7FISHUB6BVB4ZB6",
+              "functionName": "transfer",
+              "args": [
+                "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                "AAAACgAAAAAAAAAAAAAAAukO3QA="
+              ],
+              "subInvocations": []
+            },
+            {
+              "contractId": "CB6OEQFHGIZJU64ZE3VIPRONTVMEQDOKXTUIK4PJN7FISHUB6BVB4ZB6",
+              "functionName": "mint",
+              "args": [
+                "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                "AAAACgAAAAAAAAAAAAAAAAAAACo="
+              ],
+              "subInvocations": []
+            },
+            {
+              "contractId": "CB6OEQFHGIZJU64ZE3VIPRONTVMEQDOKXTUIK4PJN7FISHUB6BVB4ZB6",
+              "functionName": "burn_from",
+              "args": [
+                "AAAAEgAAAAAAAAAAyk6QH/IvQAb4HUDmRXJBuBAIf2TqpG6iLo5T+Xxva7Q=",
+                "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                "AAAACgAAAAAAAAAAAAAAAAAAAAc="
+              ],
+              "subInvocations": []
+            },
+            {
+              "contractId": "CDR4LZ5XZRH5I5XSV3OX6JENBZHJG2AFQN4WVVP4R7XUDWHMETQCG77H",
+              "functionName": "settle",
+              "args": [
+                "AAAAEQAAAAEAAAACAAAADwAAAARtZW1vAAAADgAAABR1bnJlY29nbml6ZWQgcGF5bG9hZAAAAA8AAAADdGFnAAAAAA0AAAAEAQIDBA==",
+                "AAAAEAAAAAEAAAACAAAAAwAAAAkAAAAAAAAAAQ=="
+              ],
+              "subInvocations": []
+            }
+          ]
+        }
+      },
+      "expected": {
+        "preimageType": "envelopeTypeSorobanAuthorizationWithAddress",
+        "preimageXdr": "AAAACs7gMC1ZhE0yvcqRXIID3USzP7t+3BkFHqN6vt8o7NRyAAAAAAAAIykAHoSAAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAAAAAAAABfOJApzIymnuZJuqHxc2dWEgNyrzohXHpb8qJHoHwah4AAAAHYXBwcm92ZQAAAAAEAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAADKTpAf8i9ABvgdQOZFckG4EAh/ZOqkbqIujlP5fG9rtAAAAAoAAAAAAAAAAAAAAAukO3QAAAAAAwAehIAAAAAEAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAh0cmFuc2ZlcgAAAAMAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAukO3QAAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAARtaW50AAAAAgAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAlidXJuX2Zyb20AAAAAAAADAAAAEgAAAAAAAAAAyk6QH/IvQAb4HUDmRXJBuBAIf2TqpG6iLo5T+Xxva7QAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAAAoAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAB48Xnt8xP1Hbyrt1/JI0OTpNoBYN5atX8j+9B2Owk4CMAAAAGc2V0dGxlAAAAAAACAAAAEQAAAAEAAAACAAAADwAAAARtZW1vAAAADgAAABR1bnJlY29nbml6ZWQgcGF5bG9hZAAAAA8AAAADdGFnAAAAAA0AAAAEAQIDBAAAABAAAAABAAAAAgAAAAMAAAAJAAAAAAAAAAEAAAAA",
+        "payloadHashHex": "77029cd793290e08ce2e6b66073243f1be2ece4808016dbe268d8a1d23a9297f",
+        "signatureHex": "0e53b13bbf595fa0035abadd3f763b5cff12446535830c2c9ed72a18f38eca8cc11e10be0ac8d3b7b52f53eb673c4f4dc6cff3479f2d5277c6d46e4096c70801",
+        "unsignedEntryXdr": "AAAAAgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAAAAAjKQAAAAAAAAAQAAAAAQAAAAAAAAAAAAAAAXziQKcyMpp7mSbqh8XNnVhIDcq86IVx6W/KiR6B8GoeAAAAB2FwcHJvdmUAAAAABAAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAyk6QH/IvQAb4HUDmRXJBuBAIf2TqpG6iLo5T+Xxva7QAAAAKAAAAAAAAAAAAAAALpDt0AAAAAAMAHoSAAAAABAAAAAAAAAABfOJApzIymnuZJuqHxc2dWEgNyrzohXHpb8qJHoHwah4AAAAIdHJhbnNmZXIAAAADAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAAAKU+fZpzT8HBNGlwfd+rXQyrImSeMRNBy7c/mFSQ0NxgAAAAoAAAAAAAAAAAAAAALpDt0AAAAAAAAAAAAAAAABfOJApzIymnuZJuqHxc2dWEgNyrzohXHpb8qJHoHwah4AAAAEbWludAAAAAIAAAASAAAAAAAAAAAKU+fZpzT8HBNGlwfd+rXQyrImSeMRNBy7c/mFSQ0NxgAAAAoAAAAAAAAAAAAAAAAAAAAqAAAAAAAAAAAAAAABfOJApzIymnuZJuqHxc2dWEgNyrzohXHpb8qJHoHwah4AAAAJYnVybl9mcm9tAAAAAAAAAwAAABIAAAAAAAAAAMpOkB/yL0AG+B1A5kVyQbgQCH9k6qRuoi6OU/l8b2u0AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAKAAAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAAePF57fMT9R28q7dfySNDk6TaAWDeWrV/I/vQdjsJOAjAAAABnNldHRsZQAAAAAAAgAAABEAAAABAAAAAgAAAA8AAAAEbWVtbwAAAA4AAAAUdW5yZWNvZ25pemVkIHBheWxvYWQAAAAPAAAAA3RhZwAAAAANAAAABAECAwQAAAAQAAAAAQAAAAIAAAADAAAACQAAAAAAAAABAAAAAA==",
+        "signedEntryXdr": "AAAAAgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAAAAAjKQAehIAAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABADlOxO79ZX6ADWrrdP3Y7XP8SRGU1gwwsntcqGPOOyozBHhC+CsjTt7UvU+tnPE9Nxs/zR58tUnfG1G5AlscIAQAAAAAAAAABfOJApzIymnuZJuqHxc2dWEgNyrzohXHpb8qJHoHwah4AAAAHYXBwcm92ZQAAAAAEAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAADKTpAf8i9ABvgdQOZFckG4EAh/ZOqkbqIujlP5fG9rtAAAAAoAAAAAAAAAAAAAAAukO3QAAAAAAwAehIAAAAAEAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAh0cmFuc2ZlcgAAAAMAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAukO3QAAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAARtaW50AAAAAgAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAlidXJuX2Zyb20AAAAAAAADAAAAEgAAAAAAAAAAyk6QH/IvQAb4HUDmRXJBuBAIf2TqpG6iLo5T+Xxva7QAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAAAoAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAB48Xnt8xP1Hbyrt1/JI0OTpNoBYN5atX8j+9B2Owk4CMAAAAGc2V0dGxlAAAAAAACAAAAEQAAAAEAAAACAAAADwAAAARtZW1vAAAADgAAABR1bnJlY29nbml6ZWQgcGF5bG9hZAAAAA8AAAADdGFnAAAAAA0AAAAEAQIDBAAAABAAAAABAAAAAgAAAAMAAAAJAAAAAAAAAAEAAAAA"
+      },
+      "compatibility": {
+        "protocol": {
+          "min": 27,
+          "max": null
+        },
+        "status": "current",
+        "note": "Synthetic contract ids; no host run exists for this vector.",
+        "hostVerified": []
+      },
+      "mutations": [
+        {
+          "id": "v2-token-ops-synthetic--recipient",
+          "field": "recipient",
+          "description": "recipient address replaced everywhere it appears in the invocation tree",
+          "changedPaths": [
+            "rootInvocation.subInvocations[0].args[1]",
+            "rootInvocation.subInvocations[1].args[0]"
+          ],
+          "mutatedAuthorization": {
+            "address": "GAGCWJVDANC44KKHZQ2AHLZELZOCINJME2BB4WI257P4LM7WC6OOGQ4N",
+            "credentialType": "addressV2",
+            "networkPassphrase": "Test SDF Network ; September 2015",
+            "nonce": "9001",
+            "signatureExpirationLedger": 2000000,
+            "rootInvocation": {
+              "contractId": "CB6OEQFHGIZJU64ZE3VIPRONTVMEQDOKXTUIK4PJN7FISHUB6BVB4ZB6",
+              "functionName": "approve",
+              "args": [
+                "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                "AAAAEgAAAAAAAAAAyk6QH/IvQAb4HUDmRXJBuBAIf2TqpG6iLo5T+Xxva7Q=",
+                "AAAACgAAAAAAAAAAAAAAC6Q7dAA=",
+                "AAAAAwAehIA="
+              ],
+              "subInvocations": [
+                {
+                  "contractId": "CB6OEQFHGIZJU64ZE3VIPRONTVMEQDOKXTUIK4PJN7FISHUB6BVB4ZB6",
+                  "functionName": "transfer",
+                  "args": [
+                    "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                    "AAAAEgAAAAAAAAAAq43XkLwOrbmsnuF0yyyzSqvAy5lioFDVZ9oCCLGc2Cw=",
+                    "AAAACgAAAAAAAAAAAAAAAukO3QA="
+                  ],
+                  "subInvocations": []
+                },
+                {
+                  "contractId": "CB6OEQFHGIZJU64ZE3VIPRONTVMEQDOKXTUIK4PJN7FISHUB6BVB4ZB6",
+                  "functionName": "mint",
+                  "args": [
+                    "AAAAEgAAAAAAAAAAq43XkLwOrbmsnuF0yyyzSqvAy5lioFDVZ9oCCLGc2Cw=",
+                    "AAAACgAAAAAAAAAAAAAAAAAAACo="
+                  ],
+                  "subInvocations": []
+                },
+                {
+                  "contractId": "CB6OEQFHGIZJU64ZE3VIPRONTVMEQDOKXTUIK4PJN7FISHUB6BVB4ZB6",
+                  "functionName": "burn_from",
+                  "args": [
+                    "AAAAEgAAAAAAAAAAyk6QH/IvQAb4HUDmRXJBuBAIf2TqpG6iLo5T+Xxva7Q=",
+                    "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                    "AAAACgAAAAAAAAAAAAAAAAAAAAc="
+                  ],
+                  "subInvocations": []
+                },
+                {
+                  "contractId": "CDR4LZ5XZRH5I5XSV3OX6JENBZHJG2AFQN4WVVP4R7XUDWHMETQCG77H",
+                  "functionName": "settle",
+                  "args": [
+                    "AAAAEQAAAAEAAAACAAAADwAAAARtZW1vAAAADgAAABR1bnJlY29nbml6ZWQgcGF5bG9hZAAAAA8AAAADdGFnAAAAAA0AAAAEAQIDBA==",
+                    "AAAAEAAAAAEAAAACAAAAAwAAAAkAAAAAAAAAAQ=="
+                  ],
+                  "subInvocations": []
+                }
+              ]
+            }
+          },
+          "expected": {
+            "payloadHashChanged": true,
+            "mutatedPreimageXdr": "AAAACs7gMC1ZhE0yvcqRXIID3USzP7t+3BkFHqN6vt8o7NRyAAAAAAAAIykAHoSAAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAAAAAAAABfOJApzIymnuZJuqHxc2dWEgNyrzohXHpb8qJHoHwah4AAAAHYXBwcm92ZQAAAAAEAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAADKTpAf8i9ABvgdQOZFckG4EAh/ZOqkbqIujlP5fG9rtAAAAAoAAAAAAAAAAAAAAAukO3QAAAAAAwAehIAAAAAEAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAh0cmFuc2ZlcgAAAAMAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAKuN15C8Dq25rJ7hdMsss0qrwMuZYqBQ1WfaAgixnNgsAAAACgAAAAAAAAAAAAAAAukO3QAAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAARtaW50AAAAAgAAABIAAAAAAAAAAKuN15C8Dq25rJ7hdMsss0qrwMuZYqBQ1WfaAgixnNgsAAAACgAAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAlidXJuX2Zyb20AAAAAAAADAAAAEgAAAAAAAAAAyk6QH/IvQAb4HUDmRXJBuBAIf2TqpG6iLo5T+Xxva7QAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAAAoAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAB48Xnt8xP1Hbyrt1/JI0OTpNoBYN5atX8j+9B2Owk4CMAAAAGc2V0dGxlAAAAAAACAAAAEQAAAAEAAAACAAAADwAAAARtZW1vAAAADgAAABR1bnJlY29nbml6ZWQgcGF5bG9hZAAAAA8AAAADdGFnAAAAAA0AAAAEAQIDBAAAABAAAAABAAAAAgAAAAMAAAAJAAAAAAAAAAEAAAAA",
+            "mutatedPayloadHashHex": "8a976f52511facec3868c828ff5135f42f30d0f75e6e86084bb0a2d7234245cf",
+            "originalSignatureVerifies": false,
+            "entryXdrWithOriginalSignature": "AAAAAgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAAAAAjKQAehIAAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABADlOxO79ZX6ADWrrdP3Y7XP8SRGU1gwwsntcqGPOOyozBHhC+CsjTt7UvU+tnPE9Nxs/zR58tUnfG1G5AlscIAQAAAAAAAAABfOJApzIymnuZJuqHxc2dWEgNyrzohXHpb8qJHoHwah4AAAAHYXBwcm92ZQAAAAAEAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAADKTpAf8i9ABvgdQOZFckG4EAh/ZOqkbqIujlP5fG9rtAAAAAoAAAAAAAAAAAAAAAukO3QAAAAAAwAehIAAAAAEAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAh0cmFuc2ZlcgAAAAMAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAKuN15C8Dq25rJ7hdMsss0qrwMuZYqBQ1WfaAgixnNgsAAAACgAAAAAAAAAAAAAAAukO3QAAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAARtaW50AAAAAgAAABIAAAAAAAAAAKuN15C8Dq25rJ7hdMsss0qrwMuZYqBQ1WfaAgixnNgsAAAACgAAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAlidXJuX2Zyb20AAAAAAAADAAAAEgAAAAAAAAAAyk6QH/IvQAb4HUDmRXJBuBAIf2TqpG6iLo5T+Xxva7QAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAAAoAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAB48Xnt8xP1Hbyrt1/JI0OTpNoBYN5atX8j+9B2Owk4CMAAAAGc2V0dGxlAAAAAAACAAAAEQAAAAEAAAACAAAADwAAAARtZW1vAAAADgAAABR1bnJlY29nbml6ZWQgcGF5bG9hZAAAAA8AAAADdGFnAAAAAA0AAAAEAQIDBAAAABAAAAABAAAAAgAAAAMAAAAJAAAAAAAAAAEAAAAA",
+            "hostExpectation": "reject",
+            "resignedEntryXdr": "AAAAAgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAAAAAjKQAehIAAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABAbcoKjFBIh8qnBA4+XCD/C/Sa9Bkxf/Qz1vJgBnj5IbYI3+gCFM8l6sHx5J8JkFQdhC2OLgoPznV/ZWa/dOxLCQAAAAAAAAABfOJApzIymnuZJuqHxc2dWEgNyrzohXHpb8qJHoHwah4AAAAHYXBwcm92ZQAAAAAEAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAADKTpAf8i9ABvgdQOZFckG4EAh/ZOqkbqIujlP5fG9rtAAAAAoAAAAAAAAAAAAAAAukO3QAAAAAAwAehIAAAAAEAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAh0cmFuc2ZlcgAAAAMAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAKuN15C8Dq25rJ7hdMsss0qrwMuZYqBQ1WfaAgixnNgsAAAACgAAAAAAAAAAAAAAAukO3QAAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAARtaW50AAAAAgAAABIAAAAAAAAAAKuN15C8Dq25rJ7hdMsss0qrwMuZYqBQ1WfaAgixnNgsAAAACgAAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAlidXJuX2Zyb20AAAAAAAADAAAAEgAAAAAAAAAAyk6QH/IvQAb4HUDmRXJBuBAIf2TqpG6iLo5T+Xxva7QAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAAAoAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAB48Xnt8xP1Hbyrt1/JI0OTpNoBYN5atX8j+9B2Owk4CMAAAAGc2V0dGxlAAAAAAACAAAAEQAAAAEAAAACAAAADwAAAARtZW1vAAAADgAAABR1bnJlY29nbml6ZWQgcGF5bG9hZAAAAA8AAAADdGFnAAAAAA0AAAAEAQIDBAAAABAAAAABAAAAAgAAAAMAAAAJAAAAAAAAAAEAAAAA",
+            "resignedSignatureHex": "6dca0a8c504887caa7040e3e5c20ff0bf49af419317ff433d6f2600678f921b608dfe80214cf25eac1f1e49f0990541d842d8e2e0a0fce757f6566bf74ec4b09"
+          }
+        },
+        {
+          "id": "v2-token-ops-synthetic--amount",
+          "field": "amount",
+          "description": "amount multiplied by ten everywhere it appears in the invocation tree",
+          "changedPaths": [
+            "rootInvocation.args[2]",
+            "rootInvocation.subInvocations[0].args[2]",
+            "rootInvocation.subInvocations[1].args[1]",
+            "rootInvocation.subInvocations[2].args[2]"
+          ],
+          "mutatedAuthorization": {
+            "address": "GAGCWJVDANC44KKHZQ2AHLZELZOCINJME2BB4WI257P4LM7WC6OOGQ4N",
+            "credentialType": "addressV2",
+            "networkPassphrase": "Test SDF Network ; September 2015",
+            "nonce": "9001",
+            "signatureExpirationLedger": 2000000,
+            "rootInvocation": {
+              "contractId": "CB6OEQFHGIZJU64ZE3VIPRONTVMEQDOKXTUIK4PJN7FISHUB6BVB4ZB6",
+              "functionName": "approve",
+              "args": [
+                "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                "AAAAEgAAAAAAAAAAyk6QH/IvQAb4HUDmRXJBuBAIf2TqpG6iLo5T+Xxva7Q=",
+                "AAAACgAAAAAAAAAAAAAAdGpSiAA=",
+                "AAAAAwAehIA="
+              ],
+              "subInvocations": [
+                {
+                  "contractId": "CB6OEQFHGIZJU64ZE3VIPRONTVMEQDOKXTUIK4PJN7FISHUB6BVB4ZB6",
+                  "functionName": "transfer",
+                  "args": [
+                    "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                    "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                    "AAAACgAAAAAAAAAAAAAAHRqUogA="
+                  ],
+                  "subInvocations": []
+                },
+                {
+                  "contractId": "CB6OEQFHGIZJU64ZE3VIPRONTVMEQDOKXTUIK4PJN7FISHUB6BVB4ZB6",
+                  "functionName": "mint",
+                  "args": [
+                    "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                    "AAAACgAAAAAAAAAAAAAAAAAAAaQ="
+                  ],
+                  "subInvocations": []
+                },
+                {
+                  "contractId": "CB6OEQFHGIZJU64ZE3VIPRONTVMEQDOKXTUIK4PJN7FISHUB6BVB4ZB6",
+                  "functionName": "burn_from",
+                  "args": [
+                    "AAAAEgAAAAAAAAAAyk6QH/IvQAb4HUDmRXJBuBAIf2TqpG6iLo5T+Xxva7Q=",
+                    "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                    "AAAACgAAAAAAAAAAAAAAAAAAAEY="
+                  ],
+                  "subInvocations": []
+                },
+                {
+                  "contractId": "CDR4LZ5XZRH5I5XSV3OX6JENBZHJG2AFQN4WVVP4R7XUDWHMETQCG77H",
+                  "functionName": "settle",
+                  "args": [
+                    "AAAAEQAAAAEAAAACAAAADwAAAARtZW1vAAAADgAAABR1bnJlY29nbml6ZWQgcGF5bG9hZAAAAA8AAAADdGFnAAAAAA0AAAAEAQIDBA==",
+                    "AAAAEAAAAAEAAAACAAAAAwAAAAkAAAAAAAAAAQ=="
+                  ],
+                  "subInvocations": []
+                }
+              ]
+            }
+          },
+          "expected": {
+            "payloadHashChanged": true,
+            "mutatedPreimageXdr": "AAAACs7gMC1ZhE0yvcqRXIID3USzP7t+3BkFHqN6vt8o7NRyAAAAAAAAIykAHoSAAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAAAAAAAABfOJApzIymnuZJuqHxc2dWEgNyrzohXHpb8qJHoHwah4AAAAHYXBwcm92ZQAAAAAEAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAADKTpAf8i9ABvgdQOZFckG4EAh/ZOqkbqIujlP5fG9rtAAAAAoAAAAAAAAAAAAAAHRqUogAAAAAAwAehIAAAAAEAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAh0cmFuc2ZlcgAAAAMAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAHRqUogAAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAARtaW50AAAAAgAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAAAAAaQAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAlidXJuX2Zyb20AAAAAAAADAAAAEgAAAAAAAAAAyk6QH/IvQAb4HUDmRXJBuBAIf2TqpG6iLo5T+Xxva7QAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAAAoAAAAAAAAAAAAAAAAAAABGAAAAAAAAAAAAAAAB48Xnt8xP1Hbyrt1/JI0OTpNoBYN5atX8j+9B2Owk4CMAAAAGc2V0dGxlAAAAAAACAAAAEQAAAAEAAAACAAAADwAAAARtZW1vAAAADgAAABR1bnJlY29nbml6ZWQgcGF5bG9hZAAAAA8AAAADdGFnAAAAAA0AAAAEAQIDBAAAABAAAAABAAAAAgAAAAMAAAAJAAAAAAAAAAEAAAAA",
+            "mutatedPayloadHashHex": "9813e0d838c683e84ef18a0370cc58d334117dd59d7b2ad0d598479fcd0b6ddb",
+            "originalSignatureVerifies": false,
+            "entryXdrWithOriginalSignature": "AAAAAgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAAAAAjKQAehIAAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABADlOxO79ZX6ADWrrdP3Y7XP8SRGU1gwwsntcqGPOOyozBHhC+CsjTt7UvU+tnPE9Nxs/zR58tUnfG1G5AlscIAQAAAAAAAAABfOJApzIymnuZJuqHxc2dWEgNyrzohXHpb8qJHoHwah4AAAAHYXBwcm92ZQAAAAAEAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAADKTpAf8i9ABvgdQOZFckG4EAh/ZOqkbqIujlP5fG9rtAAAAAoAAAAAAAAAAAAAAHRqUogAAAAAAwAehIAAAAAEAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAh0cmFuc2ZlcgAAAAMAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAHRqUogAAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAARtaW50AAAAAgAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAAAAAaQAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAlidXJuX2Zyb20AAAAAAAADAAAAEgAAAAAAAAAAyk6QH/IvQAb4HUDmRXJBuBAIf2TqpG6iLo5T+Xxva7QAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAAAoAAAAAAAAAAAAAAAAAAABGAAAAAAAAAAAAAAAB48Xnt8xP1Hbyrt1/JI0OTpNoBYN5atX8j+9B2Owk4CMAAAAGc2V0dGxlAAAAAAACAAAAEQAAAAEAAAACAAAADwAAAARtZW1vAAAADgAAABR1bnJlY29nbml6ZWQgcGF5bG9hZAAAAA8AAAADdGFnAAAAAA0AAAAEAQIDBAAAABAAAAABAAAAAgAAAAMAAAAJAAAAAAAAAAEAAAAA",
+            "hostExpectation": "reject",
+            "resignedEntryXdr": "AAAAAgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAAAAAjKQAehIAAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABAfBLZGY8UcpMqvi2rdWKPz6SdXn4e1aDLEUg2e8v/w53gEfbBv6YLwf76FnqLYgNt6ekcS0Rwl/XOu1BNr50sAQAAAAAAAAABfOJApzIymnuZJuqHxc2dWEgNyrzohXHpb8qJHoHwah4AAAAHYXBwcm92ZQAAAAAEAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAADKTpAf8i9ABvgdQOZFckG4EAh/ZOqkbqIujlP5fG9rtAAAAAoAAAAAAAAAAAAAAHRqUogAAAAAAwAehIAAAAAEAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAh0cmFuc2ZlcgAAAAMAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAHRqUogAAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAARtaW50AAAAAgAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAAAAAaQAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAlidXJuX2Zyb20AAAAAAAADAAAAEgAAAAAAAAAAyk6QH/IvQAb4HUDmRXJBuBAIf2TqpG6iLo5T+Xxva7QAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAAAoAAAAAAAAAAAAAAAAAAABGAAAAAAAAAAAAAAAB48Xnt8xP1Hbyrt1/JI0OTpNoBYN5atX8j+9B2Owk4CMAAAAGc2V0dGxlAAAAAAACAAAAEQAAAAEAAAACAAAADwAAAARtZW1vAAAADgAAABR1bnJlY29nbml6ZWQgcGF5bG9hZAAAAA8AAAADdGFnAAAAAA0AAAAEAQIDBAAAABAAAAABAAAAAgAAAAMAAAAJAAAAAAAAAAEAAAAA",
+            "resignedSignatureHex": "7c12d9198f1472932abe2dab75628fcfa49d5e7e1ed5a0cb1148367bcbffc39de011f6c1bfa60bc1fefa167a8b62036de9e91c4b447097f5cebb504daf9d2c01"
+          }
+        },
+        {
+          "id": "v2-token-ops-synthetic--network",
+          "field": "network",
+          "description": "network passphrase replaced (entry signed for a different network)",
+          "changedPaths": [
+            "networkPassphrase"
+          ],
+          "mutatedAuthorization": {
+            "address": "GAGCWJVDANC44KKHZQ2AHLZELZOCINJME2BB4WI257P4LM7WC6OOGQ4N",
+            "credentialType": "addressV2",
+            "networkPassphrase": "Test SDF Future Network ; October 2022",
+            "nonce": "9001",
+            "signatureExpirationLedger": 2000000,
+            "rootInvocation": {
+              "contractId": "CB6OEQFHGIZJU64ZE3VIPRONTVMEQDOKXTUIK4PJN7FISHUB6BVB4ZB6",
+              "functionName": "approve",
+              "args": [
+                "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                "AAAAEgAAAAAAAAAAyk6QH/IvQAb4HUDmRXJBuBAIf2TqpG6iLo5T+Xxva7Q=",
+                "AAAACgAAAAAAAAAAAAAAC6Q7dAA=",
+                "AAAAAwAehIA="
+              ],
+              "subInvocations": [
+                {
+                  "contractId": "CB6OEQFHGIZJU64ZE3VIPRONTVMEQDOKXTUIK4PJN7FISHUB6BVB4ZB6",
+                  "functionName": "transfer",
+                  "args": [
+                    "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                    "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                    "AAAACgAAAAAAAAAAAAAAAukO3QA="
+                  ],
+                  "subInvocations": []
+                },
+                {
+                  "contractId": "CB6OEQFHGIZJU64ZE3VIPRONTVMEQDOKXTUIK4PJN7FISHUB6BVB4ZB6",
+                  "functionName": "mint",
+                  "args": [
+                    "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                    "AAAACgAAAAAAAAAAAAAAAAAAACo="
+                  ],
+                  "subInvocations": []
+                },
+                {
+                  "contractId": "CB6OEQFHGIZJU64ZE3VIPRONTVMEQDOKXTUIK4PJN7FISHUB6BVB4ZB6",
+                  "functionName": "burn_from",
+                  "args": [
+                    "AAAAEgAAAAAAAAAAyk6QH/IvQAb4HUDmRXJBuBAIf2TqpG6iLo5T+Xxva7Q=",
+                    "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                    "AAAACgAAAAAAAAAAAAAAAAAAAAc="
+                  ],
+                  "subInvocations": []
+                },
+                {
+                  "contractId": "CDR4LZ5XZRH5I5XSV3OX6JENBZHJG2AFQN4WVVP4R7XUDWHMETQCG77H",
+                  "functionName": "settle",
+                  "args": [
+                    "AAAAEQAAAAEAAAACAAAADwAAAARtZW1vAAAADgAAABR1bnJlY29nbml6ZWQgcGF5bG9hZAAAAA8AAAADdGFnAAAAAA0AAAAEAQIDBA==",
+                    "AAAAEAAAAAEAAAACAAAAAwAAAAkAAAAAAAAAAQ=="
+                  ],
+                  "subInvocations": []
+                }
+              ]
+            }
+          },
+          "expected": {
+            "payloadHashChanged": true,
+            "mutatedPreimageXdr": "AAAACqOhxqeChnE+Kb4Ol4VnD6g40TkXzY6utKNXn/HevH/VAAAAAAAAIykAHoSAAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAAAAAAAABfOJApzIymnuZJuqHxc2dWEgNyrzohXHpb8qJHoHwah4AAAAHYXBwcm92ZQAAAAAEAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAADKTpAf8i9ABvgdQOZFckG4EAh/ZOqkbqIujlP5fG9rtAAAAAoAAAAAAAAAAAAAAAukO3QAAAAAAwAehIAAAAAEAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAh0cmFuc2ZlcgAAAAMAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAukO3QAAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAARtaW50AAAAAgAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAlidXJuX2Zyb20AAAAAAAADAAAAEgAAAAAAAAAAyk6QH/IvQAb4HUDmRXJBuBAIf2TqpG6iLo5T+Xxva7QAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAAAoAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAB48Xnt8xP1Hbyrt1/JI0OTpNoBYN5atX8j+9B2Owk4CMAAAAGc2V0dGxlAAAAAAACAAAAEQAAAAEAAAACAAAADwAAAARtZW1vAAAADgAAABR1bnJlY29nbml6ZWQgcGF5bG9hZAAAAA8AAAADdGFnAAAAAA0AAAAEAQIDBAAAABAAAAABAAAAAgAAAAMAAAAJAAAAAAAAAAEAAAAA",
+            "mutatedPayloadHashHex": "aec22c4d9dff0276cc9d7019341e93d3f01665de0cf485eac82367f1aea78d0a",
+            "originalSignatureVerifies": false,
+            "entryXdrWithOriginalSignature": "AAAAAgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAAAAAjKQAehIAAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABADlOxO79ZX6ADWrrdP3Y7XP8SRGU1gwwsntcqGPOOyozBHhC+CsjTt7UvU+tnPE9Nxs/zR58tUnfG1G5AlscIAQAAAAAAAAABfOJApzIymnuZJuqHxc2dWEgNyrzohXHpb8qJHoHwah4AAAAHYXBwcm92ZQAAAAAEAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAADKTpAf8i9ABvgdQOZFckG4EAh/ZOqkbqIujlP5fG9rtAAAAAoAAAAAAAAAAAAAAAukO3QAAAAAAwAehIAAAAAEAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAh0cmFuc2ZlcgAAAAMAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAukO3QAAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAARtaW50AAAAAgAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAlidXJuX2Zyb20AAAAAAAADAAAAEgAAAAAAAAAAyk6QH/IvQAb4HUDmRXJBuBAIf2TqpG6iLo5T+Xxva7QAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAAAoAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAB48Xnt8xP1Hbyrt1/JI0OTpNoBYN5atX8j+9B2Owk4CMAAAAGc2V0dGxlAAAAAAACAAAAEQAAAAEAAAACAAAADwAAAARtZW1vAAAADgAAABR1bnJlY29nbml6ZWQgcGF5bG9hZAAAAA8AAAADdGFnAAAAAA0AAAAEAQIDBAAAABAAAAABAAAAAgAAAAMAAAAJAAAAAAAAAAEAAAAA",
+            "hostExpectation": "reject",
+            "resignedEntryXdr": "AAAAAgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAAAAAjKQAehIAAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABA1dC4qIRq19b8iTpfdz+duddApBbHlWU/xq6Qr8U3N4SxE3BRIvmInJk4TUusLwA7eY7sMfLvCkX7uF5UL27XBwAAAAAAAAABfOJApzIymnuZJuqHxc2dWEgNyrzohXHpb8qJHoHwah4AAAAHYXBwcm92ZQAAAAAEAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAADKTpAf8i9ABvgdQOZFckG4EAh/ZOqkbqIujlP5fG9rtAAAAAoAAAAAAAAAAAAAAAukO3QAAAAAAwAehIAAAAAEAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAh0cmFuc2ZlcgAAAAMAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAukO3QAAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAARtaW50AAAAAgAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAlidXJuX2Zyb20AAAAAAAADAAAAEgAAAAAAAAAAyk6QH/IvQAb4HUDmRXJBuBAIf2TqpG6iLo5T+Xxva7QAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAAAoAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAB48Xnt8xP1Hbyrt1/JI0OTpNoBYN5atX8j+9B2Owk4CMAAAAGc2V0dGxlAAAAAAACAAAAEQAAAAEAAAACAAAADwAAAARtZW1vAAAADgAAABR1bnJlY29nbml6ZWQgcGF5bG9hZAAAAA8AAAADdGFnAAAAAA0AAAAEAQIDBAAAABAAAAABAAAAAgAAAAMAAAAJAAAAAAAAAAEAAAAA",
+            "resignedSignatureHex": "d5d0b8a8846ad7d6fc893a5f773f9db9d740a416c795653fc6ae90afc5373784b113705122f9889c99384d4bac2f003b798eec31f2ef0a45fbb85e542f6ed707"
+          }
+        },
+        {
+          "id": "v2-token-ops-synthetic--nonce",
+          "field": "nonce",
+          "description": "nonce incremented by one",
+          "changedPaths": [
+            "nonce"
+          ],
+          "mutatedAuthorization": {
+            "address": "GAGCWJVDANC44KKHZQ2AHLZELZOCINJME2BB4WI257P4LM7WC6OOGQ4N",
+            "credentialType": "addressV2",
+            "networkPassphrase": "Test SDF Network ; September 2015",
+            "nonce": "9002",
+            "signatureExpirationLedger": 2000000,
+            "rootInvocation": {
+              "contractId": "CB6OEQFHGIZJU64ZE3VIPRONTVMEQDOKXTUIK4PJN7FISHUB6BVB4ZB6",
+              "functionName": "approve",
+              "args": [
+                "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                "AAAAEgAAAAAAAAAAyk6QH/IvQAb4HUDmRXJBuBAIf2TqpG6iLo5T+Xxva7Q=",
+                "AAAACgAAAAAAAAAAAAAAC6Q7dAA=",
+                "AAAAAwAehIA="
+              ],
+              "subInvocations": [
+                {
+                  "contractId": "CB6OEQFHGIZJU64ZE3VIPRONTVMEQDOKXTUIK4PJN7FISHUB6BVB4ZB6",
+                  "functionName": "transfer",
+                  "args": [
+                    "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                    "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                    "AAAACgAAAAAAAAAAAAAAAukO3QA="
+                  ],
+                  "subInvocations": []
+                },
+                {
+                  "contractId": "CB6OEQFHGIZJU64ZE3VIPRONTVMEQDOKXTUIK4PJN7FISHUB6BVB4ZB6",
+                  "functionName": "mint",
+                  "args": [
+                    "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                    "AAAACgAAAAAAAAAAAAAAAAAAACo="
+                  ],
+                  "subInvocations": []
+                },
+                {
+                  "contractId": "CB6OEQFHGIZJU64ZE3VIPRONTVMEQDOKXTUIK4PJN7FISHUB6BVB4ZB6",
+                  "functionName": "burn_from",
+                  "args": [
+                    "AAAAEgAAAAAAAAAAyk6QH/IvQAb4HUDmRXJBuBAIf2TqpG6iLo5T+Xxva7Q=",
+                    "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                    "AAAACgAAAAAAAAAAAAAAAAAAAAc="
+                  ],
+                  "subInvocations": []
+                },
+                {
+                  "contractId": "CDR4LZ5XZRH5I5XSV3OX6JENBZHJG2AFQN4WVVP4R7XUDWHMETQCG77H",
+                  "functionName": "settle",
+                  "args": [
+                    "AAAAEQAAAAEAAAACAAAADwAAAARtZW1vAAAADgAAABR1bnJlY29nbml6ZWQgcGF5bG9hZAAAAA8AAAADdGFnAAAAAA0AAAAEAQIDBA==",
+                    "AAAAEAAAAAEAAAACAAAAAwAAAAkAAAAAAAAAAQ=="
+                  ],
+                  "subInvocations": []
+                }
+              ]
+            }
+          },
+          "expected": {
+            "payloadHashChanged": true,
+            "mutatedPreimageXdr": "AAAACs7gMC1ZhE0yvcqRXIID3USzP7t+3BkFHqN6vt8o7NRyAAAAAAAAIyoAHoSAAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAAAAAAAABfOJApzIymnuZJuqHxc2dWEgNyrzohXHpb8qJHoHwah4AAAAHYXBwcm92ZQAAAAAEAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAADKTpAf8i9ABvgdQOZFckG4EAh/ZOqkbqIujlP5fG9rtAAAAAoAAAAAAAAAAAAAAAukO3QAAAAAAwAehIAAAAAEAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAh0cmFuc2ZlcgAAAAMAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAukO3QAAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAARtaW50AAAAAgAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAlidXJuX2Zyb20AAAAAAAADAAAAEgAAAAAAAAAAyk6QH/IvQAb4HUDmRXJBuBAIf2TqpG6iLo5T+Xxva7QAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAAAoAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAB48Xnt8xP1Hbyrt1/JI0OTpNoBYN5atX8j+9B2Owk4CMAAAAGc2V0dGxlAAAAAAACAAAAEQAAAAEAAAACAAAADwAAAARtZW1vAAAADgAAABR1bnJlY29nbml6ZWQgcGF5bG9hZAAAAA8AAAADdGFnAAAAAA0AAAAEAQIDBAAAABAAAAABAAAAAgAAAAMAAAAJAAAAAAAAAAEAAAAA",
+            "mutatedPayloadHashHex": "b738c34ac1fa9f84dc96caf4fbf82d743dab3f8a102fc5b062ed1ed28616c073",
+            "originalSignatureVerifies": false,
+            "entryXdrWithOriginalSignature": "AAAAAgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAAAAAjKgAehIAAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABADlOxO79ZX6ADWrrdP3Y7XP8SRGU1gwwsntcqGPOOyozBHhC+CsjTt7UvU+tnPE9Nxs/zR58tUnfG1G5AlscIAQAAAAAAAAABfOJApzIymnuZJuqHxc2dWEgNyrzohXHpb8qJHoHwah4AAAAHYXBwcm92ZQAAAAAEAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAADKTpAf8i9ABvgdQOZFckG4EAh/ZOqkbqIujlP5fG9rtAAAAAoAAAAAAAAAAAAAAAukO3QAAAAAAwAehIAAAAAEAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAh0cmFuc2ZlcgAAAAMAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAukO3QAAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAARtaW50AAAAAgAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAlidXJuX2Zyb20AAAAAAAADAAAAEgAAAAAAAAAAyk6QH/IvQAb4HUDmRXJBuBAIf2TqpG6iLo5T+Xxva7QAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAAAoAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAB48Xnt8xP1Hbyrt1/JI0OTpNoBYN5atX8j+9B2Owk4CMAAAAGc2V0dGxlAAAAAAACAAAAEQAAAAEAAAACAAAADwAAAARtZW1vAAAADgAAABR1bnJlY29nbml6ZWQgcGF5bG9hZAAAAA8AAAADdGFnAAAAAA0AAAAEAQIDBAAAABAAAAABAAAAAgAAAAMAAAAJAAAAAAAAAAEAAAAA",
+            "hostExpectation": "reject",
+            "resignedEntryXdr": "AAAAAgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAAAAAjKgAehIAAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABAw6lsbz8OpKwgqNMibZKFqhSs/a57fyrLJ0mxVWIOpTUNzZv1vvC1JSFuEdbXljq1IaPOA2ey2025MeMMF7eNDgAAAAAAAAABfOJApzIymnuZJuqHxc2dWEgNyrzohXHpb8qJHoHwah4AAAAHYXBwcm92ZQAAAAAEAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAADKTpAf8i9ABvgdQOZFckG4EAh/ZOqkbqIujlP5fG9rtAAAAAoAAAAAAAAAAAAAAAukO3QAAAAAAwAehIAAAAAEAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAh0cmFuc2ZlcgAAAAMAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAukO3QAAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAARtaW50AAAAAgAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAlidXJuX2Zyb20AAAAAAAADAAAAEgAAAAAAAAAAyk6QH/IvQAb4HUDmRXJBuBAIf2TqpG6iLo5T+Xxva7QAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAAAoAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAB48Xnt8xP1Hbyrt1/JI0OTpNoBYN5atX8j+9B2Owk4CMAAAAGc2V0dGxlAAAAAAACAAAAEQAAAAEAAAACAAAADwAAAARtZW1vAAAADgAAABR1bnJlY29nbml6ZWQgcGF5bG9hZAAAAA8AAAADdGFnAAAAAA0AAAAEAQIDBAAAABAAAAABAAAAAgAAAAMAAAAJAAAAAAAAAAEAAAAA",
+            "resignedSignatureHex": "c3a96c6f3f0ea4ac20a8d3226d9285aa14acfdae7b7f2acb2749b155620ea5350dcd9bf5bef0b525216e11d6d7963ab521a3ce0367b2db4db931e30c17b78d0e"
+          }
+        },
+        {
+          "id": "v2-token-ops-synthetic--expiry",
+          "field": "expiry",
+          "description": "signature expiration ledger incremented by one",
+          "changedPaths": [
+            "signatureExpirationLedger"
+          ],
+          "mutatedAuthorization": {
+            "address": "GAGCWJVDANC44KKHZQ2AHLZELZOCINJME2BB4WI257P4LM7WC6OOGQ4N",
+            "credentialType": "addressV2",
+            "networkPassphrase": "Test SDF Network ; September 2015",
+            "nonce": "9001",
+            "signatureExpirationLedger": 2000001,
+            "rootInvocation": {
+              "contractId": "CB6OEQFHGIZJU64ZE3VIPRONTVMEQDOKXTUIK4PJN7FISHUB6BVB4ZB6",
+              "functionName": "approve",
+              "args": [
+                "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                "AAAAEgAAAAAAAAAAyk6QH/IvQAb4HUDmRXJBuBAIf2TqpG6iLo5T+Xxva7Q=",
+                "AAAACgAAAAAAAAAAAAAAC6Q7dAA=",
+                "AAAAAwAehIA="
+              ],
+              "subInvocations": [
+                {
+                  "contractId": "CB6OEQFHGIZJU64ZE3VIPRONTVMEQDOKXTUIK4PJN7FISHUB6BVB4ZB6",
+                  "functionName": "transfer",
+                  "args": [
+                    "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                    "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                    "AAAACgAAAAAAAAAAAAAAAukO3QA="
+                  ],
+                  "subInvocations": []
+                },
+                {
+                  "contractId": "CB6OEQFHGIZJU64ZE3VIPRONTVMEQDOKXTUIK4PJN7FISHUB6BVB4ZB6",
+                  "functionName": "mint",
+                  "args": [
+                    "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                    "AAAACgAAAAAAAAAAAAAAAAAAACo="
+                  ],
+                  "subInvocations": []
+                },
+                {
+                  "contractId": "CB6OEQFHGIZJU64ZE3VIPRONTVMEQDOKXTUIK4PJN7FISHUB6BVB4ZB6",
+                  "functionName": "burn_from",
+                  "args": [
+                    "AAAAEgAAAAAAAAAAyk6QH/IvQAb4HUDmRXJBuBAIf2TqpG6iLo5T+Xxva7Q=",
+                    "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                    "AAAACgAAAAAAAAAAAAAAAAAAAAc="
+                  ],
+                  "subInvocations": []
+                },
+                {
+                  "contractId": "CDR4LZ5XZRH5I5XSV3OX6JENBZHJG2AFQN4WVVP4R7XUDWHMETQCG77H",
+                  "functionName": "settle",
+                  "args": [
+                    "AAAAEQAAAAEAAAACAAAADwAAAARtZW1vAAAADgAAABR1bnJlY29nbml6ZWQgcGF5bG9hZAAAAA8AAAADdGFnAAAAAA0AAAAEAQIDBA==",
+                    "AAAAEAAAAAEAAAACAAAAAwAAAAkAAAAAAAAAAQ=="
+                  ],
+                  "subInvocations": []
+                }
+              ]
+            }
+          },
+          "expected": {
+            "payloadHashChanged": true,
+            "mutatedPreimageXdr": "AAAACs7gMC1ZhE0yvcqRXIID3USzP7t+3BkFHqN6vt8o7NRyAAAAAAAAIykAHoSBAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAAAAAAAABfOJApzIymnuZJuqHxc2dWEgNyrzohXHpb8qJHoHwah4AAAAHYXBwcm92ZQAAAAAEAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAADKTpAf8i9ABvgdQOZFckG4EAh/ZOqkbqIujlP5fG9rtAAAAAoAAAAAAAAAAAAAAAukO3QAAAAAAwAehIAAAAAEAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAh0cmFuc2ZlcgAAAAMAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAukO3QAAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAARtaW50AAAAAgAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAlidXJuX2Zyb20AAAAAAAADAAAAEgAAAAAAAAAAyk6QH/IvQAb4HUDmRXJBuBAIf2TqpG6iLo5T+Xxva7QAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAAAoAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAB48Xnt8xP1Hbyrt1/JI0OTpNoBYN5atX8j+9B2Owk4CMAAAAGc2V0dGxlAAAAAAACAAAAEQAAAAEAAAACAAAADwAAAARtZW1vAAAADgAAABR1bnJlY29nbml6ZWQgcGF5bG9hZAAAAA8AAAADdGFnAAAAAA0AAAAEAQIDBAAAABAAAAABAAAAAgAAAAMAAAAJAAAAAAAAAAEAAAAA",
+            "mutatedPayloadHashHex": "43d6d16eb134e75a378b51c696ce2d5980e87266a6a2ecb34b3d5134b79956e4",
+            "originalSignatureVerifies": false,
+            "entryXdrWithOriginalSignature": "AAAAAgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAAAAAjKQAehIEAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABADlOxO79ZX6ADWrrdP3Y7XP8SRGU1gwwsntcqGPOOyozBHhC+CsjTt7UvU+tnPE9Nxs/zR58tUnfG1G5AlscIAQAAAAAAAAABfOJApzIymnuZJuqHxc2dWEgNyrzohXHpb8qJHoHwah4AAAAHYXBwcm92ZQAAAAAEAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAADKTpAf8i9ABvgdQOZFckG4EAh/ZOqkbqIujlP5fG9rtAAAAAoAAAAAAAAAAAAAAAukO3QAAAAAAwAehIAAAAAEAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAh0cmFuc2ZlcgAAAAMAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAukO3QAAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAARtaW50AAAAAgAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAlidXJuX2Zyb20AAAAAAAADAAAAEgAAAAAAAAAAyk6QH/IvQAb4HUDmRXJBuBAIf2TqpG6iLo5T+Xxva7QAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAAAoAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAB48Xnt8xP1Hbyrt1/JI0OTpNoBYN5atX8j+9B2Owk4CMAAAAGc2V0dGxlAAAAAAACAAAAEQAAAAEAAAACAAAADwAAAARtZW1vAAAADgAAABR1bnJlY29nbml6ZWQgcGF5bG9hZAAAAA8AAAADdGFnAAAAAA0AAAAEAQIDBAAAABAAAAABAAAAAgAAAAMAAAAJAAAAAAAAAAEAAAAA",
+            "hostExpectation": "reject",
+            "resignedEntryXdr": "AAAAAgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAAAAAjKQAehIEAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABAx/0JPRc4V94u/ndGUndh5N+MGXVCJGZHLNPfdTUb422VZJTNx1OIHcG8McFQo9eas99iB1OUnUsBYjQ2rt9oCgAAAAAAAAABfOJApzIymnuZJuqHxc2dWEgNyrzohXHpb8qJHoHwah4AAAAHYXBwcm92ZQAAAAAEAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAADKTpAf8i9ABvgdQOZFckG4EAh/ZOqkbqIujlP5fG9rtAAAAAoAAAAAAAAAAAAAAAukO3QAAAAAAwAehIAAAAAEAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAh0cmFuc2ZlcgAAAAMAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAukO3QAAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAARtaW50AAAAAgAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAlidXJuX2Zyb20AAAAAAAADAAAAEgAAAAAAAAAAyk6QH/IvQAb4HUDmRXJBuBAIf2TqpG6iLo5T+Xxva7QAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAAAoAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAB48Xnt8xP1Hbyrt1/JI0OTpNoBYN5atX8j+9B2Owk4CMAAAAGc2V0dGxlAAAAAAACAAAAEQAAAAEAAAACAAAADwAAAARtZW1vAAAADgAAABR1bnJlY29nbml6ZWQgcGF5bG9hZAAAAA8AAAADdGFnAAAAAA0AAAAEAQIDBAAAABAAAAABAAAAAgAAAAMAAAAJAAAAAAAAAAEAAAAA",
+            "resignedSignatureHex": "c7fd093d173857de2efe7746527761e4df8c1975422466472cd3df75351be36d956494cdc753881dc1bc31c150a3d79ab3df620753949d4b01623436aedf680a"
+          }
+        },
+        {
+          "id": "v2-token-ops-synthetic--function",
+          "field": "function",
+          "description": "root function name replaced by a sibling function name",
+          "changedPaths": [
+            "rootInvocation.functionName"
+          ],
+          "mutatedAuthorization": {
+            "address": "GAGCWJVDANC44KKHZQ2AHLZELZOCINJME2BB4WI257P4LM7WC6OOGQ4N",
+            "credentialType": "addressV2",
+            "networkPassphrase": "Test SDF Network ; September 2015",
+            "nonce": "9001",
+            "signatureExpirationLedger": 2000000,
+            "rootInvocation": {
+              "contractId": "CB6OEQFHGIZJU64ZE3VIPRONTVMEQDOKXTUIK4PJN7FISHUB6BVB4ZB6",
+              "functionName": "approve_",
+              "args": [
+                "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                "AAAAEgAAAAAAAAAAyk6QH/IvQAb4HUDmRXJBuBAIf2TqpG6iLo5T+Xxva7Q=",
+                "AAAACgAAAAAAAAAAAAAAC6Q7dAA=",
+                "AAAAAwAehIA="
+              ],
+              "subInvocations": [
+                {
+                  "contractId": "CB6OEQFHGIZJU64ZE3VIPRONTVMEQDOKXTUIK4PJN7FISHUB6BVB4ZB6",
+                  "functionName": "transfer",
+                  "args": [
+                    "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                    "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                    "AAAACgAAAAAAAAAAAAAAAukO3QA="
+                  ],
+                  "subInvocations": []
+                },
+                {
+                  "contractId": "CB6OEQFHGIZJU64ZE3VIPRONTVMEQDOKXTUIK4PJN7FISHUB6BVB4ZB6",
+                  "functionName": "mint",
+                  "args": [
+                    "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                    "AAAACgAAAAAAAAAAAAAAAAAAACo="
+                  ],
+                  "subInvocations": []
+                },
+                {
+                  "contractId": "CB6OEQFHGIZJU64ZE3VIPRONTVMEQDOKXTUIK4PJN7FISHUB6BVB4ZB6",
+                  "functionName": "burn_from",
+                  "args": [
+                    "AAAAEgAAAAAAAAAAyk6QH/IvQAb4HUDmRXJBuBAIf2TqpG6iLo5T+Xxva7Q=",
+                    "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                    "AAAACgAAAAAAAAAAAAAAAAAAAAc="
+                  ],
+                  "subInvocations": []
+                },
+                {
+                  "contractId": "CDR4LZ5XZRH5I5XSV3OX6JENBZHJG2AFQN4WVVP4R7XUDWHMETQCG77H",
+                  "functionName": "settle",
+                  "args": [
+                    "AAAAEQAAAAEAAAACAAAADwAAAARtZW1vAAAADgAAABR1bnJlY29nbml6ZWQgcGF5bG9hZAAAAA8AAAADdGFnAAAAAA0AAAAEAQIDBA==",
+                    "AAAAEAAAAAEAAAACAAAAAwAAAAkAAAAAAAAAAQ=="
+                  ],
+                  "subInvocations": []
+                }
+              ]
+            }
+          },
+          "expected": {
+            "payloadHashChanged": true,
+            "mutatedPreimageXdr": "AAAACs7gMC1ZhE0yvcqRXIID3USzP7t+3BkFHqN6vt8o7NRyAAAAAAAAIykAHoSAAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAAAAAAAABfOJApzIymnuZJuqHxc2dWEgNyrzohXHpb8qJHoHwah4AAAAIYXBwcm92ZV8AAAAEAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAADKTpAf8i9ABvgdQOZFckG4EAh/ZOqkbqIujlP5fG9rtAAAAAoAAAAAAAAAAAAAAAukO3QAAAAAAwAehIAAAAAEAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAh0cmFuc2ZlcgAAAAMAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAukO3QAAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAARtaW50AAAAAgAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAlidXJuX2Zyb20AAAAAAAADAAAAEgAAAAAAAAAAyk6QH/IvQAb4HUDmRXJBuBAIf2TqpG6iLo5T+Xxva7QAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAAAoAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAB48Xnt8xP1Hbyrt1/JI0OTpNoBYN5atX8j+9B2Owk4CMAAAAGc2V0dGxlAAAAAAACAAAAEQAAAAEAAAACAAAADwAAAARtZW1vAAAADgAAABR1bnJlY29nbml6ZWQgcGF5bG9hZAAAAA8AAAADdGFnAAAAAA0AAAAEAQIDBAAAABAAAAABAAAAAgAAAAMAAAAJAAAAAAAAAAEAAAAA",
+            "mutatedPayloadHashHex": "5e0cb74b7909954fce9be4bb845b8fd33b33f5df49081832e5e5913f2e346ace",
+            "originalSignatureVerifies": false,
+            "entryXdrWithOriginalSignature": "AAAAAgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAAAAAjKQAehIAAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABADlOxO79ZX6ADWrrdP3Y7XP8SRGU1gwwsntcqGPOOyozBHhC+CsjTt7UvU+tnPE9Nxs/zR58tUnfG1G5AlscIAQAAAAAAAAABfOJApzIymnuZJuqHxc2dWEgNyrzohXHpb8qJHoHwah4AAAAIYXBwcm92ZV8AAAAEAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAADKTpAf8i9ABvgdQOZFckG4EAh/ZOqkbqIujlP5fG9rtAAAAAoAAAAAAAAAAAAAAAukO3QAAAAAAwAehIAAAAAEAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAh0cmFuc2ZlcgAAAAMAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAukO3QAAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAARtaW50AAAAAgAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAlidXJuX2Zyb20AAAAAAAADAAAAEgAAAAAAAAAAyk6QH/IvQAb4HUDmRXJBuBAIf2TqpG6iLo5T+Xxva7QAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAAAoAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAB48Xnt8xP1Hbyrt1/JI0OTpNoBYN5atX8j+9B2Owk4CMAAAAGc2V0dGxlAAAAAAACAAAAEQAAAAEAAAACAAAADwAAAARtZW1vAAAADgAAABR1bnJlY29nbml6ZWQgcGF5bG9hZAAAAA8AAAADdGFnAAAAAA0AAAAEAQIDBAAAABAAAAABAAAAAgAAAAMAAAAJAAAAAAAAAAEAAAAA",
+            "hostExpectation": "reject",
+            "resignedEntryXdr": "AAAAAgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAAAAAjKQAehIAAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABA0FznC007YKhcZQEDiuWAjcmI7RZSjg+AX2hnOxeyIiyiSSOnq0qhcyfac1xtHAzfMX0bLrZ97xFQHe31MRvBCgAAAAAAAAABfOJApzIymnuZJuqHxc2dWEgNyrzohXHpb8qJHoHwah4AAAAIYXBwcm92ZV8AAAAEAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAADKTpAf8i9ABvgdQOZFckG4EAh/ZOqkbqIujlP5fG9rtAAAAAoAAAAAAAAAAAAAAAukO3QAAAAAAwAehIAAAAAEAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAh0cmFuc2ZlcgAAAAMAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAukO3QAAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAARtaW50AAAAAgAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAlidXJuX2Zyb20AAAAAAAADAAAAEgAAAAAAAAAAyk6QH/IvQAb4HUDmRXJBuBAIf2TqpG6iLo5T+Xxva7QAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAAAoAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAB48Xnt8xP1Hbyrt1/JI0OTpNoBYN5atX8j+9B2Owk4CMAAAAGc2V0dGxlAAAAAAACAAAAEQAAAAEAAAACAAAADwAAAARtZW1vAAAADgAAABR1bnJlY29nbml6ZWQgcGF5bG9hZAAAAA8AAAADdGFnAAAAAA0AAAAEAQIDBAAAABAAAAABAAAAAgAAAAMAAAAJAAAAAAAAAAEAAAAA",
+            "resignedSignatureHex": "d05ce70b4d3b60a85c6501038ae5808dc988ed16528e0f805f68673b17b2222ca24923a7ab4aa17327da735c6d1c0cdf317d1b2eb67def11501dedf5311bc10a"
+          }
+        },
+        {
+          "id": "v2-token-ops-synthetic--contractId",
+          "field": "contractId",
+          "description": "root contract id replaced by another contract id",
+          "changedPaths": [
+            "rootInvocation.contractId"
+          ],
+          "mutatedAuthorization": {
+            "address": "GAGCWJVDANC44KKHZQ2AHLZELZOCINJME2BB4WI257P4LM7WC6OOGQ4N",
+            "credentialType": "addressV2",
+            "networkPassphrase": "Test SDF Network ; September 2015",
+            "nonce": "9001",
+            "signatureExpirationLedger": 2000000,
+            "rootInvocation": {
+              "contractId": "CCWBRSVBXXPL57HC7DOPP5QZZ37WDP2YZWREFOHBOEZXVBNOUVRCUFV3",
+              "functionName": "approve",
+              "args": [
+                "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                "AAAAEgAAAAAAAAAAyk6QH/IvQAb4HUDmRXJBuBAIf2TqpG6iLo5T+Xxva7Q=",
+                "AAAACgAAAAAAAAAAAAAAC6Q7dAA=",
+                "AAAAAwAehIA="
+              ],
+              "subInvocations": [
+                {
+                  "contractId": "CB6OEQFHGIZJU64ZE3VIPRONTVMEQDOKXTUIK4PJN7FISHUB6BVB4ZB6",
+                  "functionName": "transfer",
+                  "args": [
+                    "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                    "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                    "AAAACgAAAAAAAAAAAAAAAukO3QA="
+                  ],
+                  "subInvocations": []
+                },
+                {
+                  "contractId": "CB6OEQFHGIZJU64ZE3VIPRONTVMEQDOKXTUIK4PJN7FISHUB6BVB4ZB6",
+                  "functionName": "mint",
+                  "args": [
+                    "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                    "AAAACgAAAAAAAAAAAAAAAAAAACo="
+                  ],
+                  "subInvocations": []
+                },
+                {
+                  "contractId": "CB6OEQFHGIZJU64ZE3VIPRONTVMEQDOKXTUIK4PJN7FISHUB6BVB4ZB6",
+                  "functionName": "burn_from",
+                  "args": [
+                    "AAAAEgAAAAAAAAAAyk6QH/IvQAb4HUDmRXJBuBAIf2TqpG6iLo5T+Xxva7Q=",
+                    "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                    "AAAACgAAAAAAAAAAAAAAAAAAAAc="
+                  ],
+                  "subInvocations": []
+                },
+                {
+                  "contractId": "CDR4LZ5XZRH5I5XSV3OX6JENBZHJG2AFQN4WVVP4R7XUDWHMETQCG77H",
+                  "functionName": "settle",
+                  "args": [
+                    "AAAAEQAAAAEAAAACAAAADwAAAARtZW1vAAAADgAAABR1bnJlY29nbml6ZWQgcGF5bG9hZAAAAA8AAAADdGFnAAAAAA0AAAAEAQIDBA==",
+                    "AAAAEAAAAAEAAAACAAAAAwAAAAkAAAAAAAAAAQ=="
+                  ],
+                  "subInvocations": []
+                }
+              ]
+            }
+          },
+          "expected": {
+            "payloadHashChanged": true,
+            "mutatedPreimageXdr": "AAAACs7gMC1ZhE0yvcqRXIID3USzP7t+3BkFHqN6vt8o7NRyAAAAAAAAIykAHoSAAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAAAAAAAABrBjKob3evvzi+Nz39hnO/2G/WM2iQrjhcTN6ha6lYioAAAAHYXBwcm92ZQAAAAAEAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAADKTpAf8i9ABvgdQOZFckG4EAh/ZOqkbqIujlP5fG9rtAAAAAoAAAAAAAAAAAAAAAukO3QAAAAAAwAehIAAAAAEAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAh0cmFuc2ZlcgAAAAMAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAukO3QAAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAARtaW50AAAAAgAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAlidXJuX2Zyb20AAAAAAAADAAAAEgAAAAAAAAAAyk6QH/IvQAb4HUDmRXJBuBAIf2TqpG6iLo5T+Xxva7QAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAAAoAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAB48Xnt8xP1Hbyrt1/JI0OTpNoBYN5atX8j+9B2Owk4CMAAAAGc2V0dGxlAAAAAAACAAAAEQAAAAEAAAACAAAADwAAAARtZW1vAAAADgAAABR1bnJlY29nbml6ZWQgcGF5bG9hZAAAAA8AAAADdGFnAAAAAA0AAAAEAQIDBAAAABAAAAABAAAAAgAAAAMAAAAJAAAAAAAAAAEAAAAA",
+            "mutatedPayloadHashHex": "c09ca2477d6a873cca0e34772d90aacc8eba96028c64261b8b1efb1fcbf25e50",
+            "originalSignatureVerifies": false,
+            "entryXdrWithOriginalSignature": "AAAAAgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAAAAAjKQAehIAAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABADlOxO79ZX6ADWrrdP3Y7XP8SRGU1gwwsntcqGPOOyozBHhC+CsjTt7UvU+tnPE9Nxs/zR58tUnfG1G5AlscIAQAAAAAAAAABrBjKob3evvzi+Nz39hnO/2G/WM2iQrjhcTN6ha6lYioAAAAHYXBwcm92ZQAAAAAEAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAADKTpAf8i9ABvgdQOZFckG4EAh/ZOqkbqIujlP5fG9rtAAAAAoAAAAAAAAAAAAAAAukO3QAAAAAAwAehIAAAAAEAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAh0cmFuc2ZlcgAAAAMAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAukO3QAAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAARtaW50AAAAAgAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAlidXJuX2Zyb20AAAAAAAADAAAAEgAAAAAAAAAAyk6QH/IvQAb4HUDmRXJBuBAIf2TqpG6iLo5T+Xxva7QAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAAAoAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAB48Xnt8xP1Hbyrt1/JI0OTpNoBYN5atX8j+9B2Owk4CMAAAAGc2V0dGxlAAAAAAACAAAAEQAAAAEAAAACAAAADwAAAARtZW1vAAAADgAAABR1bnJlY29nbml6ZWQgcGF5bG9hZAAAAA8AAAADdGFnAAAAAA0AAAAEAQIDBAAAABAAAAABAAAAAgAAAAMAAAAJAAAAAAAAAAEAAAAA",
+            "hostExpectation": "reject",
+            "resignedEntryXdr": "AAAAAgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAAAAAjKQAehIAAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABACJjKGQIcH93d0XsUDj1kF0yslOsu8eH8Mm9OS1ZXRL1Rb7I6W0JsvyYl1rK7ZdZUHHDTOBJx9WX38fY06f8TBwAAAAAAAAABrBjKob3evvzi+Nz39hnO/2G/WM2iQrjhcTN6ha6lYioAAAAHYXBwcm92ZQAAAAAEAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAADKTpAf8i9ABvgdQOZFckG4EAh/ZOqkbqIujlP5fG9rtAAAAAoAAAAAAAAAAAAAAAukO3QAAAAAAwAehIAAAAAEAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAh0cmFuc2ZlcgAAAAMAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAukO3QAAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAARtaW50AAAAAgAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAlidXJuX2Zyb20AAAAAAAADAAAAEgAAAAAAAAAAyk6QH/IvQAb4HUDmRXJBuBAIf2TqpG6iLo5T+Xxva7QAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAAAoAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAB48Xnt8xP1Hbyrt1/JI0OTpNoBYN5atX8j+9B2Owk4CMAAAAGc2V0dGxlAAAAAAACAAAAEQAAAAEAAAACAAAADwAAAARtZW1vAAAADgAAABR1bnJlY29nbml6ZWQgcGF5bG9hZAAAAA8AAAADdGFnAAAAAA0AAAAEAQIDBAAAABAAAAABAAAAAgAAAAMAAAAJAAAAAAAAAAEAAAAA",
+            "resignedSignatureHex": "0898ca19021c1fddddd17b140e3d64174cac94eb2ef1e1fc326f4e4b565744bd516fb23a5b426cbf2625d6b2bb65d6541c70d3381271f565f7f1f634e9ff1307"
+          }
+        }
+      ]
+    },
+    {
+      "id": "legacy-pubnet-historical-transfer",
+      "title": "Legacy ADDRESS bound to the public-network passphrase (historical-style entry)",
+      "labels": [
+        "synthetic",
+        "historical",
+        "not-host-verified"
+      ],
+      "signer": {
+        "publicKey": "GAGCWJVDANC44KKHZQ2AHLZELZOCINJME2BB4WI257P4LM7WC6OOGQ4N",
+        "derivation": {
+          "scheme": "sha256-of-utf8-phrase",
+          "phrase": "authmatrix test vector signer 1: public test phrase, key has no value",
+          "note": "Seed = SHA-256(UTF-8 phrase). Public, test-only key; it protects nothing and must never hold value on any network."
+        }
+      },
+      "authorization": {
+        "address": "GAGCWJVDANC44KKHZQ2AHLZELZOCINJME2BB4WI257P4LM7WC6OOGQ4N",
+        "credentialType": "address",
+        "networkPassphrase": "Public Global Stellar Network ; September 2015",
+        "nonce": "123456789",
+        "signatureExpirationLedger": 52000000,
+        "rootInvocation": {
+          "contractId": "CB6OEQFHGIZJU64ZE3VIPRONTVMEQDOKXTUIK4PJN7FISHUB6BVB4ZB6",
+          "functionName": "transfer",
+          "args": [
+            "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+            "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+            "AAAACgAAAAAAAAAAAAAAADuaygA="
+          ],
+          "subInvocations": []
+        }
+      },
+      "expected": {
+        "preimageType": "envelopeTypeSorobanAuthorization",
+        "preimageXdr": "AAAACXrDOZdUTjF10ma9AiQ5sizbFlCMARY/JuXLKj4QRal5AAAAAAdbzRUDGXUAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAh0cmFuc2ZlcgAAAAMAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAADuaygAAAAAA",
+        "payloadHashHex": "f608fec0fa08cc3891a804e4fd37073599c768bb859f7780e0f7ac157bd21083",
+        "signatureHex": "c1db6d40378774d4bd56937367dbcc65da09fe89b6859295df96cf533795597634c7279f0991d46c713d3d561d7da06ef26024dbe6595cf34064d2393a036e0e",
+        "unsignedEntryXdr": "AAAAAQAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAAB1vNFQAAAAAAAAAQAAAAAQAAAAAAAAAAAAAAAXziQKcyMpp7mSbqh8XNnVhIDcq86IVx6W/KiR6B8GoeAAAACHRyYW5zZmVyAAAAAwAAABIAAAAAAAAAAAwrJqMDRc4pR8w0A68kXlwkNSwmgh5ZGu/fxbP2F5zjAAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcYAAAAKAAAAAAAAAAAAAAAAO5rKAAAAAAA=",
+        "signedEntryXdr": "AAAAAQAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAAB1vNFQMZdQAAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABAwdttQDeHdNS9VpNzZ9vMZdoJ/om2hZKV35bPUzeVWXY0xyefCZHUbHE9PVYdfaBu8mAk2+ZZXPNAZNI5OgNuDgAAAAAAAAABfOJApzIymnuZJuqHxc2dWEgNyrzohXHpb8qJHoHwah4AAAAIdHJhbnNmZXIAAAADAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAAAKU+fZpzT8HBNGlwfd+rXQyrImSeMRNBy7c/mFSQ0NxgAAAAoAAAAAAAAAAAAAAAA7msoAAAAAAA=="
+      },
+      "compatibility": {
+        "protocol": {
+          "min": 20,
+          "max": null
+        },
+        "status": "historical-unverified",
+        "note": "Public-network passphrase. AuthMatrix never contacts mainnet, so acceptance there is NOT established; do not read this as valid on any network.",
+        "hostVerified": []
+      },
+      "mutations": [
+        {
+          "id": "legacy-pubnet-historical-transfer--recipient",
+          "field": "recipient",
+          "description": "recipient address replaced everywhere it appears in the invocation tree",
+          "changedPaths": [
+            "rootInvocation.args[1]"
+          ],
+          "mutatedAuthorization": {
+            "address": "GAGCWJVDANC44KKHZQ2AHLZELZOCINJME2BB4WI257P4LM7WC6OOGQ4N",
+            "credentialType": "address",
+            "networkPassphrase": "Public Global Stellar Network ; September 2015",
+            "nonce": "123456789",
+            "signatureExpirationLedger": 52000000,
+            "rootInvocation": {
+              "contractId": "CB6OEQFHGIZJU64ZE3VIPRONTVMEQDOKXTUIK4PJN7FISHUB6BVB4ZB6",
+              "functionName": "transfer",
+              "args": [
+                "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                "AAAAEgAAAAAAAAAAq43XkLwOrbmsnuF0yyyzSqvAy5lioFDVZ9oCCLGc2Cw=",
+                "AAAACgAAAAAAAAAAAAAAADuaygA="
+              ],
+              "subInvocations": []
+            }
+          },
+          "expected": {
+            "payloadHashChanged": true,
+            "mutatedPreimageXdr": "AAAACXrDOZdUTjF10ma9AiQ5sizbFlCMARY/JuXLKj4QRal5AAAAAAdbzRUDGXUAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAh0cmFuc2ZlcgAAAAMAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAKuN15C8Dq25rJ7hdMsss0qrwMuZYqBQ1WfaAgixnNgsAAAACgAAAAAAAAAAAAAAADuaygAAAAAA",
+            "mutatedPayloadHashHex": "c5f5223e63e81dc3281af5cf832c94db75246e056834717b4d4d95d61d0bb5cb",
+            "originalSignatureVerifies": false,
+            "entryXdrWithOriginalSignature": "AAAAAQAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAAB1vNFQMZdQAAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABAwdttQDeHdNS9VpNzZ9vMZdoJ/om2hZKV35bPUzeVWXY0xyefCZHUbHE9PVYdfaBu8mAk2+ZZXPNAZNI5OgNuDgAAAAAAAAABfOJApzIymnuZJuqHxc2dWEgNyrzohXHpb8qJHoHwah4AAAAIdHJhbnNmZXIAAAADAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAACrjdeQvA6tuaye4XTLLLNKq8DLmWKgUNVn2gIIsZzYLAAAAAoAAAAAAAAAAAAAAAA7msoAAAAAAA==",
+            "hostExpectation": "reject",
+            "resignedEntryXdr": "AAAAAQAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAAB1vNFQMZdQAAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABA1mM9KtC4KsOwa+8X/vIhuKeOjgsLxlmJP28jJ+Md69nl9XHtB90nsbvz0CXBDwTuSi7HaJ3FWCff+NBwj3+vCgAAAAAAAAABfOJApzIymnuZJuqHxc2dWEgNyrzohXHpb8qJHoHwah4AAAAIdHJhbnNmZXIAAAADAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAACrjdeQvA6tuaye4XTLLLNKq8DLmWKgUNVn2gIIsZzYLAAAAAoAAAAAAAAAAAAAAAA7msoAAAAAAA==",
+            "resignedSignatureHex": "d6633d2ad0b82ac3b06bef17fef221b8a78e8e0b0bc659893f6f2327e31debd9e5f571ed07dd27b1bbf3d025c10f04ee4a2ec7689dc55827dff8d0708f7faf0a"
+          }
+        },
+        {
+          "id": "legacy-pubnet-historical-transfer--amount",
+          "field": "amount",
+          "description": "amount multiplied by ten everywhere it appears in the invocation tree",
+          "changedPaths": [
+            "rootInvocation.args[2]"
+          ],
+          "mutatedAuthorization": {
+            "address": "GAGCWJVDANC44KKHZQ2AHLZELZOCINJME2BB4WI257P4LM7WC6OOGQ4N",
+            "credentialType": "address",
+            "networkPassphrase": "Public Global Stellar Network ; September 2015",
+            "nonce": "123456789",
+            "signatureExpirationLedger": 52000000,
+            "rootInvocation": {
+              "contractId": "CB6OEQFHGIZJU64ZE3VIPRONTVMEQDOKXTUIK4PJN7FISHUB6BVB4ZB6",
+              "functionName": "transfer",
+              "args": [
+                "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                "AAAACgAAAAAAAAAAAAAAAlQL5AA="
+              ],
+              "subInvocations": []
+            }
+          },
+          "expected": {
+            "payloadHashChanged": true,
+            "mutatedPreimageXdr": "AAAACXrDOZdUTjF10ma9AiQ5sizbFlCMARY/JuXLKj4QRal5AAAAAAdbzRUDGXUAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAh0cmFuc2ZlcgAAAAMAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAAlQL5AAAAAAA",
+            "mutatedPayloadHashHex": "51af122edab39803f3b2adcb46231d1c9c04a0f1b9fa80e707a82d3d494d23a0",
+            "originalSignatureVerifies": false,
+            "entryXdrWithOriginalSignature": "AAAAAQAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAAB1vNFQMZdQAAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABAwdttQDeHdNS9VpNzZ9vMZdoJ/om2hZKV35bPUzeVWXY0xyefCZHUbHE9PVYdfaBu8mAk2+ZZXPNAZNI5OgNuDgAAAAAAAAABfOJApzIymnuZJuqHxc2dWEgNyrzohXHpb8qJHoHwah4AAAAIdHJhbnNmZXIAAAADAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAAAKU+fZpzT8HBNGlwfd+rXQyrImSeMRNBy7c/mFSQ0NxgAAAAoAAAAAAAAAAAAAAAJUC+QAAAAAAA==",
+            "hostExpectation": "reject",
+            "resignedEntryXdr": "AAAAAQAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAAB1vNFQMZdQAAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABAr0ksWmlCTzyU4y/TiVOdx28I+Udingdtf21ZGQStyT87/rZeVU2SaLDfqVckiNXlFVhC5Bd2cDJFU2XmrBrRDwAAAAAAAAABfOJApzIymnuZJuqHxc2dWEgNyrzohXHpb8qJHoHwah4AAAAIdHJhbnNmZXIAAAADAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAAAKU+fZpzT8HBNGlwfd+rXQyrImSeMRNBy7c/mFSQ0NxgAAAAoAAAAAAAAAAAAAAAJUC+QAAAAAAA==",
+            "resignedSignatureHex": "af492c5a69424f3c94e32fd389539dc76f08f947629e076d7f6d591904adc93f3bfeb65e554d9268b0dfa9572488d5e5155842e417767032455365e6ac1ad10f"
+          }
+        },
+        {
+          "id": "legacy-pubnet-historical-transfer--network",
+          "field": "network",
+          "description": "network passphrase replaced (entry signed for a different network)",
+          "changedPaths": [
+            "networkPassphrase"
+          ],
+          "mutatedAuthorization": {
+            "address": "GAGCWJVDANC44KKHZQ2AHLZELZOCINJME2BB4WI257P4LM7WC6OOGQ4N",
+            "credentialType": "address",
+            "networkPassphrase": "Test SDF Network ; September 2015",
+            "nonce": "123456789",
+            "signatureExpirationLedger": 52000000,
+            "rootInvocation": {
+              "contractId": "CB6OEQFHGIZJU64ZE3VIPRONTVMEQDOKXTUIK4PJN7FISHUB6BVB4ZB6",
+              "functionName": "transfer",
+              "args": [
+                "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                "AAAACgAAAAAAAAAAAAAAADuaygA="
+              ],
+              "subInvocations": []
+            }
+          },
+          "expected": {
+            "payloadHashChanged": true,
+            "mutatedPreimageXdr": "AAAACc7gMC1ZhE0yvcqRXIID3USzP7t+3BkFHqN6vt8o7NRyAAAAAAdbzRUDGXUAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAh0cmFuc2ZlcgAAAAMAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAADuaygAAAAAA",
+            "mutatedPayloadHashHex": "3fc8e3379aa585a1c4a69e3a6f18028d945e0e3e0e2bcc6adc5e403445ebc84c",
+            "originalSignatureVerifies": false,
+            "entryXdrWithOriginalSignature": "AAAAAQAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAAB1vNFQMZdQAAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABAwdttQDeHdNS9VpNzZ9vMZdoJ/om2hZKV35bPUzeVWXY0xyefCZHUbHE9PVYdfaBu8mAk2+ZZXPNAZNI5OgNuDgAAAAAAAAABfOJApzIymnuZJuqHxc2dWEgNyrzohXHpb8qJHoHwah4AAAAIdHJhbnNmZXIAAAADAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAAAKU+fZpzT8HBNGlwfd+rXQyrImSeMRNBy7c/mFSQ0NxgAAAAoAAAAAAAAAAAAAAAA7msoAAAAAAA==",
+            "hostExpectation": "reject",
+            "resignedEntryXdr": "AAAAAQAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAAB1vNFQMZdQAAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABAaWU107e+LUkhQi4KGfIyPm8Xv0B10t7t8mYJ8lnG+hgbipw3Xcv3sD3VM4UZqMc+0YII18uLMFwKR028v52eDwAAAAAAAAABfOJApzIymnuZJuqHxc2dWEgNyrzohXHpb8qJHoHwah4AAAAIdHJhbnNmZXIAAAADAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAAAKU+fZpzT8HBNGlwfd+rXQyrImSeMRNBy7c/mFSQ0NxgAAAAoAAAAAAAAAAAAAAAA7msoAAAAAAA==",
+            "resignedSignatureHex": "696535d3b7be2d4921422e0a19f2323e6f17bf4075d2deedf26609f259c6fa181b8a9c375dcbf7b03dd5338519a8c73ed18208d7cb8b305c0a474dbcbf9d9e0f"
+          }
+        },
+        {
+          "id": "legacy-pubnet-historical-transfer--nonce",
+          "field": "nonce",
+          "description": "nonce incremented by one",
+          "changedPaths": [
+            "nonce"
+          ],
+          "mutatedAuthorization": {
+            "address": "GAGCWJVDANC44KKHZQ2AHLZELZOCINJME2BB4WI257P4LM7WC6OOGQ4N",
+            "credentialType": "address",
+            "networkPassphrase": "Public Global Stellar Network ; September 2015",
+            "nonce": "123456790",
+            "signatureExpirationLedger": 52000000,
+            "rootInvocation": {
+              "contractId": "CB6OEQFHGIZJU64ZE3VIPRONTVMEQDOKXTUIK4PJN7FISHUB6BVB4ZB6",
+              "functionName": "transfer",
+              "args": [
+                "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                "AAAACgAAAAAAAAAAAAAAADuaygA="
+              ],
+              "subInvocations": []
+            }
+          },
+          "expected": {
+            "payloadHashChanged": true,
+            "mutatedPreimageXdr": "AAAACXrDOZdUTjF10ma9AiQ5sizbFlCMARY/JuXLKj4QRal5AAAAAAdbzRYDGXUAAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAh0cmFuc2ZlcgAAAAMAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAADuaygAAAAAA",
+            "mutatedPayloadHashHex": "faf8e9036d0d5d9163edb29ed31c0dba226c49055df368394d3f9072f1c6f516",
+            "originalSignatureVerifies": false,
+            "entryXdrWithOriginalSignature": "AAAAAQAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAAB1vNFgMZdQAAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABAwdttQDeHdNS9VpNzZ9vMZdoJ/om2hZKV35bPUzeVWXY0xyefCZHUbHE9PVYdfaBu8mAk2+ZZXPNAZNI5OgNuDgAAAAAAAAABfOJApzIymnuZJuqHxc2dWEgNyrzohXHpb8qJHoHwah4AAAAIdHJhbnNmZXIAAAADAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAAAKU+fZpzT8HBNGlwfd+rXQyrImSeMRNBy7c/mFSQ0NxgAAAAoAAAAAAAAAAAAAAAA7msoAAAAAAA==",
+            "hostExpectation": "reject",
+            "resignedEntryXdr": "AAAAAQAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAAB1vNFgMZdQAAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABACh9yzJI9Ovbc+qo+tDrlxfE3T7liSM+UM/GrSLsapcGgpVuYEleHgMNEzlgp8MkC/uDoVek9Cajv1/QCG+1GBwAAAAAAAAABfOJApzIymnuZJuqHxc2dWEgNyrzohXHpb8qJHoHwah4AAAAIdHJhbnNmZXIAAAADAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAAAKU+fZpzT8HBNGlwfd+rXQyrImSeMRNBy7c/mFSQ0NxgAAAAoAAAAAAAAAAAAAAAA7msoAAAAAAA==",
+            "resignedSignatureHex": "0a1f72cc923d3af6dcfaaa3eb43ae5c5f1374fb96248cf9433f1ab48bb1aa5c1a0a55b9812578780c344ce5829f0c902fee0e855e93d09a8efd7f4021bed4607"
+          }
+        },
+        {
+          "id": "legacy-pubnet-historical-transfer--expiry",
+          "field": "expiry",
+          "description": "signature expiration ledger incremented by one",
+          "changedPaths": [
+            "signatureExpirationLedger"
+          ],
+          "mutatedAuthorization": {
+            "address": "GAGCWJVDANC44KKHZQ2AHLZELZOCINJME2BB4WI257P4LM7WC6OOGQ4N",
+            "credentialType": "address",
+            "networkPassphrase": "Public Global Stellar Network ; September 2015",
+            "nonce": "123456789",
+            "signatureExpirationLedger": 52000001,
+            "rootInvocation": {
+              "contractId": "CB6OEQFHGIZJU64ZE3VIPRONTVMEQDOKXTUIK4PJN7FISHUB6BVB4ZB6",
+              "functionName": "transfer",
+              "args": [
+                "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                "AAAACgAAAAAAAAAAAAAAADuaygA="
+              ],
+              "subInvocations": []
+            }
+          },
+          "expected": {
+            "payloadHashChanged": true,
+            "mutatedPreimageXdr": "AAAACXrDOZdUTjF10ma9AiQ5sizbFlCMARY/JuXLKj4QRal5AAAAAAdbzRUDGXUBAAAAAAAAAAF84kCnMjKae5km6ofFzZ1YSA3KvOiFcelvyokegfBqHgAAAAh0cmFuc2ZlcgAAAAMAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAADuaygAAAAAA",
+            "mutatedPayloadHashHex": "f65e40fe48133c885e220baf91d846cad861349ef0451f34e2ab04a701c987b6",
+            "originalSignatureVerifies": false,
+            "entryXdrWithOriginalSignature": "AAAAAQAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAAB1vNFQMZdQEAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABAwdttQDeHdNS9VpNzZ9vMZdoJ/om2hZKV35bPUzeVWXY0xyefCZHUbHE9PVYdfaBu8mAk2+ZZXPNAZNI5OgNuDgAAAAAAAAABfOJApzIymnuZJuqHxc2dWEgNyrzohXHpb8qJHoHwah4AAAAIdHJhbnNmZXIAAAADAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAAAKU+fZpzT8HBNGlwfd+rXQyrImSeMRNBy7c/mFSQ0NxgAAAAoAAAAAAAAAAAAAAAA7msoAAAAAAA==",
+            "hostExpectation": "reject",
+            "resignedEntryXdr": "AAAAAQAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAAB1vNFQMZdQEAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABAsBttfBc5RM6S4YdjQVwSVEbmKvhW13veZvKFXa9t0KlzuE7TzpdUJbWAGu588I1N06MHrj2ud2bWk79OYd9OCQAAAAAAAAABfOJApzIymnuZJuqHxc2dWEgNyrzohXHpb8qJHoHwah4AAAAIdHJhbnNmZXIAAAADAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAAAKU+fZpzT8HBNGlwfd+rXQyrImSeMRNBy7c/mFSQ0NxgAAAAoAAAAAAAAAAAAAAAA7msoAAAAAAA==",
+            "resignedSignatureHex": "b01b6d7c173944ce92e18763415c125446e62af856d77bde66f2855daf6dd0a973b84ed3ce975425b5801aee7cf08d4dd3a307ae3dae7766d693bf4e61df4e09"
+          }
+        },
+        {
+          "id": "legacy-pubnet-historical-transfer--contractId",
+          "field": "contractId",
+          "description": "root contract id replaced by another contract id",
+          "changedPaths": [
+            "rootInvocation.contractId"
+          ],
+          "mutatedAuthorization": {
+            "address": "GAGCWJVDANC44KKHZQ2AHLZELZOCINJME2BB4WI257P4LM7WC6OOGQ4N",
+            "credentialType": "address",
+            "networkPassphrase": "Public Global Stellar Network ; September 2015",
+            "nonce": "123456789",
+            "signatureExpirationLedger": 52000000,
+            "rootInvocation": {
+              "contractId": "CCWBRSVBXXPL57HC7DOPP5QZZ37WDP2YZWREFOHBOEZXVBNOUVRCUFV3",
+              "functionName": "transfer",
+              "args": [
+                "AAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOM=",
+                "AAAAEgAAAAAAAAAAClPn2ac0/BwTRpcH3fq10MqyJknjETQcu3P5hUkNDcY=",
+                "AAAACgAAAAAAAAAAAAAAADuaygA="
+              ],
+              "subInvocations": []
+            }
+          },
+          "expected": {
+            "payloadHashChanged": true,
+            "mutatedPreimageXdr": "AAAACXrDOZdUTjF10ma9AiQ5sizbFlCMARY/JuXLKj4QRal5AAAAAAdbzRUDGXUAAAAAAAAAAAGsGMqhvd6+/OL43Pf2Gc7/Yb9YzaJCuOFxM3qFrqViKgAAAAh0cmFuc2ZlcgAAAAMAAAASAAAAAAAAAAAMKyajA0XOKUfMNAOvJF5cJDUsJoIeWRrv38Wz9hec4wAAABIAAAAAAAAAAApT59mnNPwcE0aXB936tdDKsiZJ4xE0HLtz+YVJDQ3GAAAACgAAAAAAAAAAAAAAADuaygAAAAAA",
+            "mutatedPayloadHashHex": "f96d20efb43a881b1c39feae028e3bc34b771a8987d3ad98e0eda54971177670",
+            "originalSignatureVerifies": false,
+            "entryXdrWithOriginalSignature": "AAAAAQAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAAB1vNFQMZdQAAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABAwdttQDeHdNS9VpNzZ9vMZdoJ/om2hZKV35bPUzeVWXY0xyefCZHUbHE9PVYdfaBu8mAk2+ZZXPNAZNI5OgNuDgAAAAAAAAABrBjKob3evvzi+Nz39hnO/2G/WM2iQrjhcTN6ha6lYioAAAAIdHJhbnNmZXIAAAADAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAAAKU+fZpzT8HBNGlwfd+rXQyrImSeMRNBy7c/mFSQ0NxgAAAAoAAAAAAAAAAAAAAAA7msoAAAAAAA==",
+            "hostExpectation": "reject",
+            "resignedEntryXdr": "AAAAAQAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAAB1vNFQMZdQAAAAAQAAAAAQAAAAEAAAARAAAAAQAAAAIAAAAPAAAACnB1YmxpY19rZXkAAAAAAA0AAAAgDCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAAPAAAACXNpZ25hdHVyZQAAAAAAAA0AAABADeviV979PQkA99QaOjOU/Tz+E2QBgHt4fy/munsmZBhzGIHhjvw3Ui1Z/ADn//c5WhTDwwqshdMIhHRHciIiAAAAAAAAAAABrBjKob3evvzi+Nz39hnO/2G/WM2iQrjhcTN6ha6lYioAAAAIdHJhbnNmZXIAAAADAAAAEgAAAAAAAAAADCsmowNFzilHzDQDryReXCQ1LCaCHlka79/Fs/YXnOMAAAASAAAAAAAAAAAKU+fZpzT8HBNGlwfd+rXQyrImSeMRNBy7c/mFSQ0NxgAAAAoAAAAAAAAAAAAAAAA7msoAAAAAAA==",
+            "resignedSignatureHex": "0debe257defd3d0900f7d41a3a3394fd3cfe136401807b787f2fe6ba7b266418731881e18efc37522d59fc00e7fff7395a14c3c30aac85d30884744772222200"
+          }
+        }
+      ]
+    }
+  ]
+}
