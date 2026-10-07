@@ -1,0 +1,20 @@
+[package]
+name = "authmatrix-adapter-rust"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+publish = false
+description = "AuthMatrix adapter B: Rust on stellar-xdr + sha2 + ed25519-dalek. Shares no code with the TypeScript adapter or @stellar/stellar-sdk."
+
+[dependencies]
+stellar-xdr = { version = "=28.0.1", default-features = true, features = ["base64"] }
+sha2 = "=0.10.9"
+ed25519-dalek = "=2.2.0"
+serde_json = "=1.0.151"
+hex = "=0.4.3"
+base64 = "=0.22.1"
+
+[dev-dependencies]
+
+[profile.release]
+opt-level = 2
