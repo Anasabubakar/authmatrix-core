@@ -1,0 +1,69 @@
+warning: `panic` is ambiguous
+  --> contracts/outer/src/test.rs:70:18
+   |
+70 |         other => panic!("signer is not a classic account: {other:?}"),
+   |                  ^^^^^ ambiguous name
+   |
+   = note: ambiguous because of a conflict between a name from a glob import and an outer scope during import or macro resolution
+note: `panic` could refer to the macro imported here
+  --> contracts/outer/src/test.rs:17:5
+   |
+17 | use std::prelude::v1::*;
+   |     ^^^^^^^^^^^^^^^^^^^
+   = help: consider adding an explicit import of `panic` to disambiguate
+   = help: or use `self::panic` to refer to this macro unambiguously
+note: `panic` could also refer to a macro from prelude
+  --> /rustc/ac68faa20c58cbccd01ee7208bf3b6e93a7d7f96/library/core/src/prelude/mod.rs:41:12
+   = warning: this was previously accepted by the compiler but is being phased out; it will become a hard error in a future release!
+   = note: for more information, see issue #147319 <https://github.com/rust-lang/rust/issues/147319>
+   = note: `#[warn(ambiguous_panic_imports)]` (part of `#[warn(future_incompatible)]`) on by default
+
+warning: `authmatrix-outer` (lib test) generated 1 warning
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.17s
+     Running unittests src/lib.rs (/home/gamp/.cache/stellar-cargo-target/debug/deps/authmatrix_inner-72bcd3b30269096b)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (/home/gamp/.cache/stellar-cargo-target/debug/deps/authmatrix_outer-0cdc57e21e762873)
+
+running 1 test
+v2-nested-relay-testnet            original         expected accept -> accepted returned 12500000000
+v2-nested-relay-testnet            control-no-auth  expected reject -> rejected Ok(Error(Context, InvalidAction)) [diagnostic: no 'failed account authentication' event (no entry matched, or call failed elsewhere)]
+v2-nested-relay-testnet            control-unsigned expected reject -> rejected Ok(Error(Context, InvalidAction)) [diagnostic: failed account authentication (entry matched the call; signature/expiry/nonce check refused it)]
+v2-nested-relay-testnet            recipient        expected reject -> rejected Ok(Error(Context, InvalidAction)) [diagnostic: failed account authentication (entry matched the call; signature/expiry/nonce check refused it)]
+v2-nested-relay-testnet            recipient-resigned expected accept -> accepted returned 12500000000
+v2-nested-relay-testnet            amount           expected reject -> rejected Ok(Error(Context, InvalidAction)) [diagnostic: failed account authentication (entry matched the call; signature/expiry/nonce check refused it)]
+v2-nested-relay-testnet            amount-resigned  expected accept -> accepted returned 125000000000
+v2-nested-relay-testnet            network          expected reject -> rejected Ok(Error(Context, InvalidAction)) [diagnostic: failed account authentication (entry matched the call; signature/expiry/nonce check refused it)]
+v2-nested-relay-testnet            network-resigned expected accept -> accepted returned 12500000000
+v2-nested-relay-testnet            nonce            expected reject -> rejected Ok(Error(Context, InvalidAction)) [diagnostic: failed account authentication (entry matched the call; signature/expiry/nonce check refused it)]
+v2-nested-relay-testnet            nonce-resigned   expected accept -> accepted returned 12500000000
+v2-nested-relay-testnet            expiry           expected reject -> rejected Ok(Error(Context, InvalidAction)) [diagnostic: failed account authentication (entry matched the call; signature/expiry/nonce check refused it)]
+v2-nested-relay-testnet            expiry-resigned  expected accept -> accepted returned 12500000000
+v2-nested-relay-testnet            function         expected reject -> rejected Ok(Error(Context, InvalidAction)) [diagnostic: failed account authentication (entry matched the call; signature/expiry/nonce check refused it)]
+v2-nested-relay-testnet            function-resigned expected accept -> accepted returned 12500000000
+v2-nested-relay-testnet            contractId       expected reject -> rejected Ok(Error(Context, InvalidAction)) [diagnostic: failed account authentication (entry matched the call; signature/expiry/nonce check refused it)]
+v2-nested-relay-testnet            contractId-resigned expected accept -> accepted returned 12500000000
+legacy-nested-relay-testnet        original         expected accept -> accepted returned 12500000000
+legacy-nested-relay-testnet        control-no-auth  expected reject -> rejected Ok(Error(Context, InvalidAction)) [diagnostic: no 'failed account authentication' event (no entry matched, or call failed elsewhere)]
+legacy-nested-relay-testnet        control-unsigned expected reject -> rejected Ok(Error(Context, InvalidAction)) [diagnostic: failed account authentication (entry matched the call; signature/expiry/nonce check refused it)]
+legacy-nested-relay-testnet        recipient        expected reject -> rejected Ok(Error(Context, InvalidAction)) [diagnostic: failed account authentication (entry matched the call; signature/expiry/nonce check refused it)]
+legacy-nested-relay-testnet        recipient-resigned expected accept -> accepted returned 12500000000
+legacy-nested-relay-testnet        amount           expected reject -> rejected Ok(Error(Context, InvalidAction)) [diagnostic: failed account authentication (entry matched the call; signature/expiry/nonce check refused it)]
+legacy-nested-relay-testnet        amount-resigned  expected accept -> accepted returned 125000000000
+legacy-nested-relay-testnet        network          expected reject -> rejected Ok(Error(Context, InvalidAction)) [diagnostic: failed account authentication (entry matched the call; signature/expiry/nonce check refused it)]
+legacy-nested-relay-testnet        network-resigned expected accept -> accepted returned 12500000000
+legacy-nested-relay-testnet        nonce            expected reject -> rejected Ok(Error(Context, InvalidAction)) [diagnostic: failed account authentication (entry matched the call; signature/expiry/nonce check refused it)]
+legacy-nested-relay-testnet        nonce-resigned   expected accept -> accepted returned 12500000000
+legacy-nested-relay-testnet        expiry           expected reject -> rejected Ok(Error(Context, InvalidAction)) [diagnostic: failed account authentication (entry matched the call; signature/expiry/nonce check refused it)]
+legacy-nested-relay-testnet        expiry-resigned  expected accept -> accepted returned 12500000000
+legacy-nested-relay-testnet        function         expected reject -> rejected Ok(Error(Context, InvalidAction)) [diagnostic: failed account authentication (entry matched the call; signature/expiry/nonce check refused it)]
+legacy-nested-relay-testnet        function-resigned expected accept -> accepted returned 12500000000
+legacy-nested-relay-testnet        contractId       expected reject -> rejected Ok(Error(Context, InvalidAction)) [diagnostic: failed account authentication (entry matched the call; signature/expiry/nonce check refused it)]
+legacy-nested-relay-testnet        contractId-resigned expected accept -> accepted returned 12500000000
+test test::host_accepts_originals_and_rejects_mutations_and_controls ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.55s
+

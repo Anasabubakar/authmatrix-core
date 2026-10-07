@@ -1,0 +1,259 @@
+{
+  "environment": {
+    "contracts": "fixtures/nested-auth outer+inner, run natively (not wasm)",
+    "host": "soroban-env-host 28.0.2 via soroban-sdk =28.0.0 (testutils)",
+    "ledgerSequence": 500,
+    "networkIdFrom": "SHA-256 of the vector's network passphrase",
+    "protocolVersion": 28
+  },
+  "format": "authmatrix-evidence",
+  "formatVersion": "1.0.0",
+  "kind": "native-testutils",
+  "limits": [
+    "No transaction envelope, footprint, fee or resource accounting was exercised.",
+    "Ledger sequence and network id are set by the test, not read from a network.",
+    "Contracts ran natively; the compiled wasm is exercised by the testnet evidence instead.",
+    "The signer's classic account entry is synthetic (master weight 1, thresholds 1)."
+  ],
+  "recordedAt": "2026-10-07T18:53:36Z",
+  "results": [
+    {
+      "case": "original",
+      "detail": "returned 12500000000",
+      "expectation": "accept",
+      "outcome": "accepted",
+      "vectorId": "v2-nested-relay-testnet"
+    },
+    {
+      "case": "control-no-auth",
+      "detail": "Ok(Error(Context, InvalidAction)) [diagnostic: no 'failed account authentication' event (no entry matched, or call failed elsewhere)]",
+      "expectation": "reject",
+      "outcome": "rejected",
+      "vectorId": "v2-nested-relay-testnet"
+    },
+    {
+      "case": "control-unsigned",
+      "detail": "Ok(Error(Context, InvalidAction)) [diagnostic: failed account authentication (entry matched the call; signature/expiry/nonce check refused it)]",
+      "expectation": "reject",
+      "outcome": "rejected",
+      "vectorId": "v2-nested-relay-testnet"
+    },
+    {
+      "case": "recipient",
+      "detail": "Ok(Error(Context, InvalidAction)) [diagnostic: failed account authentication (entry matched the call; signature/expiry/nonce check refused it)]",
+      "expectation": "reject",
+      "outcome": "rejected",
+      "vectorId": "v2-nested-relay-testnet"
+    },
+    {
+      "case": "recipient-resigned",
+      "detail": "returned 12500000000",
+      "expectation": "accept",
+      "outcome": "accepted",
+      "vectorId": "v2-nested-relay-testnet"
+    },
+    {
+      "case": "amount",
+      "detail": "Ok(Error(Context, InvalidAction)) [diagnostic: failed account authentication (entry matched the call; signature/expiry/nonce check refused it)]",
+      "expectation": "reject",
+      "outcome": "rejected",
+      "vectorId": "v2-nested-relay-testnet"
+    },
+    {
+      "case": "amount-resigned",
+      "detail": "returned 125000000000",
+      "expectation": "accept",
+      "outcome": "accepted",
+      "vectorId": "v2-nested-relay-testnet"
+    },
+    {
+      "case": "network",
+      "detail": "Ok(Error(Context, InvalidAction)) [diagnostic: failed account authentication (entry matched the call; signature/expiry/nonce check refused it)]",
+      "expectation": "reject",
+      "outcome": "rejected",
+      "vectorId": "v2-nested-relay-testnet"
+    },
+    {
+      "case": "network-resigned",
+      "detail": "returned 12500000000",
+      "expectation": "accept",
+      "outcome": "accepted",
+      "vectorId": "v2-nested-relay-testnet"
+    },
+    {
+      "case": "nonce",
+      "detail": "Ok(Error(Context, InvalidAction)) [diagnostic: failed account authentication (entry matched the call; signature/expiry/nonce check refused it)]",
+      "expectation": "reject",
+      "outcome": "rejected",
+      "vectorId": "v2-nested-relay-testnet"
+    },
+    {
+      "case": "nonce-resigned",
+      "detail": "returned 12500000000",
+      "expectation": "accept",
+      "outcome": "accepted",
+      "vectorId": "v2-nested-relay-testnet"
+    },
+    {
+      "case": "expiry",
+      "detail": "Ok(Error(Context, InvalidAction)) [diagnostic: failed account authentication (entry matched the call; signature/expiry/nonce check refused it)]",
+      "expectation": "reject",
+      "outcome": "rejected",
+      "vectorId": "v2-nested-relay-testnet"
+    },
+    {
+      "case": "expiry-resigned",
+      "detail": "returned 12500000000",
+      "expectation": "accept",
+      "outcome": "accepted",
+      "vectorId": "v2-nested-relay-testnet"
+    },
+    {
+      "case": "function",
+      "detail": "Ok(Error(Context, InvalidAction)) [diagnostic: failed account authentication (entry matched the call; signature/expiry/nonce check refused it)]",
+      "expectation": "reject",
+      "outcome": "rejected",
+      "vectorId": "v2-nested-relay-testnet"
+    },
+    {
+      "case": "function-resigned",
+      "detail": "returned 12500000000",
+      "expectation": "accept",
+      "outcome": "accepted",
+      "vectorId": "v2-nested-relay-testnet"
+    },
+    {
+      "case": "contractId",
+      "detail": "Ok(Error(Context, InvalidAction)) [diagnostic: failed account authentication (entry matched the call; signature/expiry/nonce check refused it)]",
+      "expectation": "reject",
+      "outcome": "rejected",
+      "vectorId": "v2-nested-relay-testnet"
+    },
+    {
+      "case": "contractId-resigned",
+      "detail": "returned 12500000000",
+      "expectation": "accept",
+      "outcome": "accepted",
+      "vectorId": "v2-nested-relay-testnet"
+    },
+    {
+      "case": "original",
+      "detail": "returned 12500000000",
+      "expectation": "accept",
+      "outcome": "accepted",
+      "vectorId": "legacy-nested-relay-testnet"
+    },
+    {
+      "case": "control-no-auth",
+      "detail": "Ok(Error(Context, InvalidAction)) [diagnostic: no 'failed account authentication' event (no entry matched, or call failed elsewhere)]",
+      "expectation": "reject",
+      "outcome": "rejected",
+      "vectorId": "legacy-nested-relay-testnet"
+    },
+    {
+      "case": "control-unsigned",
+      "detail": "Ok(Error(Context, InvalidAction)) [diagnostic: failed account authentication (entry matched the call; signature/expiry/nonce check refused it)]",
+      "expectation": "reject",
+      "outcome": "rejected",
+      "vectorId": "legacy-nested-relay-testnet"
+    },
+    {
+      "case": "recipient",
+      "detail": "Ok(Error(Context, InvalidAction)) [diagnostic: failed account authentication (entry matched the call; signature/expiry/nonce check refused it)]",
+      "expectation": "reject",
+      "outcome": "rejected",
+      "vectorId": "legacy-nested-relay-testnet"
+    },
+    {
+      "case": "recipient-resigned",
+      "detail": "returned 12500000000",
+      "expectation": "accept",
+      "outcome": "accepted",
+      "vectorId": "legacy-nested-relay-testnet"
+    },
+    {
+      "case": "amount",
+      "detail": "Ok(Error(Context, InvalidAction)) [diagnostic: failed account authentication (entry matched the call; signature/expiry/nonce check refused it)]",
+      "expectation": "reject",
+      "outcome": "rejected",
+      "vectorId": "legacy-nested-relay-testnet"
+    },
+    {
+      "case": "amount-resigned",
+      "detail": "returned 125000000000",
+      "expectation": "accept",
+      "outcome": "accepted",
+      "vectorId": "legacy-nested-relay-testnet"
+    },
+    {
+      "case": "network",
+      "detail": "Ok(Error(Context, InvalidAction)) [diagnostic: failed account authentication (entry matched the call; signature/expiry/nonce check refused it)]",
+      "expectation": "reject",
+      "outcome": "rejected",
+      "vectorId": "legacy-nested-relay-testnet"
+    },
+    {
+      "case": "network-resigned",
+      "detail": "returned 12500000000",
+      "expectation": "accept",
+      "outcome": "accepted",
+      "vectorId": "legacy-nested-relay-testnet"
+    },
+    {
+      "case": "nonce",
+      "detail": "Ok(Error(Context, InvalidAction)) [diagnostic: failed account authentication (entry matched the call; signature/expiry/nonce check refused it)]",
+      "expectation": "reject",
+      "outcome": "rejected",
+      "vectorId": "legacy-nested-relay-testnet"
+    },
+    {
+      "case": "nonce-resigned",
+      "detail": "returned 12500000000",
+      "expectation": "accept",
+      "outcome": "accepted",
+      "vectorId": "legacy-nested-relay-testnet"
+    },
+    {
+      "case": "expiry",
+      "detail": "Ok(Error(Context, InvalidAction)) [diagnostic: failed account authentication (entry matched the call; signature/expiry/nonce check refused it)]",
+      "expectation": "reject",
+      "outcome": "rejected",
+      "vectorId": "legacy-nested-relay-testnet"
+    },
+    {
+      "case": "expiry-resigned",
+      "detail": "returned 12500000000",
+      "expectation": "accept",
+      "outcome": "accepted",
+      "vectorId": "legacy-nested-relay-testnet"
+    },
+    {
+      "case": "function",
+      "detail": "Ok(Error(Context, InvalidAction)) [diagnostic: failed account authentication (entry matched the call; signature/expiry/nonce check refused it)]",
+      "expectation": "reject",
+      "outcome": "rejected",
+      "vectorId": "legacy-nested-relay-testnet"
+    },
+    {
+      "case": "function-resigned",
+      "detail": "returned 12500000000",
+      "expectation": "accept",
+      "outcome": "accepted",
+      "vectorId": "legacy-nested-relay-testnet"
+    },
+    {
+      "case": "contractId",
+      "detail": "Ok(Error(Context, InvalidAction)) [diagnostic: failed account authentication (entry matched the call; signature/expiry/nonce check refused it)]",
+      "expectation": "reject",
+      "outcome": "rejected",
+      "vectorId": "legacy-nested-relay-testnet"
+    },
+    {
+      "case": "contractId-resigned",
+      "detail": "returned 12500000000",
+      "expectation": "accept",
+      "outcome": "accepted",
+      "vectorId": "legacy-nested-relay-testnet"
+    }
+  ]
+}
