@@ -1,0 +1,68 @@
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+env:
+  CARGO_TERM_COLOR: never
+
+jobs:
+  node-and-adapters:
+    name: typecheck, schema, vectors, both adapters, tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: adapters/rust
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run typecheck
+      - run: pnpm run check:schema
+      - run: pnpm run check:vectors
+      - name: Build and test the Rust adapter
+        run: |
+          cargo build --release --locked -j2
+          cargo test --locked -j2
+        working-directory: adapters/rust
+      - run: pnpm test
+        env:
+          AUTHMATRIX_RUST_ADAPTER: ${{ github.workspace }}/adapters/rust/target/release/authmatrix-adapter-rust
+      - run: pnpm run conformance
+        env:
+          CARGO_TARGET_DIR: ${{ github.workspace }}/adapters/rust/target
+      - run: pnpm run build
+      - name: Packed tarball is installable
+        run: |
+          pnpm pack --pack-destination "$RUNNER_TEMP"
+          mkdir "$RUNNER_TEMP/smoke" && cd "$RUNNER_TEMP/smoke"
+          npm init -y >/dev/null
+          npm install "$RUNNER_TEMP"/anasabubakar-authmatrix-core-*.tgz
+          node -e "import('@anasabubakar/authmatrix-core').then(m => { if (!m.MAPPINGS.length) process.exit(1); console.log('ok', m.VECTOR_FORMAT_VERSION) })"
+
+  host-fixture:
+    name: fixture contracts (real-host tests) and wasm build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32v1-none
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: fixtures/nested-auth
+      - name: Install stellar CLI
+        run: cargo install --locked stellar-cli --version 28.1.0 --features opt
+      - run: cargo test --locked -j2
+        working-directory: fixtures/nested-auth
+      - run: stellar contract build
+        working-directory: fixtures/nested-auth
