@@ -1,0 +1,20 @@
+[package]
+name = "authmatrix-outer"
+description = "AuthMatrix fixture: authorizes a relay call for `from`, then calls the inner contract (nested authorization). Not for production."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+doctest = false
+
+[dependencies]
+soroban-sdk = { workspace = true }
+
+[dev-dependencies]
+soroban-sdk = { workspace = true, features = ["testutils"] }
+authmatrix-inner = { path = "../inner" }
+serde_json = "=1.0.151"
+sha2 = "=0.10.9"
