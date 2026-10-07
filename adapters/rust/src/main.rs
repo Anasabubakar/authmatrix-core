@@ -353,3 +353,64 @@ fn main() {
         let _ = out.flush();
     }
 }
+
+#[cfg(test)]
+mod tests {
+    //! Rust-only checks of the adapter against the committed vectors (no Node, no SDK involved).
+    use super::*;
+    use std::fs;
+
+    fn read(path: &str) -> Value {
+        serde_json::from_str(&fs::read_to_string(format!("{}/../../{path}", env!("CARGO_MANIFEST_DIR"))).unwrap()).unwrap()
+    }
+
+    #[test]
+    fn rfc8032_vectors() {
+        let f = read("vectors/rfc8032-ed25519.json");
+        let vs = f["vectors"].as_array().unwrap();
+        assert_eq!(vs.len(), 4);
+        for t in vs {
+            let out = op_ed25519_sign(&json!({ "secretKeyHex": t["secretKeyHex"], "messageHex": t["messageHex"] })).unwrap();
+            assert_eq!(out["publicKeyHex"], t["publicKeyHex"], "{}", t["name"]);
+            assert_eq!(out["signatureHex"], t["signatureHex"], "{}", t["name"]);
+        }
+    }
+
+    #[test]
+    fn builds_every_reviewed_vector_byte_for_byte() {
+        let f = read("vectors/authmatrix-vectors.v1.json");
+        for v in f["vectors"].as_array().unwrap() {
+            let phrase = v["signer"]["derivation"]["phrase"].clone();
+            let out = op_build(&json!({ "authorization": v["authorization"], "phrase": phrase })).unwrap();
+            assert_eq!(out, v["expected"], "{}", v["id"]);
+            let ver = op_verify(&json!({ "entryXdr": v["expected"]["signedEntryXdr"], "networkPassphrase": v["authorization"]["networkPassphrase"] })).unwrap();
+            assert_eq!(ver["signatureValid"], true);
+            assert_eq!(ver["payloadHashHex"], v["expected"]["payloadHashHex"]);
+        }
+    }
+
+    #[test]
+    fn every_mutation_changes_the_hash_and_breaks_the_original_signature() {
+        let f = read("vectors/authmatrix-vectors.v1.json");
+        let mut n = 0;
+        for v in f["vectors"].as_array().unwrap() {
+            for m in v["mutations"].as_array().unwrap() {
+                let ver = op_verify(&json!({ "entryXdr": m["expected"]["entryXdrWithOriginalSignature"], "networkPassphrase": m["mutatedAuthorization"]["networkPassphrase"] })).unwrap();
+                assert_eq!(ver["signatureValid"], false, "{}", m["id"]);
+                assert_eq!(ver["payloadHashHex"], m["expected"]["mutatedPayloadHashHex"], "{}", m["id"]);
+                assert_ne!(ver["payloadHashHex"], v["expected"]["payloadHashHex"]);
+                n += 1;
+            }
+        }
+        assert_eq!(n, 27);
+    }
+
+    #[test]
+    fn refuses_a_mismatched_signer_and_bad_input() {
+        let f = read("vectors/authmatrix-vectors.v1.json");
+        let v = &f["vectors"][0];
+        assert!(op_build(&json!({ "authorization": v["authorization"], "phrase": "some other phrase" })).unwrap_err().contains("does not match"));
+        assert!(handle("{not json")["ok"] == false);
+        assert!(handle(r#"{"protocol":"authmatrix-adapter/1","id":3,"op":"decode","params":{"entryXdr":"AAAA"}}"#)["ok"] == false);
+    }
+}
