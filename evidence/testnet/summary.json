@@ -1,0 +1,304 @@
+{
+  "format": "authmatrix-evidence",
+  "formatVersion": "1.0.0",
+  "kind": "testnet-simulate-enforce",
+  "recordedAt": "2026-10-07T18:53:29.568Z",
+  "environment": {
+    "rpc": "https://soroban-testnet.stellar.org",
+    "rpcVersion": "29.0.0-b2b701685c79aee17fe4eb22dbd08a5dfd11594d",
+    "protocolVersion": 29,
+    "ledgerSequence": 5075121,
+    "networkPassphrase": "Test SDF Network ; September 2015",
+    "authMode": "enforce",
+    "deployment": "evidence/testnet/deployment.json",
+    "signerAccount": "GAGCWJVDANC44KKHZQ2AHLZELZOCINJME2BB4WI257P4LM7WC6OOGQ4N"
+  },
+  "limits": [
+    "simulateTransaction is a simulation: nothing was submitted, no transaction was applied, nonces were not consumed.",
+    "Only the vectors labelled host-verifiable (fixture contracts) were run; the synthetic vectors have no host result.",
+    "The network mutation signs under a different passphrase and submits to testnet (one network per run).",
+    "Testnet is not mainnet; acceptance on testnet does not establish acceptance on any other network or protocol."
+  ],
+  "results": [
+    {
+      "vectorId": "v2-nested-relay-testnet",
+      "case": "original",
+      "expectation": "accept",
+      "outcome": "accepted",
+      "detail": "simulation succeeded; return ScVal xdr AAAACgAAAAAAAAAAAAAAAukO3QA= = scvI128",
+      "raw": {
+        "path": "evidence/testnet/raw/v2-nested-relay-testnet--original.json"
+      }
+    },
+    {
+      "vectorId": "v2-nested-relay-testnet",
+      "case": "recipient",
+      "expectation": "reject",
+      "outcome": "rejected",
+      "detail": "HostError: Error(Auth, InvalidAction); host diagnostic: failed account authentication with Error(Crypto, InvalidInput) (account signature check refused the entry)",
+      "raw": {
+        "path": "evidence/testnet/raw/v2-nested-relay-testnet--recipient.json"
+      }
+    },
+    {
+      "vectorId": "v2-nested-relay-testnet",
+      "case": "recipient-resigned",
+      "expectation": "accept",
+      "outcome": "accepted",
+      "detail": "simulation succeeded; return ScVal xdr AAAACgAAAAAAAAAAAAAAAukO3QA= = scvI128",
+      "raw": {
+        "path": "evidence/testnet/raw/v2-nested-relay-testnet--recipient-resigned.json"
+      }
+    },
+    {
+      "vectorId": "v2-nested-relay-testnet",
+      "case": "amount",
+      "expectation": "reject",
+      "outcome": "rejected",
+      "detail": "HostError: Error(Auth, InvalidAction); host diagnostic: failed account authentication with Error(Crypto, InvalidInput) (account signature check refused the entry)",
+      "raw": {
+        "path": "evidence/testnet/raw/v2-nested-relay-testnet--amount.json"
+      }
+    },
+    {
+      "vectorId": "v2-nested-relay-testnet",
+      "case": "amount-resigned",
+      "expectation": "accept",
+      "outcome": "accepted",
+      "detail": "simulation succeeded; return ScVal xdr AAAACgAAAAAAAAAAAAAAHRqUogA= = scvI128",
+      "raw": {
+        "path": "evidence/testnet/raw/v2-nested-relay-testnet--amount-resigned.json"
+      }
+    },
+    {
+      "vectorId": "v2-nested-relay-testnet",
+      "case": "network",
+      "expectation": "reject",
+      "outcome": "rejected",
+      "detail": "HostError: Error(Auth, InvalidAction); host diagnostic: failed account authentication with Error(Crypto, InvalidInput) (account signature check refused the entry)",
+      "raw": {
+        "path": "evidence/testnet/raw/v2-nested-relay-testnet--network.json"
+      }
+    },
+    {
+      "vectorId": "v2-nested-relay-testnet",
+      "case": "nonce",
+      "expectation": "reject",
+      "outcome": "rejected",
+      "detail": "HostError: Error(Auth, InvalidAction); host diagnostic: failed account authentication with Error(Crypto, InvalidInput) (account signature check refused the entry)",
+      "raw": {
+        "path": "evidence/testnet/raw/v2-nested-relay-testnet--nonce.json"
+      }
+    },
+    {
+      "vectorId": "v2-nested-relay-testnet",
+      "case": "nonce-resigned",
+      "expectation": "accept",
+      "outcome": "accepted",
+      "detail": "simulation succeeded; return ScVal xdr AAAACgAAAAAAAAAAAAAAAukO3QA= = scvI128",
+      "raw": {
+        "path": "evidence/testnet/raw/v2-nested-relay-testnet--nonce-resigned.json"
+      }
+    },
+    {
+      "vectorId": "v2-nested-relay-testnet",
+      "case": "expiry",
+      "expectation": "reject",
+      "outcome": "rejected",
+      "detail": "HostError: Error(Auth, InvalidAction); host diagnostic: failed account authentication with Error(Crypto, InvalidInput) (account signature check refused the entry)",
+      "raw": {
+        "path": "evidence/testnet/raw/v2-nested-relay-testnet--expiry.json"
+      }
+    },
+    {
+      "vectorId": "v2-nested-relay-testnet",
+      "case": "expiry-resigned",
+      "expectation": "accept",
+      "outcome": "accepted",
+      "detail": "simulation succeeded; return ScVal xdr AAAACgAAAAAAAAAAAAAAAukO3QA= = scvI128",
+      "raw": {
+        "path": "evidence/testnet/raw/v2-nested-relay-testnet--expiry-resigned.json"
+      }
+    },
+    {
+      "vectorId": "v2-nested-relay-testnet",
+      "case": "function",
+      "expectation": "reject",
+      "outcome": "rejected",
+      "detail": "HostError: Error(Auth, InvalidAction); host diagnostic: failed account authentication with Error(Crypto, InvalidInput) (account signature check refused the entry)",
+      "raw": {
+        "path": "evidence/testnet/raw/v2-nested-relay-testnet--function.json"
+      }
+    },
+    {
+      "vectorId": "v2-nested-relay-testnet",
+      "case": "function-resigned",
+      "expectation": "accept",
+      "outcome": "accepted",
+      "detail": "simulation succeeded; return ScVal xdr AAAACgAAAAAAAAAAAAAAAukO3QA= = scvI128",
+      "raw": {
+        "path": "evidence/testnet/raw/v2-nested-relay-testnet--function-resigned.json"
+      }
+    },
+    {
+      "vectorId": "v2-nested-relay-testnet",
+      "case": "contractId",
+      "expectation": "reject",
+      "outcome": "rejected",
+      "detail": "HostError: Error(Auth, InvalidAction); host diagnostic: failed account authentication with Error(Crypto, InvalidInput) (account signature check refused the entry)",
+      "raw": {
+        "path": "evidence/testnet/raw/v2-nested-relay-testnet--contractId.json"
+      }
+    },
+    {
+      "vectorId": "v2-nested-relay-testnet",
+      "case": "contractId-resigned",
+      "expectation": "accept",
+      "outcome": "accepted",
+      "detail": "simulation succeeded; return ScVal xdr AAAACgAAAAAAAAAAAAAAAukO3QA= = scvI128",
+      "raw": {
+        "path": "evidence/testnet/raw/v2-nested-relay-testnet--contractId-resigned.json"
+      }
+    },
+    {
+      "vectorId": "legacy-nested-relay-testnet",
+      "case": "original",
+      "expectation": "accept",
+      "outcome": "accepted",
+      "detail": "simulation succeeded; return ScVal xdr AAAACgAAAAAAAAAAAAAAAukO3QA= = scvI128",
+      "raw": {
+        "path": "evidence/testnet/raw/legacy-nested-relay-testnet--original.json"
+      }
+    },
+    {
+      "vectorId": "legacy-nested-relay-testnet",
+      "case": "recipient",
+      "expectation": "reject",
+      "outcome": "rejected",
+      "detail": "HostError: Error(Auth, InvalidAction); host diagnostic: failed account authentication with Error(Crypto, InvalidInput) (account signature check refused the entry)",
+      "raw": {
+        "path": "evidence/testnet/raw/legacy-nested-relay-testnet--recipient.json"
+      }
+    },
+    {
+      "vectorId": "legacy-nested-relay-testnet",
+      "case": "recipient-resigned",
+      "expectation": "accept",
+      "outcome": "accepted",
+      "detail": "simulation succeeded; return ScVal xdr AAAACgAAAAAAAAAAAAAAAukO3QA= = scvI128",
+      "raw": {
+        "path": "evidence/testnet/raw/legacy-nested-relay-testnet--recipient-resigned.json"
+      }
+    },
+    {
+      "vectorId": "legacy-nested-relay-testnet",
+      "case": "amount",
+      "expectation": "reject",
+      "outcome": "rejected",
+      "detail": "HostError: Error(Auth, InvalidAction); host diagnostic: failed account authentication with Error(Crypto, InvalidInput) (account signature check refused the entry)",
+      "raw": {
+        "path": "evidence/testnet/raw/legacy-nested-relay-testnet--amount.json"
+      }
+    },
+    {
+      "vectorId": "legacy-nested-relay-testnet",
+      "case": "amount-resigned",
+      "expectation": "accept",
+      "outcome": "accepted",
+      "detail": "simulation succeeded; return ScVal xdr AAAACgAAAAAAAAAAAAAAHRqUogA= = scvI128",
+      "raw": {
+        "path": "evidence/testnet/raw/legacy-nested-relay-testnet--amount-resigned.json"
+      }
+    },
+    {
+      "vectorId": "legacy-nested-relay-testnet",
+      "case": "network",
+      "expectation": "reject",
+      "outcome": "rejected",
+      "detail": "HostError: Error(Auth, InvalidAction); host diagnostic: failed account authentication with Error(Crypto, InvalidInput) (account signature check refused the entry)",
+      "raw": {
+        "path": "evidence/testnet/raw/legacy-nested-relay-testnet--network.json"
+      }
+    },
+    {
+      "vectorId": "legacy-nested-relay-testnet",
+      "case": "nonce",
+      "expectation": "reject",
+      "outcome": "rejected",
+      "detail": "HostError: Error(Auth, InvalidAction); host diagnostic: failed account authentication with Error(Crypto, InvalidInput) (account signature check refused the entry)",
+      "raw": {
+        "path": "evidence/testnet/raw/legacy-nested-relay-testnet--nonce.json"
+      }
+    },
+    {
+      "vectorId": "legacy-nested-relay-testnet",
+      "case": "nonce-resigned",
+      "expectation": "accept",
+      "outcome": "accepted",
+      "detail": "simulation succeeded; return ScVal xdr AAAACgAAAAAAAAAAAAAAAukO3QA= = scvI128",
+      "raw": {
+        "path": "evidence/testnet/raw/legacy-nested-relay-testnet--nonce-resigned.json"
+      }
+    },
+    {
+      "vectorId": "legacy-nested-relay-testnet",
+      "case": "expiry",
+      "expectation": "reject",
+      "outcome": "rejected",
+      "detail": "HostError: Error(Auth, InvalidAction); host diagnostic: failed account authentication with Error(Crypto, InvalidInput) (account signature check refused the entry)",
+      "raw": {
+        "path": "evidence/testnet/raw/legacy-nested-relay-testnet--expiry.json"
+      }
+    },
+    {
+      "vectorId": "legacy-nested-relay-testnet",
+      "case": "expiry-resigned",
+      "expectation": "accept",
+      "outcome": "accepted",
+      "detail": "simulation succeeded; return ScVal xdr AAAACgAAAAAAAAAAAAAAAukO3QA= = scvI128",
+      "raw": {
+        "path": "evidence/testnet/raw/legacy-nested-relay-testnet--expiry-resigned.json"
+      }
+    },
+    {
+      "vectorId": "legacy-nested-relay-testnet",
+      "case": "function",
+      "expectation": "reject",
+      "outcome": "rejected",
+      "detail": "HostError: Error(Auth, InvalidAction); host diagnostic: failed account authentication with Error(Crypto, InvalidInput) (account signature check refused the entry)",
+      "raw": {
+        "path": "evidence/testnet/raw/legacy-nested-relay-testnet--function.json"
+      }
+    },
+    {
+      "vectorId": "legacy-nested-relay-testnet",
+      "case": "function-resigned",
+      "expectation": "accept",
+      "outcome": "accepted",
+      "detail": "simulation succeeded; return ScVal xdr AAAACgAAAAAAAAAAAAAAAukO3QA= = scvI128",
+      "raw": {
+        "path": "evidence/testnet/raw/legacy-nested-relay-testnet--function-resigned.json"
+      }
+    },
+    {
+      "vectorId": "legacy-nested-relay-testnet",
+      "case": "contractId",
+      "expectation": "reject",
+      "outcome": "rejected",
+      "detail": "HostError: Error(Auth, InvalidAction); host diagnostic: failed account authentication with Error(Crypto, InvalidInput) (account signature check refused the entry)",
+      "raw": {
+        "path": "evidence/testnet/raw/legacy-nested-relay-testnet--contractId.json"
+      }
+    },
+    {
+      "vectorId": "legacy-nested-relay-testnet",
+      "case": "contractId-resigned",
+      "expectation": "accept",
+      "outcome": "accepted",
+      "detail": "simulation succeeded; return ScVal xdr AAAACgAAAAAAAAAAAAAAAukO3QA= = scvI128",
+      "raw": {
+        "path": "evidence/testnet/raw/legacy-nested-relay-testnet--contractId-resigned.json"
+      }
+    }
+  ]
+}
