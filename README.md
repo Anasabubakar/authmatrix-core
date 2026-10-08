@@ -19,7 +19,7 @@ Example (from `evidence/testnet/summary.json`, a refused mutation, verbatim host
 
 ## Install and run
 
-Not published to npm. From a clone (Node >= 22, pnpm 11, Rust stable; the stellar CLI 28.1.0 only to rebuild the wasm):
+Published to npm as `@anas.abubakar/authmatrix-core`. From a clone (Node >= 22, pnpm 11, Rust stable; the stellar CLI 28.1.0 only to rebuild the wasm):
 
 ```bash
 git clone <this repo> && cd authmatrix-core
