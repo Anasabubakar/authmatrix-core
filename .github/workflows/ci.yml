@@ -46,7 +46,7 @@ jobs:
           pnpm pack --pack-destination "$RUNNER_TEMP"
           mkdir "$RUNNER_TEMP/smoke" && cd "$RUNNER_TEMP/smoke"
           npm init -y >/dev/null
-          npm install "$RUNNER_TEMP"/anasabubakar-authmatrix-core-*.tgz
+          npm install "$RUNNER_TEMP"/anas.abubakar-authmatrix-core-*.tgz
           node -e "import('@anas.abubakar/authmatrix-core').then(m => { if (!m.MAPPINGS.length) process.exit(1); console.log('ok', m.VECTOR_FORMAT_VERSION) })"
 
   host-fixture:
