@@ -3,7 +3,7 @@
   "formatVersion": "1.0.0",
   "generator": {
     "tool": "authmatrix-core scripts/gen-vectors.ts",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "sdk": "@stellar/stellar-sdk@17.2.1",
     "note": "Canonical values come from the SDK's official helpers; the Rust adapter and the Soroban host independently confirm them (see README)."
   },
