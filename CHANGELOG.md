@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.1.1
+- Package metadata (repository, homepage, bugs) and absolute documentation links. No runtime changes since 0.1.0.
+
 ## 0.1.0 (unreleased)
 
 - Vector format `authmatrix-vectors` 1.0.0, adapter protocol `authmatrix-adapter/1`, evidence format 1.0.0, with JSON Schemas generated from zod.
