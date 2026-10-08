@@ -1,6 +1,11 @@
+<p align="center"><img src="docs/assets/banner.svg" alt="authmatrix-core" width="100%"></p>
+
 # authmatrix-core
 
-**Documentation:** https://stellar-developer-tools.gitbook.io/authmatrix-core/
+[![CI](https://github.com/Auth-Matrix/authmatrix-core/actions/workflows/ci.yml/badge.svg)](https://github.com/Auth-Matrix/authmatrix-core/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![Release](https://img.shields.io/github/v/release/Auth-Matrix/authmatrix-core)](https://github.com/Auth-Matrix/authmatrix-core/releases) [![npm](https://img.shields.io/npm/v/@anas.abubakar/authmatrix-core)](https://www.npmjs.com/package/@anas.abubakar/authmatrix-core)
+
+[Documentation](https://stellar-developer-tools.gitbook.io/authmatrix-core/) · [App repository](https://github.com/Auth-Matrix/authmatrix-inspector) · [Issues](https://github.com/Auth-Matrix/authmatrix-core/issues) · [Discussions](https://github.com/Auth-Matrix/authmatrix-core/discussions)
+
 
 Soroban authorization entries changed in Protocol 27. This repo checks that two independent implementations compute the same signature payload for the same entry, and that the real Soroban host agrees.
 
@@ -55,7 +60,7 @@ Packaging for the inspector: `pnpm run build && pnpm pack` produces `anas.abubak
 
 ## Repository map
 
-- `vectors/` reviewed vectors and RFC 8032 vectors; `schema/` generated JSON Schemas (formats in [SPEC.md](https://github.com/Anasabubakar/authmatrix-core/blob/main/SPEC.md))
+- `vectors/` reviewed vectors and RFC 8032 vectors; `schema/` generated JSON Schemas (formats in [SPEC.md](https://github.com/Auth-Matrix/authmatrix-core/blob/main/SPEC.md))
 - `adapters/typescript`, `adapters/rust` the two adapters (protocol `authmatrix-adapter/1`)
 - `fixtures/nested-auth` outer/inner contracts, real-host tests, committed wasm and its hashes
 - `evidence/` native results, testnet results and raw RPC recordings, conformance report
@@ -75,12 +80,46 @@ Calls named like SEP-41 (`transfer`, `transfer_from`, `approve`, `burn`, `burn_f
 - Test keys are derived from public phrases and protect nothing. Never fund them on a real network.
 - No audit, no safety claim, and no wallet or SDK maintainer has reviewed this. A decoded authorization is not a statement about what contracts do with it.
 
+## Repository layout
+
+- `adapters/`: independent adapter implementations
+- `docs/`: decision records (ADRs), evidence and assets
+- `evidence/`: recorded evidence and how it was produced
+- `fixtures/`: recorded and fixture data used by the tests
+- `gitbook/`: source of the GitBook documentation
+- `schema/`: JSON Schemas, generated and checked in CI
+- `scripts/`: build, generation and recording scripts
+- `src/`: source
+- `test/`: tests
+- `vectors/`: reviewed language-neutral test vectors
+
+## Documentation
+
+The full documentation is at https://stellar-developer-tools.gitbook.io/authmatrix-core/. It is built from the `gitbook/` folder of this repository and synced from `main`, so a fix to a page is a pull request here.
+
+## Contributing
+
+Open issues are scoped so one person can finish one in a single cycle, and each lists acceptance criteria. Read [CONTRIBUTING.md](CONTRIBUTING.md), pick an issue from the [issue list](https://github.com/Auth-Matrix/authmatrix-core/issues), and say you are taking it before you start. Security reports go through [SECURITY.md](SECURITY.md), not public issues.
+
+## Maintainers
+
+| Maintainer | Role | GitHub |
+|---|---|---|
+| Anas Abubakar | Lead maintainer | [@Anasabubakar](https://github.com/Anasabubakar) |
+| Abdulbasit Fazazi | Co-maintainer | [@fazaziishola-coder](https://github.com/fazaziishola-coder) |
+
+## Community
+
+Questions and design discussion go in [GitHub Discussions](https://github.com/Auth-Matrix/authmatrix-core/discussions). Bugs and scoped work go in [Issues](https://github.com/Auth-Matrix/authmatrix-core/issues).
+
 ## Licence
 
-MIT. See [LICENSE](https://github.com/Anasabubakar/authmatrix-core/blob/main/LICENSE), [CONTRIBUTING.md](https://github.com/Anasabubakar/authmatrix-core/blob/main/CONTRIBUTING.md), [SECURITY.md](https://github.com/Anasabubakar/authmatrix-core/blob/main/SECURITY.md).
+MIT. See [LICENSE](https://github.com/Auth-Matrix/authmatrix-core/blob/main/LICENSE), [CONTRIBUTING.md](https://github.com/Auth-Matrix/authmatrix-core/blob/main/CONTRIBUTING.md), [SECURITY.md](https://github.com/Auth-Matrix/authmatrix-core/blob/main/SECURITY.md).
 
 ## Contributors
 
-<a href="https://github.com/Anasabubakar/authmatrix-core/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Anasabubakar/authmatrix-core" alt="Contributors to authmatrix-core" />
+Thanks to all the contributors who have made this project possible.
+
+<a href="https://github.com/Auth-Matrix/authmatrix-core/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Auth-Matrix/authmatrix-core" alt="Contributors to authmatrix-core" />
 </a>
