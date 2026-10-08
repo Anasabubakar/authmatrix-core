@@ -47,7 +47,7 @@ jobs:
           mkdir "$RUNNER_TEMP/smoke" && cd "$RUNNER_TEMP/smoke"
           npm init -y >/dev/null
           npm install "$RUNNER_TEMP"/anasabubakar-authmatrix-core-*.tgz
-          node -e "import('@anasabubakar/authmatrix-core').then(m => { if (!m.MAPPINGS.length) process.exit(1); console.log('ok', m.VECTOR_FORMAT_VERSION) })"
+          node -e "import('@anas.abubakar/authmatrix-core').then(m => { if (!m.MAPPINGS.length) process.exit(1); console.log('ok', m.VECTOR_FORMAT_VERSION) })"
 
   host-fixture:
     name: fixture contracts (real-host tests) and wasm build

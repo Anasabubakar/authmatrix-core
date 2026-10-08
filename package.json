@@ -1,5 +1,5 @@
 {
-  "name": "@anasabubakar/authmatrix-core",
+  "name": "@anas.abubakar/authmatrix-core",
   "version": "0.1.0",
   "description": "Language-neutral Soroban authorization vectors, two independent adapters (TypeScript SDK and Rust stellar-xdr), and host-backed verification evidence.",
   "license": "MIT",
