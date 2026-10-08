@@ -53,7 +53,7 @@ Packaging for the inspector: `pnpm run build && pnpm pack` produces `anas.abubak
 
 ## Repository map
 
-- `vectors/` reviewed vectors and RFC 8032 vectors; `schema/` generated JSON Schemas (formats in [SPEC.md](SPEC.md))
+- `vectors/` reviewed vectors and RFC 8032 vectors; `schema/` generated JSON Schemas (formats in [SPEC.md](https://github.com/Anasabubakar/authmatrix-core/blob/main/SPEC.md))
 - `adapters/typescript`, `adapters/rust` the two adapters (protocol `authmatrix-adapter/1`)
 - `fixtures/nested-auth` outer/inner contracts, real-host tests, committed wasm and its hashes
 - `evidence/` native results, testnet results and raw RPC recordings, conformance report
@@ -75,4 +75,4 @@ Calls named like SEP-41 (`transfer`, `transfer_from`, `approve`, `burn`, `burn_f
 
 ## Licence
 
-MIT. See [LICENSE](LICENSE), [CONTRIBUTING.md](CONTRIBUTING.md), [SECURITY.md](SECURITY.md).
+MIT. See [LICENSE](https://github.com/Anasabubakar/authmatrix-core/blob/main/LICENSE), [CONTRIBUTING.md](https://github.com/Anasabubakar/authmatrix-core/blob/main/CONTRIBUTING.md), [SECURITY.md](https://github.com/Anasabubakar/authmatrix-core/blob/main/SECURITY.md).
