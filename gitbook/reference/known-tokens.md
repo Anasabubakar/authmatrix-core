@@ -1,0 +1,3 @@
+# Known tokens
+
+Calls named like SEP-41 (`transfer`, `transfer_from`, `approve`, `burn`, `burn_from`, `allowance`, ...) and the Stellar Asset Contract extras (`mint`, `clawback`, `set_admin`, ...) are decoded by a reviewed table in `src/tokens.ts`, checked in tests against signature lines copied from SEP-41 v0.5.2 and `soroban-sdk` 28.0.0. SEP-41 itself defines no `mint` or `clawback` function (events only), so those are labelled as Stellar Asset Contract conventions. Matching is by function name, arity and argument types only: a hit means "token-shaped call", not "this contract is a token". Anything that does not fit stays raw with its XDR. Amounts are exact integers; token decimals are not in an entry and are never assumed.
