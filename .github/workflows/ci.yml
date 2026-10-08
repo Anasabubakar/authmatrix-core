@@ -61,7 +61,10 @@ jobs:
         with:
           workspaces: fixtures/nested-auth
       - name: Install stellar CLI
-        run: cargo install --locked stellar-cli --version 28.1.0 --features opt
+        run: |
+          curl -fsSL https://github.com/stellar/stellar-cli/releases/download/v28.1.0/stellar-cli-28.1.0-x86_64-unknown-linux-gnu.tar.gz | tar xz -C "$RUNNER_TEMP"
+          install -m 0755 "$RUNNER_TEMP/stellar" /usr/local/bin/stellar
+          stellar --version
       - run: cargo test --locked -j2
         working-directory: fixtures/nested-auth
       - run: stellar contract build
