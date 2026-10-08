@@ -1,17 +1,22 @@
 {
   "name": "@anas.abubakar/authmatrix-core",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Language-neutral Soroban authorization vectors, two independent adapters (TypeScript SDK and Rust stellar-xdr), and host-backed verification evidence.",
   "license": "MIT",
   "author": "Anas Abubakar",
   "type": "module",
-  "engines": { "node": ">=22" },
+  "engines": {
+    "node": ">=22"
+  },
   "packageManager": "pnpm@11.25.0",
   "private": false,
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
-    ".": { "types": "./dist/index.d.ts", "default": "./dist/index.js" },
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
     "./schema/vector.v1.schema.json": "./schema/vector.v1.schema.json",
     "./schema/adapter-protocol.v1.schema.json": "./schema/adapter-protocol.v1.schema.json",
     "./schema/evidence.v1.schema.json": "./schema/evidence.v1.schema.json",
@@ -20,7 +25,17 @@
     "./evidence/native-host/results.json": "./evidence/native-host/results.json",
     "./evidence/testnet/summary.json": "./evidence/testnet/summary.json"
   },
-  "files": ["dist", "schema", "vectors", "evidence/native-host/results.json", "evidence/testnet/summary.json", "evidence/testnet/deployment.json", "evidence/conformance-report.json", "README.md", "LICENSE"],
+  "files": [
+    "dist",
+    "schema",
+    "vectors",
+    "evidence/native-host/results.json",
+    "evidence/testnet/summary.json",
+    "evidence/testnet/deployment.json",
+    "evidence/conformance-report.json",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "schema": "node --experimental-strip-types scripts/gen-schema.ts",
@@ -41,5 +56,13 @@
     "@types/node": "26.6.4",
     "typescript": "7.0.2",
     "vitest": "5.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anasabubakar/authmatrix-core.git"
+  },
+  "homepage": "https://github.com/Anasabubakar/authmatrix-core#readme",
+  "bugs": {
+    "url": "https://github.com/Anasabubakar/authmatrix-core/issues"
   }
 }
