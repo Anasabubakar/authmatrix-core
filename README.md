@@ -76,3 +76,9 @@ Calls named like SEP-41 (`transfer`, `transfer_from`, `approve`, `burn`, `burn_f
 ## Licence
 
 MIT. See [LICENSE](https://github.com/Anasabubakar/authmatrix-core/blob/main/LICENSE), [CONTRIBUTING.md](https://github.com/Anasabubakar/authmatrix-core/blob/main/CONTRIBUTING.md), [SECURITY.md](https://github.com/Anasabubakar/authmatrix-core/blob/main/SECURITY.md).
+
+## Contributors
+
+<a href="https://github.com/Anasabubakar/authmatrix-core/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Anasabubakar/authmatrix-core" alt="Contributors to authmatrix-core" />
+</a>
