@@ -38,7 +38,7 @@ pnpm run evidence:native
 pnpm run evidence:testnet
 ```
 
-Packaging for the inspector: `pnpm run build && pnpm pack` produces `anas.abubakar-authmatrix-core-0.1.0.tgz` containing `dist/`, the JSON Schemas, the vectors and the evidence summaries.
+Packaging for the inspector: `pnpm run build && pnpm pack` produces `anas.abubakar-authmatrix-core-0.1.1.tgz` containing `dist/`, the JSON Schemas, the vectors and the evidence summaries.
 
 ## Supported versions
 
